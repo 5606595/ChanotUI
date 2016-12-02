@@ -19,7 +19,6 @@
       <Button icon="forward" size="small" type="primary">Go froward</Button>
       <Icon attr="search" />
     </Box>
-    <Message>这是一条普通提示</Message>
   </div>
 </template>
 

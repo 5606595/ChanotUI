@@ -59,10 +59,29 @@
 
 	'use strict';
 	
-	addEventListener('DOMContentLoaded', function () {
+	var _main = __webpack_require__(8);
 	
-	  var opt = __webpack_require__(8);
-	  var app = new Vue(opt).$mount('#app');
+	var _main2 = _interopRequireDefault(_main);
+	
+	var _message = __webpack_require__(32);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
+	var _button = __webpack_require__(10);
+	
+	var _button2 = _interopRequireDefault(_button);
+	
+	var _spin = __webpack_require__(22);
+	
+	var _spin2 = _interopRequireDefault(_spin);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	addEventListener('DOMContentLoaded', function () {
+	  Vue.component("c-message", _message2.default);
+	  Vue.component("c-spin", _spin2.default);
+	  Vue.component("c-button", _button2.default);
+	  var app = new Vue().$mount('#app');
 	  window.app = app;
 	});
 
@@ -78,7 +97,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/src/main.vue"
+	  var id = "/Users/jorten/github/ChanotUI/src/main.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -157,7 +176,6 @@
 	//       <Button icon="forward" size="small" type="primary">Go froward</Button>
 	//       <Icon attr="search" />
 	//     </Box>
-	//     <Message>这是一条普通提示</Message>
 	//   </div>
 	// </template>
 	
@@ -176,7 +194,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/components/button/button.vue"
+	  var id = "/Users/jorten/github/ChanotUI/components/button/button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -200,8 +218,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5e962baf&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5e962baf&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -713,7 +731,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/components/icon/icon.vue"
+	  var id = "/Users/jorten/github/ChanotUI/components/icon/icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -737,8 +755,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4b33ff4f&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4b33ff4f&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -859,7 +877,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/components/spin/spin.vue"
+	  var id = "/Users/jorten/github/ChanotUI/components/spin/spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -883,8 +901,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-373b24ef&file=spin.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spin.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-373b24ef&file=spin.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spin.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4fe71505&file=spin.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spin.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4fe71505&file=spin.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spin.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -916,7 +934,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <style lang="less" rel="stylesheet/less">
+	// <style lang="less">
 	//     @jblue: #3ec8f5;
 	//     .spin {
 	//         position: relative;
@@ -1020,7 +1038,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/components/box/box.vue"
+	  var id = "/Users/jorten/github/ChanotUI/components/box/box.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1044,8 +1062,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-74fac487&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-74fac487&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1118,7 +1136,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/FE/js程序/vue/vue-test的副本/components/message/message.vue"
+	  var id = "/Users/jorten/github/ChanotUI/components/message/message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1142,8 +1160,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-3d9baa02&file=message.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./message.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-3d9baa02&file=message.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./message.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1e199ad6&file=message.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./message.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1e199ad6&file=message.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./message.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1282,7 +1300,7 @@
 /* 37 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <Box>\n      <Spin tips=\"loading...\"></Spin>\n      <Icon type=\"success\"/>\n      <Icon type=\"fail\"/>\n      <Icon type=\"prompt\"/>\n      <Icon type=\"warning\"/>\n      <Icon type=\"search\"/>\n    </Box>\n    <Box>\n      <Button size=\"large\">large</Button>\n      <Button type=\"primary\">default</Button>\n      <Button size=\"small\" type=\"primary\">small</Button>\n      <Button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></Button>\n      <Button type=\"primary\" icon=\"search\" size=\"small\">click me</Button>\n      <Button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</Button>\n      <Icon attr=\"search\" />\n    </Box>\n    <Message>这是一条普通提示</Message>\n  </div>";
+	module.exports = "<div>\n    <Box>\n      <Spin tips=\"loading...\"></Spin>\n      <Icon type=\"success\"/>\n      <Icon type=\"fail\"/>\n      <Icon type=\"prompt\"/>\n      <Icon type=\"warning\"/>\n      <Icon type=\"search\"/>\n    </Box>\n    <Box>\n      <Button size=\"large\">large</Button>\n      <Button type=\"primary\">default</Button>\n      <Button size=\"small\" type=\"primary\">small</Button>\n      <Button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></Button>\n      <Button type=\"primary\" icon=\"search\" size=\"small\">click me</Button>\n      <Button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</Button>\n      <Icon attr=\"search\" />\n    </Box>\n  </div>";
 
 /***/ }
 /******/ ]);

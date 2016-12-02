@@ -7,9 +7,12 @@ var htmlone = require('gulp-htmlone')
 
 var autoprefixer = require('autoprefixer')
 
+var appList = ['main']
+
 gulp.task('default', ['build'], function () {
     console.log('done')
 })
+
 
 gulp.task('bundle', function () {
     return gulp.src(mapFiles(appList, 'js'))
