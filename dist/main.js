@@ -77,13 +77,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	addEventListener('DOMContentLoaded', function () {
-	  Vue.component("c-message", _message2.default);
-	  Vue.component("c-spin", _spin2.default);
-	  Vue.component("c-button", _button2.default);
-	  var app = new Vue().$mount('#app');
-	  window.app = app;
-	});
+	Vue.component("c-message", _message2.default);
+	Vue.component("c-spin", _spin2.default);
+	Vue.component("c-button", _button2.default);
+	// var app = new Vue().$mount('#app')
+	// window.app = app
 
 /***/ },
 /* 8 */
