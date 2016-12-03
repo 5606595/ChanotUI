@@ -3,8 +3,7 @@
 
  - spin组件：加载显示组件，标签***&lt;c-spin>***
  - button组件：按钮，可调整大小、样式、图标，标签***&lt;c-button>***
- - Message组件：全局提示，可设置持续时间，标签***&lt;c-message>***
-
+ - Message组件：全局提示，可设置持续时间，全局变量message
 #####使用方法：需要先导入vue2.0文件
 
     <script src="vue.js"></script>

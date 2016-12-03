@@ -63,10 +63,6 @@
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _message = __webpack_require__(32);
-	
-	var _message2 = _interopRequireDefault(_message);
-	
 	var _button = __webpack_require__(10);
 	
 	var _button2 = _interopRequireDefault(_button);
@@ -75,11 +71,15 @@
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
+	var _message = __webpack_require__(38);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	Vue.component("c-message", _message2.default);
 	Vue.component("c-spin", _spin2.default);
 	Vue.component("c-button", _button2.default);
+	window.message = _message2.default;
 	// var app = new Vue().$mount('#app')
 	// window.app = app
 
@@ -1299,6 +1299,70 @@
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n    <Box>\n      <Spin tips=\"loading...\"></Spin>\n      <Icon type=\"success\"/>\n      <Icon type=\"fail\"/>\n      <Icon type=\"prompt\"/>\n      <Icon type=\"warning\"/>\n      <Icon type=\"search\"/>\n    </Box>\n    <Box>\n      <Button size=\"large\">large</Button>\n      <Button type=\"primary\">default</Button>\n      <Button size=\"small\" type=\"primary\">small</Button>\n      <Button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></Button>\n      <Button type=\"primary\" icon=\"search\" size=\"small\">click me</Button>\n      <Button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</Button>\n      <Icon attr=\"search\" />\n    </Box>\n  </div>";
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _message = __webpack_require__(32);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    info: function info(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        if (duration) {
+	            message.duration = duration;
+	        }
+	        message.$mount(div);
+	    },
+	    success: function success(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "success";
+	        if (duration) {
+	            message.duration = duration;
+	        }
+	        message.$mount(div);
+	    },
+	    fail: function fail(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "fail";
+	        if (duration) {
+	            message.duration = duration;
+	        }
+	        message.$mount(div);
+	    },
+	    warning: function warning(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "warning";
+	        if (duration) {
+	            message.duration = duration;
+	        }
+	        message.$mount(div);
+	    }
+	}; /**
+	    * Created by jorten on 2016/12/1.
+	    */
 
 /***/ }
 /******/ ]);
