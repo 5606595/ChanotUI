@@ -46,6 +46,6 @@ export default {
             message.duration = duration
         }
         message.$mount(div)
-    },
+    }
 
 }
