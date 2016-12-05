@@ -65,8 +65,11 @@
             time: function() {
                 if(this.duration) {
                     return this.duration * 1000;
+                } else if(this.duration === 0) {
+                    return 0;
+                } else {
+                    return 1500;
                 }
-                return 1500;
             }
         },
         components:{
@@ -76,12 +79,16 @@
             type: String,
         },
         mounted() {
-            setTimeout(() => {
-                this.$el.classList.add("j-end")
-                this.$el.addEventListener("animationend", () => {
-                    this.show = false
-                }, false);
-            }, this.time)
+            if(this.time !== 0) {
+                setTimeout(() => {
+                    if(this.$el.classList) {
+                        this.$el.classList.add("j-end")
+                        this.$el.addEventListener("animationend", () => {
+                            this.show = false
+                        }, false);
+                    }
+                }, this.time)
+            }
         }
     }
 </script>

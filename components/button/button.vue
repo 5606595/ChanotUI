@@ -25,6 +25,9 @@
             background-color: @jblue;
             border-color: @jblue;
             color: white;
+            i {
+                color: white;
+            }
             &:hover {
                 background-color: @jbluelight;
                 border-color: @jbluelight;
@@ -40,6 +43,9 @@
             background-color: @jgrey;
             border-color: @jdefault;
             color: #AAA;
+            i {
+                color: #AAA;
+            }
             &:hover {
                 border-color: @jdefault;
                 background-color: @jgrey;

@@ -15,5 +15,10 @@
 #####设置图标
 
     <c-icon type="success" />
+    <c-icon type="fail" />
+    <c-icon type="warning" />
+    <c-icon type="loading" />
+    <c-icon type="forward" />
+    <c-icon type="backward" />
     <c-icon type="search" />
 

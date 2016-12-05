@@ -71,9 +71,22 @@
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
+	var _icon = __webpack_require__(39);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	var _message = __webpack_require__(38);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	Vue.component("c-spin", _spin2.default);
+	var hide = _message2.default.success("haha", 0);
+	Vue.component("c-icon", _icon2.default);
+	Vue.component('c-button', _button2.default);
+	Vue.component('c-spin', _spin2.default);
+	
+	setTimeout(hide, 1500);
 	
 	var app = new Vue().$mount('#app');
 	window.app = app;
@@ -230,7 +243,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -626,6 +639,9 @@
 	//             background-color: @jblue;
 	//             border-color: @jblue;
 	//             color: white;
+	//             i {
+	//                 color: white;
+	//             }
 	//             &:hover {
 	//                 background-color: @jbluelight;
 	//                 border-color: @jbluelight;
@@ -641,6 +657,9 @@
 	//             background-color: @jgrey;
 	//             border-color: @jdefault;
 	//             color: #AAA;
+	//             i {
+	//                 color: #AAA;
+	//             }
 	//             &:hover {
 	//                 border-color: @jdefault;
 	//                 background-color: @jgrey;
@@ -767,7 +786,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".jicon {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id：\"191439\" */\n  src: url('//at.alicdn.com/t/font_t6inlill5jzl4n29.eot');\n  src: url('//at.alicdn.com/t/font_t6inlill5jzl4n29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_t6inlill5jzl4n29.woff') format('woff'), url('//at.alicdn.com/t/font_t6inlill5jzl4n29.ttf') format('truetype'), url('//at.alicdn.com/t/font_t6inlill5jzl4n29.svg#iconfont') format('svg');\n}\n", ""]);
+	exports.push([module.id, ".jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.icon-download:before {\n  content: '\\E621';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot');\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.woff') format('woff'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.ttf') format('truetype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.svg#iconfont') format('svg');\n}\n", ""]);
 	
 	// exports
 
@@ -790,6 +809,7 @@
 	//     @fail: #fc561f;
 	//     @warning: #fda929;
 	//     .jicon {
+	//         display: inline-block;
 	//         font-family:"iconfont" !important;
 	//         font-size:16px;
 	//         font-style:normal;
@@ -823,13 +843,32 @@
 	//     }
 	//     .jicon-search:before { content: "\e600"; }
 	//     .jicon-backward:before { content: "\e60a"; }
+	//     .jicon-loading {
+	//         color: @default;
+	//         animation: loading .5s linear infinite;
+	//         &:before {
+	//             content: '\e637';
+	//         }
+	//     }
+	//     .icon-download:before { content: '\e621' }
+	//     @keyframes loading {
+	//         0% {
+	//             transform: rotate(0deg);
+	//         }
+	//         50% {
+	//             transform: rotate(180deg);
+	//         }
+	//         100% {
+	//             transform: rotate(360deg);
+	//         }
+	//     }
 	//     @font-face {
-	//         font-family: 'iconfont';  /* project id："191439" */
-	//         src: url('//at.alicdn.com/t/font_t6inlill5jzl4n29.eot');
-	//         src: url('//at.alicdn.com/t/font_t6inlill5jzl4n29.eot?#iefix') format('embedded-opentype'),
-	//         url('//at.alicdn.com/t/font_t6inlill5jzl4n29.woff') format('woff'),
-	//         url('//at.alicdn.com/t/font_t6inlill5jzl4n29.ttf') format('truetype'),
-	//         url('//at.alicdn.com/t/font_t6inlill5jzl4n29.svg#iconfont') format('svg');
+	//         font-family: 'iconfont';  /* project id 191439 */
+	//         src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot');
+	//         src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot?#iefix') format('embedded-opentype'),
+	//         url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.woff') format('woff'),
+	//         url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.ttf') format('truetype'),
+	//         url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.svg#iconfont') format('svg');
 	//     }
 	// </style>
 	// <script>
@@ -1207,8 +1246,11 @@
 	        time: function time() {
 	            if (this.duration) {
 	                return this.duration * 1000;
+	            } else if (this.duration === 0) {
+	                return 0;
+	            } else {
+	                return 1500;
 	            }
-	            return 1500;
 	        }
 	    },
 	    components: {
@@ -1220,12 +1262,16 @@
 	    mounted: function mounted() {
 	        var _this = this;
 	
-	        setTimeout(function () {
-	            _this.$el.classList.add("j-end");
-	            _this.$el.addEventListener("animationend", function () {
-	                _this.show = false;
-	            }, false);
-	        }, this.time);
+	        if (this.time !== 0) {
+	            setTimeout(function () {
+	                if (_this.$el.classList) {
+	                    _this.$el.classList.add("j-end");
+	                    _this.$el.addEventListener("animationend", function () {
+	                        _this.show = false;
+	                    }, false);
+	                }
+	            }, this.time);
+	        }
 	    }
 	};
 	// </script>
@@ -1294,6 +1340,121 @@
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n    <Box>\n      <Spin tips=\"loading...\"></Spin>\n      <Icon type=\"success\"/>\n      <Icon type=\"fail\"/>\n      <Icon type=\"prompt\"/>\n      <Icon type=\"warning\"/>\n      <Icon type=\"search\"/>\n    </Box>\n    <Box>\n      <Button size=\"large\">large</Button>\n      <Button type=\"primary\">default</Button>\n      <Button size=\"small\" type=\"primary\">small</Button>\n      <Button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></Button>\n      <Button type=\"primary\" icon=\"search\" size=\"small\">click me</Button>\n      <Button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</Button>\n      <Icon attr=\"search\" />\n    </Box>\n  </div>";
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _message = __webpack_require__(32);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    info: function info(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    success: function success(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "success";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    fail: function fail(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "fail";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    warning: function warning(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "warning";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    loading: function loading(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "loading";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    }
+	}; /**
+	    * Created by jorten on 2016/12/1.
+	    */
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _icon = __webpack_require__(16);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _icon2.default; /**
+	                                   * Created by jorten on 2016/12/4.
+	                                   */
 
 /***/ }
 /******/ ]);

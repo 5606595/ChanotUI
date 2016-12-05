@@ -9,10 +9,14 @@ export default {
         document.body.appendChild(div);
         let message = new Vue(Message)
         message.$slots.default= content
-        if(duration) {
-            message.duration = duration
-        }
+        message.duration = duration
         message.$mount(div)
+        return () => {
+            message.$el.classList.add("j-end")
+            message.$el.addEventListener("animationend", () => {
+                message.show = false
+            }, false);
+        }
     },
     success(content, duration) {
         let div = document.createElement("div");
@@ -20,10 +24,14 @@ export default {
         let message = new Vue(Message)
         message.$slots.default= content
         message.type = "success"
-        if(duration) {
-            message.duration = duration
-        }
+        message.duration = duration
         message.$mount(div)
+        return () => {
+            message.$el.classList.add("j-end")
+            message.$el.addEventListener("animationend", () => {
+                message.show = false
+            }, false);
+        }
     },
     fail(content, duration) {
         let div = document.createElement("div");
@@ -31,10 +39,14 @@ export default {
         let message = new Vue(Message)
         message.$slots.default= content
         message.type = "fail";
-        if(duration) {
-            message.duration = duration
-        }
+        message.duration = duration
         message.$mount(div)
+        return () => {
+            message.$el.classList.add("j-end")
+            message.$el.addEventListener("animationend", () => {
+                message.show = false
+            }, false);
+        }
     },
     warning(content, duration) {
         let div = document.createElement("div");
@@ -42,10 +54,29 @@ export default {
         let message = new Vue(Message)
         message.$slots.default= content
         message.type = "warning";
-        if(duration) {
-            message.duration = duration
-        }
+        message.duration = duration
         message.$mount(div)
+        return () => {
+            message.$el.classList.add("j-end")
+            message.$el.addEventListener("animationend", () => {
+                message.show = false
+            }, false);
+        }
+    },
+    loading(content, duration) {
+        let div = document.createElement("div");
+        document.body.appendChild(div);
+        let message = new Vue(Message)
+        message.$slots.default= content
+        message.type = "loading";
+        message.duration = duration
+        message.$mount(div)
+        return () => {
+            message.$el.classList.add("j-end")
+            message.$el.addEventListener("animationend", () => {
+                message.show = false
+            }, false);
+        }
     }
 
 }
