@@ -30,3 +30,7 @@
     <c-button icon="backward">后退<c-button>
     <c-button icon="search" shape="circle" />
 
+#####加载按钮
+
+    <c-button loading>加载中</c-button>
+

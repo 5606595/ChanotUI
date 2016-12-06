@@ -15,6 +15,12 @@
         font-size: 14px;
         margin: 10px;
         position: relative;
+        &.loading {
+            background: @jbluelight!important;
+            &:hover {
+                cursor: default;
+            }
+        }
         &:hover {
             cursor: pointer;
             color: @jblue;
@@ -102,7 +108,7 @@
 <template>
     <button
         class="j-btn"
-        :class="[type, size, 'shape-' + shape]"
+        :class="[type, size, btnShape, { loading: loading }]"
         :disabled="disabled"
         @click="clickEvent"
     >
@@ -110,7 +116,7 @@
             <!--<p v-if="show" class="clicked"></p>-->
         <!--</transition>-->
         <!--<i v-if="icon" class="jicon" :class="'jicon-' + icon"></i>-->
-        <Icon v-if="icon" :type="icon"></Icon>
+        <Icon v-if="exists" :type="iconType"></Icon>
         <slot></slot>
     </button>
 </template>
@@ -118,13 +124,18 @@
     import Icon from '../icon/icon.vue'
     export default {
         data() {
-            return {}
+            return {
+
+            }
         },
         components: {
             'Icon': Icon
         },
         methods: {
             clickEvent(event) {
+                if(this.loading) {
+                    return;
+                }
                 var dom = event.target;
                 if(dom.nodeName.toLowerCase() !== 'button') {
                     dom = dom.parentNode;
@@ -141,6 +152,7 @@
                     }, false);
                 }
                 dom.classList.add("clicked")
+                this.$emit("click")
 //                console.log(this.type)
 //                this.show = true;
             },
@@ -154,8 +166,26 @@
             size: String,
             show: Boolean,
             icon: String,
-            shape: String
+            shape: String,
+            loading: Boolean
         },
-        computed: {},
+        computed: {
+            exists() {
+                return this.icon || this.loading;
+            },
+            iconType() {
+                if(this.loading) {
+                    return 'loading'
+                }
+                return this.icon;
+            },
+            btnShape() {
+                if(this.shape) {
+                    return 'shape-' + this.shape;
+                } else {
+                    return false
+                }
+            }
+        },
     }
 </script>

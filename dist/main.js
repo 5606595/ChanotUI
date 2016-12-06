@@ -71,11 +71,11 @@
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
-	var _icon = __webpack_require__(39);
+	var _icon = __webpack_require__(38);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _message = __webpack_require__(38);
+	var _message = __webpack_require__(39);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
@@ -243,7 +243,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading {\n  background: #46a6ea !important;\n}\n.j-btn.loading:hover {\n  cursor: default;\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -581,6 +581,9 @@
 	    },
 	    methods: {
 	        clickEvent: function clickEvent(event) {
+	            if (this.loading) {
+	                return;
+	            }
 	            var dom = event.target;
 	            if (dom.nodeName.toLowerCase() !== 'button') {
 	                dom = dom.parentNode;
@@ -597,6 +600,7 @@
 	                }, false);
 	            }
 	            dom.classList.add("clicked");
+	            this.$emit("click");
 	            //                console.log(this.type)
 	            //                this.show = true;
 	        }
@@ -607,9 +611,27 @@
 	        size: String,
 	        show: Boolean,
 	        icon: String,
-	        shape: String
+	        shape: String,
+	        loading: Boolean
 	    },
-	    computed: {}
+	    computed: {
+	        exists: function exists() {
+	            return this.icon || this.loading;
+	        },
+	        iconType: function iconType() {
+	            if (this.loading) {
+	                return 'loading';
+	            }
+	            return this.icon;
+	        },
+	        btnShape: function btnShape() {
+	            if (this.shape) {
+	                return 'shape-' + this.shape;
+	            } else {
+	                return false;
+	            }
+	        }
+	    }
 	};
 	// </script>
 	// <style lang="less" type="text/less" rel="stylesheet/less">
@@ -629,6 +651,12 @@
 	//         font-size: 14px;
 	//         margin: 10px;
 	//         position: relative;
+	//         &.loading {
+	//             background: @jbluelight!important;
+	//             &:hover {
+	//                 cursor: default;
+	//             }
+	//         }
 	//         &:hover {
 	//             cursor: pointer;
 	//             color: @jblue;
@@ -716,7 +744,7 @@
 	// <template>
 	//     <button
 	//         class="j-btn"
-	//         :class="[type, size, 'shape-' + shape]"
+	//         :class="[type, size, btnShape, { loading: loading }]"
 	//         :disabled="disabled"
 	//         @click="clickEvent"
 	//     >
@@ -724,7 +752,7 @@
 	//             <!--<p v-if="show" class="clicked"></p>-->
 	//         <!--</transition>-->
 	//         <!--<i v-if="icon" class="jicon" :class="'jicon-' + icon"></i>-->
-	//         <Icon v-if="icon" :type="icon"></Icon>
+	//         <Icon v-if="exists" :type="iconType"></Icon>
 	//         <slot></slot>
 	//     </button>
 	// </template>
@@ -894,7 +922,7 @@
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<button\n        class=\"j-btn\"\n        :class=\"[type, size, 'shape-' + shape]\"\n        :disabled=\"disabled\"\n        @click=\"clickEvent\"\n    >\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <Icon v-if=\"icon\" :type=\"icon\"></Icon>\n        <slot></slot>\n    </button>";
+	module.exports = "<button\n        class=\"j-btn\"\n        :class=\"[type, size, btnShape, { loading: loading }]\"\n        :disabled=\"disabled\"\n        @click=\"clickEvent\"\n    >\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <Icon v-if=\"exists\" :type=\"iconType\"></Icon>\n        <slot></slot>\n    </button>";
 
 /***/ },
 /* 22 */
@@ -1345,6 +1373,26 @@
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _icon = __webpack_require__(16);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _icon2.default; /**
+	                                   * Created by jorten on 2016/12/4.
+	                                   */
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -1435,26 +1483,6 @@
 	}; /**
 	    * Created by jorten on 2016/12/1.
 	    */
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _icon = __webpack_require__(16);
-	
-	var _icon2 = _interopRequireDefault(_icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _icon2.default; /**
-	                                   * Created by jorten on 2016/12/4.
-	                                   */
 
 /***/ }
 /******/ ]);
