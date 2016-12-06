@@ -12,6 +12,14 @@
 
     Vue.component('c-button', button)
 
+#####若用.vue文件则设置:
+
+    {
+        components: {
+            'c-button': button
+        }
+    }
+
 #####可设置大小
 
     <c-button size="large">大按钮</c-button>

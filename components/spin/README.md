@@ -11,6 +11,14 @@
 
 	Vue.component('c-spin', spin)
 
+#####若用.vue文件则设置:
+
+    {
+        components: {
+            'c-spin': spin
+        }
+    }
+
 #####可设置提示语
 
 	<c-spin tips="loading..."></spin>

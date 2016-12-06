@@ -12,6 +12,14 @@
 
     Vue.component('c-icon', icon)
 
+#####若用.vue文件则设置:
+
+    {
+        components: {
+            'c-icon': icon
+        }
+    }
+
 #####设置图标
 
     <c-icon type="success" />
