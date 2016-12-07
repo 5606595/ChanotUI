@@ -510,10 +510,10 @@
 	//     </box>
 	//     <box>
 	//       <row space="between">
-	//         <column span="3">
+	//         <column xs="1" sm="6" md="2" lg="2">
 	//           haha
 	//         </column>
-	//         <column span="3">
+	//         <column xs="10" sm="6" md="8" lg="10">
 	//           hehe
 	//         </column>
 	//       </row>
@@ -1761,7 +1761,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".c-col {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  word-break: break-all;\n  overflow: hidden;\n}\n.c-col.c-col-12 {\n  width: 100%;\n}\n.c-col.c-col-11 {\n  width: 91.66666667%;\n}\n.c-col.c-col-10 {\n  width: 83.33333333%;\n}\n.c-col.c-col-9 {\n  width: 75%;\n}\n.c-col.c-col-8 {\n  width: 66.66666667%;\n}\n.c-col.c-col-7 {\n  width: 58.33333333%;\n}\n.c-col.c-col-6 {\n  width: 50%;\n}\n.c-col.c-col-5 {\n  width: 41.66666667%;\n}\n.c-col.c-col-4 {\n  width: 33.33333333%;\n}\n.c-col.c-col-3 {\n  width: 25%;\n}\n.c-col.c-col-2 {\n  width: 16.66666667%;\n}\n.c-col.c-col-1 {\n  width: 8.33333333%;\n}\n", ""]);
+	exports.push([module.id, ".c-col {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  word-break: break-all;\n  overflow: hidden;\n}\n.c-col.c-col-12 {\n  width: 100%;\n}\n.c-col.c-col-11 {\n  width: 91.66666667%;\n}\n.c-col.c-col-10 {\n  width: 83.33333333%;\n}\n.c-col.c-col-9 {\n  width: 75%;\n}\n.c-col.c-col-8 {\n  width: 66.66666667%;\n}\n.c-col.c-col-7 {\n  width: 58.33333333%;\n}\n.c-col.c-col-6 {\n  width: 50%;\n}\n.c-col.c-col-5 {\n  width: 41.66666667%;\n}\n.c-col.c-col-4 {\n  width: 33.33333333%;\n}\n.c-col.c-col-3 {\n  width: 25%;\n}\n.c-col.c-col-2 {\n  width: 16.66666667%;\n}\n.c-col.c-col-1 {\n  width: 8.33333333%;\n}\n@media (max-width: 767px) {\n  .c-col.c-xs-12 {\n    width: 100%;\n  }\n  .c-col.c-xs-11 {\n    width: 91.66666667%;\n  }\n  .c-col.c-xs-10 {\n    width: 83.33333333%;\n  }\n  .c-col.c-xs-9 {\n    width: 75%;\n  }\n  .c-col.c-xs-8 {\n    width: 66.66666667%;\n  }\n  .c-col.c-xs-7 {\n    width: 58.33333333%;\n  }\n  .c-col.c-xs-6 {\n    width: 50%;\n  }\n  .c-col.c-xs-5 {\n    width: 41.66666667%;\n  }\n  .c-col.c-xs-4 {\n    width: 33.33333333%;\n  }\n  .c-col.c-xs-3 {\n    width: 25%;\n  }\n  .c-col.c-xs-2 {\n    width: 16.66666667%;\n  }\n  .c-col.c-xs-1 {\n    width: 8.33333333%;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .c-col.c-sm-12 {\n    width: 100%;\n  }\n  .c-col.c-sm-11 {\n    width: 91.66666667%;\n  }\n  .c-col.c-sm-10 {\n    width: 83.33333333%;\n  }\n  .c-col.c-sm-9 {\n    width: 75%;\n  }\n  .c-col.c-sm-8 {\n    width: 66.66666667%;\n  }\n  .c-col.c-sm-7 {\n    width: 58.33333333%;\n  }\n  .c-col.c-sm-6 {\n    width: 50%;\n  }\n  .c-col.c-sm-5 {\n    width: 41.66666667%;\n  }\n  .c-col.c-sm-4 {\n    width: 33.33333333%;\n  }\n  .c-col.c-sm-3 {\n    width: 25%;\n  }\n  .c-col.c-sm-2 {\n    width: 16.66666667%;\n  }\n  .c-col.c-sm-1 {\n    width: 8.33333333%;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .c-col.c-md-12 {\n    width: 100%;\n  }\n  .c-col.c-md-11 {\n    width: 91.66666667%;\n  }\n  .c-col.c-md-10 {\n    width: 83.33333333%;\n  }\n  .c-col.c-md-9 {\n    width: 75%;\n  }\n  .c-col.c-md-8 {\n    width: 66.66666667%;\n  }\n  .c-col.c-md-7 {\n    width: 58.33333333%;\n  }\n  .c-col.c-md-6 {\n    width: 50%;\n  }\n  .c-col.c-md-5 {\n    width: 41.66666667%;\n  }\n  .c-col.c-md-4 {\n    width: 33.33333333%;\n  }\n  .c-col.c-md-3 {\n    width: 25%;\n  }\n  .c-col.c-md-2 {\n    width: 16.66666667%;\n  }\n  .c-col.c-md-1 {\n    width: 8.33333333%;\n  }\n}\n@media (min-width: 1200px) {\n  .c-col.c-lg-12 {\n    width: 100%;\n  }\n  .c-col.c-lg-11 {\n    width: 91.66666667%;\n  }\n  .c-col.c-lg-10 {\n    width: 83.33333333%;\n  }\n  .c-col.c-lg-9 {\n    width: 75%;\n  }\n  .c-col.c-lg-8 {\n    width: 66.66666667%;\n  }\n  .c-col.c-lg-7 {\n    width: 58.33333333%;\n  }\n  .c-col.c-lg-6 {\n    width: 50%;\n  }\n  .c-col.c-lg-5 {\n    width: 41.66666667%;\n  }\n  .c-col.c-lg-4 {\n    width: 33.33333333%;\n  }\n  .c-col.c-lg-3 {\n    width: 25%;\n  }\n  .c-col.c-lg-2 {\n    width: 16.66666667%;\n  }\n  .c-col.c-lg-1 {\n    width: 8.33333333%;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1770,13 +1770,13 @@
 /* 53 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	// <template>
-	//     <div class="c-col" :class="'c-col-' + span">
+	//     <div class="c-col" :class="[cspan, cxs, csm, cmd, clg]">
 	//         <slot></slot>
 	//     </div>
 	// </template>
@@ -1785,7 +1785,7 @@
 	//         .c-cols(@n, @i: @n) when (@i > 0) {
 	//             &.c-col-@{i} {
 	//                 width: (@i * 100% / @n);
-	//             }
+	//             };
 	//             .c-cols(@n, (@i - 1));
 	//         }
 	//         .c-cols(12);
@@ -1794,17 +1794,64 @@
 	//         justify-content: center;
 	//         word-break: break-all;
 	//         overflow: hidden;
+	//         @media(max-width: 767px) {
+	//             .c-cols(@n, @i: @n) when (@i > 0) {
+	//                 &.c-xs-@{i} {
+	//                     width: (@i * 100% / @n)
+	//                 }
+	//                 .c-cols(@n, (@i - 1));
+	//             }
+	//             .c-cols(12);
+	//         }
+	//         @media(min-width: 768px) and (max-width: 991px) {
+	//             .c-cols(@n, @i: @n) when (@i > 0) {
+	//                 &.c-sm-@{i} {
+	//                     width: (@i * 100% / @n)
+	//                 }
+	//                 .c-cols(@n, (@i - 1));
+	//             }
+	//             .c-cols(12);
+	//         }
+	//         @media(min-width: 992px) and (max-width: 1199px) {
+	//             .c-cols(@n, @i: @n) when (@i > 0) {
+	//                 &.c-md-@{i} {
+	//                     width: (@i * 100% / @n)
+	//                 }
+	//                 .c-cols(@n, (@i - 1));
+	//             }
+	//             .c-cols(12);
+	//         }
+	//         @media(min-width: 1200px) {
+	//             .c-cols(@n, @i: @n) when (@i > 0) {
+	//                 &.c-lg-@{i} {
+	//                     width: (@i * 100% / @n)
+	//                 }
+	//                 .c-cols(@n, (@i - 1));
+	//             }
+	//             .c-cols(12);
+	//         }
 	//     }
 	// </style>
 	// <script>
 	exports.default = {
 	    data: function data() {
-	        return {};
+	        return {
+	            cspan: this.span ? 'c-col-' + this.span : null,
+	            cxs: this.xs ? 'c-xs-' + this.xs : null,
+	            csm: this.sm ? 'c-sm-' + this.sm : null,
+	            cmd: this.md ? 'c-md-' + this.md : null,
+	            clg: this.lg ? 'c-lg-' + this.lg : null
+	        };
 	    },
 	
 	    props: {
-	        span: Number
+	        span: Number,
+	        xs: Number,
+	        sm: Number,
+	        md: Number,
+	        lg: Number
 	    }
+	
 	};
 	// </script>
 
@@ -1812,13 +1859,13 @@
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"c-col\" :class=\"'c-col-' + span\">\n        <slot></slot>\n    </div>";
+	module.exports = "<div class=\"c-col\" :class=\"[cspan, cxs, csm, cmd, clg]\">\n        <slot></slot>\n    </div>";
 
 /***/ },
 /* 55 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column span=\"3\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column span=\"3\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

@@ -36,10 +36,10 @@
     </box>
     <box>
       <row space="between">
-        <column span="3">
+        <column xs="1" sm="6" md="2" lg="2">
           haha
         </column>
-        <column span="3">
+        <column xs="10" sm="6" md="8" lg="10">
           hehe
         </column>
       </row>
