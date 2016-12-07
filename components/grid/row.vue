@@ -1,5 +1,5 @@
 <template>
-    <div class="c-row" :style="space">
+    <div class="c-row" :style="justifyContent">
         <slot></slot>
     </div>
 </template>
@@ -19,7 +19,7 @@
             space: String
         },
         computed: {
-            space() {
+            justifyContent() {
                 switch (this.space) {
                     case 'start':
                         return {
@@ -41,9 +41,8 @@
                         return {
                             justifyContent: 'space-around'
                         }
-                    default:
-                        return null
                 }
+                return null
             }
         }
     }

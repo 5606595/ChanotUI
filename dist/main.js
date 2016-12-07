@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(8);
+	module.exports = __webpack_require__(9);
 
 
 /***/ },
@@ -55,12 +55,13 @@
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _main = __webpack_require__(9);
+	var _main = __webpack_require__(10);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -70,14 +71,14 @@
 	window.app = app;
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(60)
-	module.exports = __webpack_require__(10)
+	__webpack_require__(11)
+	module.exports = __webpack_require__(15)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(59)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(55)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -91,150 +92,23 @@
 	})()}
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _button = __webpack_require__(11);
-	
-	var _button2 = _interopRequireDefault(_button);
-	
-	var _spin = __webpack_require__(23);
-	
-	var _spin2 = _interopRequireDefault(_spin);
-	
-	var _icon = __webpack_require__(28);
-	
-	var _icon2 = _interopRequireDefault(_icon);
-	
-	var _message = __webpack_require__(29);
-	
-	var _message2 = _interopRequireDefault(_message);
-	
-	var _box = __webpack_require__(35);
-	
-	var _box2 = _interopRequireDefault(_box);
-	
-	var _grid = __webpack_require__(66);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <style scoped lang="less" rel="stylesheet/less">
-	//   .c-col {
-	//     &:nth-of-type(2n) {
-	//       background: #52bdee;
-	//     }
-	//     &:nth-of-type(2n+1) {
-	//       background: #1aa1e6;
-	//     }
-	//   }
-	//   .c-row {
-	//     height: 50px;
-	//     color: white;
-	//   }
-	// </style>
-	// <template>
-	//   <div>
-	//     <box>
-	//       <spin tips="loading..."></spin>
-	//       <icon type="success"/>
-	//       <icon type="fail"/>
-	//       <icon type="prompt"/>
-	//       <icon type="warning"/>
-	//       <icon type="search"/>
-	//     </box>
-	//     <box>
-	//       <c-button size="large">large</c-button>
-	//       <c-button type="primary">default</c-button>
-	//       <c-button size="small" type="primary">small</c-button>
-	//       <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
-	//       <c-button type="primary" icon="search" shape="circle"></c-button>
-	//       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
-	//       <c-button type="primary" icon="search" size="small">click me</c-button>
-	//       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
-	//       <c-button icon="download" size="small" type="primary">download</c-button>
-	//       <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
-	//     </box>
-	//     <box>
-	//       <row around>
-	//         <column span="3">
-	//           haha
-	//         </column>
-	//         <column span="3">
-	//           hehe
-	//         </column>
-	//       </row>
-	//     </box>
-	//   </div>
-	// </template>
-	
-	// <script>
-	exports.default = {
-	  components: {
-	    'c-button': _button2.default,
-	    'spin': _spin2.default,
-	    'box': _box2.default,
-	    'message': _message2.default,
-	    'icon': _icon2.default,
-	    'row': _grid.row,
-	    'column': _grid.column
-	  },
-	  data: function data() {
-	    return {
-	      name: 'just-vue',
-	      loading: false
-	    };
-	  },
-	
-	  computed: {},
-	  methods: {}
-	};
-	// </script>
-
-/***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(12)
-	module.exports = __webpack_require__(16)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(22)
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/github/ChanotUI/components/button/button.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-	  }
-	})()}
-
-/***/ },
-/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(12);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -244,21 +118,21 @@
 	}
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading {\n  background: #46a6ea !important;\n  color: white!important;\n}\n.j-btn.loading i {\n  color: white;\n}\n.j-btn.loading:hover {\n  cursor: default;\n  border: 1px solid #DADADA;\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".c-col[_v-415b7153]:nth-of-type(2n) {\n  background: #52bdee;\n}\n.c-col[_v-415b7153]:nth-of-type(2n+1) {\n  background: #1aa1e6;\n}\n.c-row[_v-415b7153] {\n  height: 50px;\n  color: white;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -313,7 +187,7 @@
 	};
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -565,7 +439,174 @@
 
 
 /***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _button = __webpack_require__(16);
+	
+	var _button2 = _interopRequireDefault(_button);
+	
+	var _spin = __webpack_require__(26);
+	
+	var _spin2 = _interopRequireDefault(_spin);
+	
+	var _icon = __webpack_require__(31);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	var _message = __webpack_require__(32);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
+	var _box = __webpack_require__(38);
+	
+	var _box2 = _interopRequireDefault(_box);
+	
+	var _grid = __webpack_require__(44);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <style scoped lang="less" rel="stylesheet/less">
+	//   .c-col {
+	//     &:nth-of-type(2n) {
+	//       background: #52bdee;
+	//     }
+	//     &:nth-of-type(2n+1) {
+	//       background: #1aa1e6;
+	//     }
+	//   }
+	//   .c-row {
+	//     height: 50px;
+	//     color: white;
+	//   }
+	// </style>
+	// <template>
+	//   <div>
+	//     <box>
+	//       <spin tips="loading..."></spin>
+	//       <icon type="success"/>
+	//       <icon type="fail"/>
+	//       <icon type="prompt"/>
+	//       <icon type="warning"/>
+	//       <icon type="search"/>
+	//     </box>
+	//     <box>
+	//       <c-button size="large">large</c-button>
+	//       <c-button type="primary">default</c-button>
+	//       <c-button size="small" type="primary">small</c-button>
+	//       <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
+	//       <c-button type="primary" icon="search" shape="circle"></c-button>
+	//       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
+	//       <c-button type="primary" icon="search" size="small">click me</c-button>
+	//       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
+	//       <c-button icon="download" size="small" type="primary">download</c-button>
+	//       <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
+	//     </box>
+	//     <box>
+	//       <row space="between">
+	//         <column span="3">
+	//           haha
+	//         </column>
+	//         <column span="3">
+	//           hehe
+	//         </column>
+	//       </row>
+	//     </box>
+	//   </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	  components: {
+	    'c-button': _button2.default,
+	    'spin': _spin2.default,
+	    'box': _box2.default,
+	    'message': _message2.default,
+	    'icon': _icon2.default,
+	    'row': _grid.row,
+	    'column': _grid.column
+	  },
+	  data: function data() {
+	    return {
+	      name: 'just-vue',
+	      loading: false
+	    };
+	  },
+	
+	  computed: {},
+	  methods: {}
+	};
+	// </script>
+
+/***/ },
 /* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(17)
+	module.exports = __webpack_require__(19)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(25)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/button/button.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(18);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(14)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-610020c5&file=button.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./button.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(13)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading {\n  background: #46a6ea !important;\n  color: white!important;\n}\n.j-btn.loading i {\n  color: white;\n}\n.j-btn.loading:hover {\n  cursor: default;\n  border: 1px solid #DADADA;\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -574,7 +615,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(17);
+	var _icon = __webpack_require__(20);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -773,14 +814,14 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(18)
-	module.exports = __webpack_require__(20)
+	__webpack_require__(21)
+	module.exports = __webpack_require__(23)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(21)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(24)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -794,16 +835,16 @@
 	})()}
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(19);
+	var content = __webpack_require__(22);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -820,10 +861,10 @@
 	}
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -834,7 +875,7 @@
 
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -927,26 +968,26 @@
 	// </script>
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = "<i class=\"jicon\" :class=\"'jicon-' + type\"></i>";
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = "<button\n        class=\"j-btn\"\n        :class=\"[type, size, btnShape, { loading: loading }]\"\n        :disabled=\"disabled\"\n        @click=\"clickEvent\"\n    >\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <Icon v-if=\"exists\" :type=\"iconType\"></Icon>\n        <slot></slot>\n    </button>";
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(24)
-	module.exports = __webpack_require__(26)
+	__webpack_require__(27)
+	module.exports = __webpack_require__(29)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(27)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(30)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -960,16 +1001,16 @@
 	})()}
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(25);
+	var content = __webpack_require__(28);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -986,10 +1027,10 @@
 	}
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -1000,7 +1041,7 @@
 
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1094,13 +1135,13 @@
 	// </script>
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"jspin-container\">\n        <div class=\"spin\">\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n        </div>\n        <div class=\"jsay\">\n            <span>{{ tips }}</span>\n        </div>\n    </div>";
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1109,7 +1150,7 @@
 	  value: true
 	});
 	
-	var _icon = __webpack_require__(17);
+	var _icon = __webpack_require__(20);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1120,7 +1161,7 @@
 	                                   */
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1129,7 +1170,7 @@
 	    value: true
 	});
 	
-	var _message = __webpack_require__(30);
+	var _message = __webpack_require__(33);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
@@ -1215,14 +1256,14 @@
 	    */
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(31)
-	module.exports = __webpack_require__(33)
+	__webpack_require__(34)
+	module.exports = __webpack_require__(36)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(34)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(37)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1236,16 +1277,16 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(32);
+	var content = __webpack_require__(35);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1262,10 +1303,10 @@
 	}
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -1276,7 +1317,7 @@
 
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1285,7 +1326,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(17);
+	var _icon = __webpack_require__(20);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1389,13 +1430,13 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-message\" v-if=\"show\">\n        <icon :type=\"newType\"></icon>\n        <span class=\"message\">\n            <slot></slot>\n        </span>\n    </div>";
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1404,7 +1445,7 @@
 	  value: true
 	});
 	
-	var _box = __webpack_require__(36);
+	var _box = __webpack_require__(39);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
@@ -1415,14 +1456,14 @@
 	                                  */
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(37)
-	module.exports = __webpack_require__(39)
+	__webpack_require__(40)
+	module.exports = __webpack_require__(42)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(40)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(43)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1436,16 +1477,16 @@
 	})()}
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(38);
+	var content = __webpack_require__(41);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1462,10 +1503,10 @@
 	}
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -1476,7 +1517,7 @@
 
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1507,81 +1548,13 @@
 	// </script>
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-box\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */
-/***/ function(module, exports) {
-
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row around=\"\" _v-415b7153=\"\">\n        <column span=\"3\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column span=\"3\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n  </div>";
-
-/***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(61);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(14)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".c-col[_v-415b7153]:nth-of-type(2n) {\n  background: #52bdee;\n}\n.c-col[_v-415b7153]:nth-of-type(2n+1) {\n  background: #1aa1e6;\n}\n.c-row[_v-415b7153] {\n  height: 50px;\n  color: white;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1591,11 +1564,11 @@
 	});
 	exports.column = exports.row = undefined;
 	
-	var _row = __webpack_require__(67);
+	var _row = __webpack_require__(45);
 	
 	var _row2 = _interopRequireDefault(_row);
 	
-	var _column = __webpack_require__(72);
+	var _column = __webpack_require__(50);
 	
 	var _column2 = _interopRequireDefault(_column);
 	
@@ -1608,14 +1581,14 @@
 	exports.column = _column2.default;
 
 /***/ },
-/* 67 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(68)
-	module.exports = __webpack_require__(70)
+	__webpack_require__(46)
+	module.exports = __webpack_require__(48)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(49)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1629,16 +1602,16 @@
 	})()}
 
 /***/ },
-/* 68 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(69);
+	var content = __webpack_require__(47);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1655,10 +1628,10 @@
 	}
 
 /***/ },
-/* 69 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -1669,7 +1642,7 @@
 
 
 /***/ },
-/* 70 */
+/* 48 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1678,7 +1651,7 @@
 	    value: true
 	});
 	// <template>
-	//     <div class="c-row" :style="space">
+	//     <div class="c-row" :style="justifyContent">
 	//         <slot></slot>
 	//     </div>
 	// </template>
@@ -1697,7 +1670,7 @@
 	        space: String
 	    },
 	    computed: {
-	        space: function space() {
+	        justifyContent: function justifyContent() {
 	            switch (this.space) {
 	                case 'start':
 	                    return {
@@ -1719,29 +1692,28 @@
 	                    return {
 	                        justifyContent: 'space-around'
 	                    };
-	                default:
-	                    return null;
 	            }
+	            return null;
 	        }
 	    }
 	};
 	// </script>
 
 /***/ },
-/* 71 */
+/* 49 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"c-row\" :style=\"space\">\n        <slot></slot>\n    </div>";
+	module.exports = "<div class=\"c-row\" :style=\"justifyContent\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 72 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(73)
-	module.exports = __webpack_require__(75)
+	__webpack_require__(51)
+	module.exports = __webpack_require__(53)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(76)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(54)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1755,16 +1727,16 @@
 	})()}
 
 /***/ },
-/* 73 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(74);
+	var content = __webpack_require__(52);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(14)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1781,10 +1753,10 @@
 	}
 
 /***/ },
-/* 74 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 	
 	
@@ -1795,7 +1767,7 @@
 
 
 /***/ },
-/* 75 */
+/* 53 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1837,10 +1809,16 @@
 	// </script>
 
 /***/ },
-/* 76 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-col\" :class=\"'c-col-' + span\">\n        <slot></slot>\n    </div>";
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column span=\"3\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column span=\"3\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

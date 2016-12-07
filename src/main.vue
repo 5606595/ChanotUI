@@ -35,7 +35,7 @@
       <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
     </box>
     <box>
-      <row around>
+      <row space="between">
         <column span="3">
           haha
         </column>
