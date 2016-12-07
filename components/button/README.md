@@ -41,4 +41,13 @@
 #####加载按钮
 
     <c-button loading>加载中</c-button>
+    <c-button :loading="loading" @click="loading = true">点击加载</c-button>
+
+    export default {
+        data() {
+            return {
+                loading: false
+            }
+        }
+    }
 

@@ -17,8 +17,13 @@
         position: relative;
         &.loading {
             background: @jbluelight!important;
+            color: white!important;
+            i {
+                color: white;
+            }
             &:hover {
                 cursor: default;
+                border: 1px solid @jdefault;
             }
         }
         &:hover {

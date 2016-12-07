@@ -63,32 +63,9 @@
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _button = __webpack_require__(10);
-	
-	var _button2 = _interopRequireDefault(_button);
-	
-	var _spin = __webpack_require__(22);
-	
-	var _spin2 = _interopRequireDefault(_spin);
-	
-	var _icon = __webpack_require__(38);
-	
-	var _icon2 = _interopRequireDefault(_icon);
-	
-	var _message = __webpack_require__(39);
-	
-	var _message2 = _interopRequireDefault(_message);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var hide = _message2.default.success("haha", 0);
-	Vue.component("c-icon", _icon2.default);
-	Vue.component('c-button', _button2.default);
-	Vue.component('c-spin', _spin2.default);
-	
-	setTimeout(hide, 1500);
-	
-	var app = new Vue().$mount('#app');
+	var app = new Vue(_main2.default).$mount('#app');
 	window.app = app;
 
 /***/ },
@@ -98,7 +75,7 @@
 	module.exports = __webpack_require__(9)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(37)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(40)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -129,31 +106,32 @@
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
-	var _box = __webpack_require__(27);
+	var _icon = __webpack_require__(27);
 	
-	var _box2 = _interopRequireDefault(_box);
+	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _message = __webpack_require__(32);
+	var _message = __webpack_require__(28);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
-	var _icon = __webpack_require__(16);
+	var _box = __webpack_require__(34);
 	
-	var _icon2 = _interopRequireDefault(_icon);
+	var _box2 = _interopRequireDefault(_box);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
 	  components: {
-	    'Button': _button2.default,
-	    'Spin': _spin2.default,
-	    'Box': _box2.default,
-	    'Message': _message2.default,
-	    'Icon': _icon2.default
+	    'c-button': _button2.default,
+	    'spin': _spin2.default,
+	    'box': _box2.default,
+	    'message': _message2.default,
+	    'icon': _icon2.default
 	  },
 	  data: function data() {
 	    return {
-	      name: 'just-vue'
+	      name: 'just-vue',
+	      loading: false
 	    };
 	  },
 	
@@ -163,25 +141,26 @@
 	// </script>
 	// <template>
 	//   <div>
-	//     <Box>
-	//       <Spin tips="loading..."></Spin>
-	//       <Icon type="success"/>
-	//       <Icon type="fail"/>
-	//       <Icon type="prompt"/>
-	//       <Icon type="warning"/>
-	//       <Icon type="search"/>
-	//     </Box>
-	//     <Box>
-	//       <Button size="large">large</Button>
-	//       <Button type="primary">default</Button>
-	//       <Button size="small" type="primary">small</Button>
-	//       <Button type="primary" size="large" icon="search" shape="circle"></Button>
-	//       <Button type="primary" icon="search" shape="circle"></Button>
-	//       <Button type="primary" icon="search" shape="circle" size="small"></Button>
-	//       <Button type="primary" icon="search" size="small">click me</Button>
-	//       <Button icon="forward" size="small" type="primary">Go froward</Button>
-	//       <Icon attr="search" />
-	//     </Box>
+	//     <box>
+	//       <spin tips="loading..."></spin>
+	//       <icon type="success"/>
+	//       <icon type="fail"/>
+	//       <icon type="prompt"/>
+	//       <icon type="warning"/>
+	//       <icon type="search"/>
+	//     </box>
+	//     <box>
+	//       <c-button size="large">large</c-button>
+	//       <c-button type="primary">default</c-button>
+	//       <c-button size="small" type="primary">small</c-button>
+	//       <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
+	//       <c-button type="primary" icon="search" shape="circle"></c-button>
+	//       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
+	//       <c-button type="primary" icon="search" size="small">click me</c-button>
+	//       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
+	//       <icon attr="search" />
+	//       <c-button :loading="loading" @click="loading = true">我收起看不见的承诺</c-button>
+	//     </box>
 	//   </div>
 	// </template>
 	
@@ -243,7 +222,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading {\n  background: #46a6ea !important;\n}\n.j-btn.loading:hover {\n  cursor: default;\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".j-btn {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading {\n  background: #46a6ea !important;\n  color: white!important;\n}\n.j-btn.loading i {\n  color: white;\n}\n.j-btn.loading:hover {\n  cursor: default;\n  border: 1px solid #DADADA;\n}\n.j-btn:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i {\n  color: white;\n}\n.j-btn.primary:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large {\n  padding: 8px 20px;\n}\n.j-btn.small {\n  padding: 4px 12px;\n}\n.j-btn[disabled] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i {\n  color: #AAA;\n}\n.j-btn[disabled]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large {\n  padding: 8px;\n}\n.j-btn.shape-circle.small {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -653,8 +632,13 @@
 	//         position: relative;
 	//         &.loading {
 	//             background: @jbluelight!important;
+	//             color: white!important;
+	//             i {
+	//                 color: white;
+	//             }
 	//             &:hover {
 	//                 cursor: default;
+	//                 border: 1px solid @jdefault;
 	//             }
 	//         }
 	//         &:hover {
@@ -1089,109 +1073,126 @@
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(28)
-	module.exports = __webpack_require__(30)
+	'use strict';
 	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(31)
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/github/ChanotUI/components/box/box.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-	  }
-	})()}
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _icon = __webpack_require__(16);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _icon2.default; /**
+	                                   * Created by jorten on 2016/12/4.
+	                                   */
 
 /***/ },
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(29);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(13)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".j-box {\n  padding: 50px 30px;\n  box-sizing: border-box;\n  width: 500px;\n  height: 200px;\n  margin: 20px;\n  border: 1px solid #e9e9e9;\n  border-radius: 10px;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 30 */
-/***/ function(module, exports) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <style lang="less" rel="stylesheet/less">
-	//     .j-box {
-	//         @border: #e9e9e9;
-	//         padding: 50px 30px;
-	//         box-sizing: border-box;
-	//         width: 500px;
-	//         height: 200px;
-	//         margin: 20px;
-	//         border: 1px solid @border;
-	//         border-radius: 10px;
-	//     }
-	// </style>
-	// <template>
-	//     <div class="j-box">
-	//         <slot></slot>
-	//     </div>
-	// </template>
 	
-	// <script>
-	exports.default = {};
-	// </script>
+	var _message = __webpack_require__(29);
+	
+	var _message2 = _interopRequireDefault(_message);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    info: function info(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    success: function success(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "success";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    fail: function fail(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "fail";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    warning: function warning(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "warning";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    },
+	    loading: function loading(content, duration) {
+	        var div = document.createElement("div");
+	        document.body.appendChild(div);
+	        var message = new Vue(_message2.default);
+	        message.$slots.default = content;
+	        message.type = "loading";
+	        message.duration = duration;
+	        message.$mount(div);
+	        return function () {
+	            message.$el.classList.add("j-end");
+	            message.$el.addEventListener("animationend", function () {
+	                message.show = false;
+	            }, false);
+	        };
+	    }
+	}; /**
+	    * Created by jorten on 2016/12/1.
+	    */
 
 /***/ },
-/* 31 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"j-box\">\n        <slot></slot>\n    </div>";
-
-/***/ },
-/* 32 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(33)
-	module.exports = __webpack_require__(35)
+	__webpack_require__(30)
+	module.exports = __webpack_require__(32)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(36)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(33)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1205,13 +1206,13 @@
 	})()}
 
 /***/ },
-/* 33 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(34);
+	var content = __webpack_require__(31);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(14)(content, {});
@@ -1231,7 +1232,7 @@
 	}
 
 /***/ },
-/* 34 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(13)();
@@ -1245,7 +1246,7 @@
 
 
 /***/ },
-/* 35 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1358,19 +1359,13 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 36 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-message\" v-if=\"show\">\n        <icon :type=\"newType\"></icon>\n        <span class=\"message\">\n            <slot></slot>\n        </span>\n    </div>";
 
 /***/ },
-/* 37 */
-/***/ function(module, exports) {
-
-	module.exports = "<div>\n    <Box>\n      <Spin tips=\"loading...\"></Spin>\n      <Icon type=\"success\"/>\n      <Icon type=\"fail\"/>\n      <Icon type=\"prompt\"/>\n      <Icon type=\"warning\"/>\n      <Icon type=\"search\"/>\n    </Box>\n    <Box>\n      <Button size=\"large\">large</Button>\n      <Button type=\"primary\">default</Button>\n      <Button size=\"small\" type=\"primary\">small</Button>\n      <Button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\"></Button>\n      <Button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></Button>\n      <Button type=\"primary\" icon=\"search\" size=\"small\">click me</Button>\n      <Button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</Button>\n      <Icon attr=\"search\" />\n    </Box>\n  </div>";
-
-/***/ },
-/* 38 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1379,110 +1374,119 @@
 	  value: true
 	});
 	
-	var _icon = __webpack_require__(16);
+	var _box = __webpack_require__(35);
 	
-	var _icon2 = _interopRequireDefault(_icon);
+	var _box2 = _interopRequireDefault(_box);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _icon2.default; /**
-	                                   * Created by jorten on 2016/12/4.
-	                                   */
+	exports.default = _box2.default; /**
+	                                  * Created by jorten on 2016/12/7.
+	                                  */
 
 /***/ },
-/* 39 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(36)
+	module.exports = __webpack_require__(38)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(39)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/box/box.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(37);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(14)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-36efc21d&file=box.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./box.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(13)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".j-box {\n  padding: 50px 30px;\n  box-sizing: border-box;\n  width: 500px;\n  height: 200px;\n  margin: 20px;\n  border: 1px solid #e9e9e9;\n  border-radius: 10px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 38 */
+/***/ function(module, exports) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	// <style lang="less" rel="stylesheet/less">
+	//     .j-box {
+	//         @border: #e9e9e9;
+	//         padding: 50px 30px;
+	//         box-sizing: border-box;
+	//         width: 500px;
+	//         height: 200px;
+	//         margin: 20px;
+	//         border: 1px solid @border;
+	//         border-radius: 10px;
+	//     }
+	// </style>
+	// <template>
+	//     <div class="j-box">
+	//         <slot></slot>
+	//     </div>
+	// </template>
 	
-	var _message = __webpack_require__(32);
-	
-	var _message2 = _interopRequireDefault(_message);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	    info: function info(content, duration) {
-	        var div = document.createElement("div");
-	        document.body.appendChild(div);
-	        var message = new Vue(_message2.default);
-	        message.$slots.default = content;
-	        message.duration = duration;
-	        message.$mount(div);
-	        return function () {
-	            message.$el.classList.add("j-end");
-	            message.$el.addEventListener("animationend", function () {
-	                message.show = false;
-	            }, false);
-	        };
-	    },
-	    success: function success(content, duration) {
-	        var div = document.createElement("div");
-	        document.body.appendChild(div);
-	        var message = new Vue(_message2.default);
-	        message.$slots.default = content;
-	        message.type = "success";
-	        message.duration = duration;
-	        message.$mount(div);
-	        return function () {
-	            message.$el.classList.add("j-end");
-	            message.$el.addEventListener("animationend", function () {
-	                message.show = false;
-	            }, false);
-	        };
-	    },
-	    fail: function fail(content, duration) {
-	        var div = document.createElement("div");
-	        document.body.appendChild(div);
-	        var message = new Vue(_message2.default);
-	        message.$slots.default = content;
-	        message.type = "fail";
-	        message.duration = duration;
-	        message.$mount(div);
-	        return function () {
-	            message.$el.classList.add("j-end");
-	            message.$el.addEventListener("animationend", function () {
-	                message.show = false;
-	            }, false);
-	        };
-	    },
-	    warning: function warning(content, duration) {
-	        var div = document.createElement("div");
-	        document.body.appendChild(div);
-	        var message = new Vue(_message2.default);
-	        message.$slots.default = content;
-	        message.type = "warning";
-	        message.duration = duration;
-	        message.$mount(div);
-	        return function () {
-	            message.$el.classList.add("j-end");
-	            message.$el.addEventListener("animationend", function () {
-	                message.show = false;
-	            }, false);
-	        };
-	    },
-	    loading: function loading(content, duration) {
-	        var div = document.createElement("div");
-	        document.body.appendChild(div);
-	        var message = new Vue(_message2.default);
-	        message.$slots.default = content;
-	        message.type = "loading";
-	        message.duration = duration;
-	        message.$mount(div);
-	        return function () {
-	            message.$el.classList.add("j-end");
-	            message.$el.addEventListener("animationend", function () {
-	                message.show = false;
-	            }, false);
-	        };
-	    }
-	}; /**
-	    * Created by jorten on 2016/12/1.
-	    */
+	// <script>
+	exports.default = {};
+	// </script>
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"j-box\">\n        <slot></slot>\n    </div>";
+
+/***/ },
+/* 40 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>\n    <box>\n      <spin tips=\"loading...\"></spin>\n      <icon type=\"success\"/>\n      <icon type=\"fail\"/>\n      <icon type=\"prompt\"/>\n      <icon type=\"warning\"/>\n      <icon type=\"search\"/>\n    </box>\n    <box>\n      <c-button size=\"large\">large</c-button>\n      <c-button type=\"primary\">default</c-button>\n      <c-button size=\"small\" type=\"primary\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</c-button>\n      <icon attr=\"search\" />\n      <c-button :loading=\"loading\" @click=\"loading = true\">我收起看不见的承诺</c-button>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);
