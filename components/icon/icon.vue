@@ -48,7 +48,7 @@
             content: '\e637';
         }
     }
-    .icon-download:before { content: '\e621' }
+    .jicon-download:before { content: '\e621' }
     @keyframes loading {
         0% {
             transform: rotate(0deg);

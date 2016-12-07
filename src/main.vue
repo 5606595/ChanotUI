@@ -1,3 +1,17 @@
+<style scoped lang="less" rel="stylesheet/less">
+  .c-col {
+    &:nth-of-type(2n) {
+      background: #52bdee;
+    }
+    &:nth-of-type(2n+1) {
+      background: #1aa1e6;
+    }
+  }
+  .c-row {
+    height: 50px;
+    color: white;
+  }
+</style>
 <template>
   <div>
     <box>
@@ -17,8 +31,18 @@
       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
       <c-button type="primary" icon="search" size="small">click me</c-button>
       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
-      <icon attr="search" />
-      <c-button :loading="loading" @click="loading = true">我收起看不见的承诺</c-button>
+      <c-button icon="download" size="small" type="primary">download</c-button>
+      <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
+    </box>
+    <box>
+      <row around>
+        <column span="3">
+          haha
+        </column>
+        <column span="3">
+          hehe
+        </column>
+      </row>
     </box>
   </div>
 </template>
@@ -29,13 +53,16 @@
   import icon from '../components/icon'
   import message from '../components/message'
   import box from '../components/box'
+  import { row, column } from '../components/grid'
   export default {
     components: {
       'c-button': button,
       'spin': spin,
       'box': box,
       'message': message,
-      'icon': icon
+      'icon': icon,
+      'row': row,
+      'column': column
     },
     data() {
       return {

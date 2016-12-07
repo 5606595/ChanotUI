@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(7);
+	module.exports = __webpack_require__(8);
 
 
 /***/ },
@@ -54,12 +54,13 @@
 /* 4 */,
 /* 5 */,
 /* 6 */,
-/* 7 */
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _main = __webpack_require__(8);
+	var _main = __webpack_require__(9);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -69,13 +70,14 @@
 	window.app = app;
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(9)
+	__webpack_require__(60)
+	module.exports = __webpack_require__(10)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(40)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(59)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -89,7 +91,7 @@
 	})()}
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -98,47 +100,44 @@
 	  value: true
 	});
 	
-	var _button = __webpack_require__(10);
+	var _button = __webpack_require__(11);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _spin = __webpack_require__(22);
+	var _spin = __webpack_require__(23);
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
-	var _icon = __webpack_require__(27);
+	var _icon = __webpack_require__(28);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _message = __webpack_require__(28);
+	var _message = __webpack_require__(29);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
-	var _box = __webpack_require__(34);
+	var _box = __webpack_require__(35);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
+	var _grid = __webpack_require__(66);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  components: {
-	    'c-button': _button2.default,
-	    'spin': _spin2.default,
-	    'box': _box2.default,
-	    'message': _message2.default,
-	    'icon': _icon2.default
-	  },
-	  data: function data() {
-	    return {
-	      name: 'just-vue',
-	      loading: false
-	    };
-	  },
-	
-	  computed: {},
-	  methods: {}
-	};
-	// </script>
+	// <style scoped lang="less" rel="stylesheet/less">
+	//   .c-col {
+	//     &:nth-of-type(2n) {
+	//       background: #52bdee;
+	//     }
+	//     &:nth-of-type(2n+1) {
+	//       background: #1aa1e6;
+	//     }
+	//   }
+	//   .c-row {
+	//     height: 50px;
+	//     color: white;
+	//   }
+	// </style>
 	// <template>
 	//   <div>
 	//     <box>
@@ -158,23 +157,54 @@
 	//       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
 	//       <c-button type="primary" icon="search" size="small">click me</c-button>
 	//       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
-	//       <icon attr="search" />
-	//       <c-button :loading="loading" @click="loading = true">我收起看不见的承诺</c-button>
+	//       <c-button icon="download" size="small" type="primary">download</c-button>
+	//       <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
+	//     </box>
+	//     <box>
+	//       <row around>
+	//         <column span="3">
+	//           haha
+	//         </column>
+	//         <column span="3">
+	//           hehe
+	//         </column>
+	//       </row>
 	//     </box>
 	//   </div>
 	// </template>
 	
 	// <script>
+	exports.default = {
+	  components: {
+	    'c-button': _button2.default,
+	    'spin': _spin2.default,
+	    'box': _box2.default,
+	    'message': _message2.default,
+	    'icon': _icon2.default,
+	    'row': _grid.row,
+	    'column': _grid.column
+	  },
+	  data: function data() {
+	    return {
+	      name: 'just-vue',
+	      loading: false
+	    };
+	  },
+	
+	  computed: {},
+	  methods: {}
+	};
+	// </script>
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(11)
-	module.exports = __webpack_require__(15)
+	__webpack_require__(12)
+	module.exports = __webpack_require__(16)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(21)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(22)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -188,16 +218,16 @@
 	})()}
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(12);
+	var content = __webpack_require__(13);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -214,10 +244,10 @@
 	}
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	
 	
@@ -228,7 +258,7 @@
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -283,7 +313,7 @@
 	};
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -535,7 +565,7 @@
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -544,7 +574,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(16);
+	var _icon = __webpack_require__(17);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -743,14 +773,14 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(17)
-	module.exports = __webpack_require__(19)
+	__webpack_require__(18)
+	module.exports = __webpack_require__(20)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(20)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(21)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -764,16 +794,16 @@
 	})()}
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(19);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -790,21 +820,21 @@
 	}
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.icon-download:before {\n  content: '\\E621';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot');\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.woff') format('woff'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.ttf') format('truetype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.svg#iconfont') format('svg');\n}\n", ""]);
+	exports.push([module.id, ".jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.jicon-download:before {\n  content: '\\E621';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot');\n  src: url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.woff') format('woff'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.ttf') format('truetype'), url('//at.alicdn.com/t/font_bc6z3e1kztpm0a4i.svg#iconfont') format('svg');\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -862,7 +892,7 @@
 	//             content: '\e637';
 	//         }
 	//     }
-	//     .icon-download:before { content: '\e621' }
+	//     .jicon-download:before { content: '\e621' }
 	//     @keyframes loading {
 	//         0% {
 	//             transform: rotate(0deg);
@@ -897,26 +927,26 @@
 	// </script>
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "<i class=\"jicon\" :class=\"'jicon-' + type\"></i>";
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	module.exports = "<button\n        class=\"j-btn\"\n        :class=\"[type, size, btnShape, { loading: loading }]\"\n        :disabled=\"disabled\"\n        @click=\"clickEvent\"\n    >\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <Icon v-if=\"exists\" :type=\"iconType\"></Icon>\n        <slot></slot>\n    </button>";
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(23)
-	module.exports = __webpack_require__(25)
+	__webpack_require__(24)
+	module.exports = __webpack_require__(26)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(26)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(27)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -930,16 +960,16 @@
 	})()}
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(24);
+	var content = __webpack_require__(25);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -956,10 +986,10 @@
 	}
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	
 	
@@ -970,7 +1000,7 @@
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1064,13 +1094,13 @@
 	// </script>
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"jspin-container\">\n        <div class=\"spin\">\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n            <i class=\"dot\"></i>\n        </div>\n        <div class=\"jsay\">\n            <span>{{ tips }}</span>\n        </div>\n    </div>";
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1079,7 +1109,7 @@
 	  value: true
 	});
 	
-	var _icon = __webpack_require__(16);
+	var _icon = __webpack_require__(17);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1090,7 +1120,7 @@
 	                                   */
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1099,7 +1129,7 @@
 	    value: true
 	});
 	
-	var _message = __webpack_require__(29);
+	var _message = __webpack_require__(30);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
@@ -1185,14 +1215,14 @@
 	    */
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(30)
-	module.exports = __webpack_require__(32)
+	__webpack_require__(31)
+	module.exports = __webpack_require__(33)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(33)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(34)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1206,16 +1236,16 @@
 	})()}
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(31);
+	var content = __webpack_require__(32);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1232,10 +1262,10 @@
 	}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	
 	
@@ -1246,7 +1276,7 @@
 
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1255,7 +1285,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(16);
+	var _icon = __webpack_require__(17);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1359,13 +1389,13 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-message\" v-if=\"show\">\n        <icon :type=\"newType\"></icon>\n        <span class=\"message\">\n            <slot></slot>\n        </span>\n    </div>";
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1374,7 +1404,7 @@
 	  value: true
 	});
 	
-	var _box = __webpack_require__(35);
+	var _box = __webpack_require__(36);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
@@ -1385,14 +1415,14 @@
 	                                  */
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(36)
-	module.exports = __webpack_require__(38)
+	__webpack_require__(37)
+	module.exports = __webpack_require__(39)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(39)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(40)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1406,16 +1436,16 @@
 	})()}
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(37);
+	var content = __webpack_require__(38);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1432,10 +1462,10 @@
 	}
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
 	
 	
@@ -1446,7 +1476,7 @@
 
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1477,16 +1507,340 @@
 	// </script>
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-box\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 40 */
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <box>\n      <spin tips=\"loading...\"></spin>\n      <icon type=\"success\"/>\n      <icon type=\"fail\"/>\n      <icon type=\"prompt\"/>\n      <icon type=\"warning\"/>\n      <icon type=\"search\"/>\n    </box>\n    <box>\n      <c-button size=\"large\">large</c-button>\n      <c-button type=\"primary\">default</c-button>\n      <c-button size=\"small\" type=\"primary\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</c-button>\n      <icon attr=\"search\" />\n      <c-button :loading=\"loading\" @click=\"loading = true\">我收起看不见的承诺</c-button>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row around=\"\" _v-415b7153=\"\">\n        <column span=\"3\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column span=\"3\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n  </div>";
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(61);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(15)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-415b7153&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".c-col[_v-415b7153]:nth-of-type(2n) {\n  background: #52bdee;\n}\n.c-col[_v-415b7153]:nth-of-type(2n+1) {\n  background: #1aa1e6;\n}\n.c-row[_v-415b7153] {\n  height: 50px;\n  color: white;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.column = exports.row = undefined;
+	
+	var _row = __webpack_require__(67);
+	
+	var _row2 = _interopRequireDefault(_row);
+	
+	var _column = __webpack_require__(72);
+	
+	var _column2 = _interopRequireDefault(_column);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by jorten on 2016/12/7.
+	 */
+	exports.row = _row2.default;
+	exports.column = _column2.default;
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(68)
+	module.exports = __webpack_require__(70)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/grid/row.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(69);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(15)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-61295c2a&file=row.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./row.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-61295c2a&file=row.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./row.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".c-row {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-row" :style="space">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style lang="less" rel="stylesheet/less">
+	//     .c-row {
+	//         display: flex;
+	//     }
+	// </style>
+	// <script>
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    props: {
+	        space: String
+	    },
+	    computed: {
+	        space: function space() {
+	            switch (this.space) {
+	                case 'start':
+	                    return {
+	                        justifyContent: 'flex-start'
+	                    };
+	                case 'end':
+	                    return {
+	                        justifyContent: 'flex-end'
+	                    };
+	                case 'center':
+	                    return {
+	                        justifyContent: 'center'
+	                    };
+	                case 'between':
+	                    return {
+	                        justifyContent: 'space-between'
+	                    };
+	                case 'around':
+	                    return {
+	                        justifyContent: 'space-around'
+	                    };
+	                default:
+	                    return null;
+	            }
+	        }
+	    }
+	};
+	// </script>
+
+/***/ },
+/* 71 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-row\" :style=\"space\">\n        <slot></slot>\n    </div>";
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(73)
+	module.exports = __webpack_require__(75)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(76)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/grid/column.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(74);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(15)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6efc49d5&file=column.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./column.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6efc49d5&file=column.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./column.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".c-col {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  word-break: break-all;\n  overflow: hidden;\n}\n.c-col.c-col-12 {\n  width: 100%;\n}\n.c-col.c-col-11 {\n  width: 91.66666667%;\n}\n.c-col.c-col-10 {\n  width: 83.33333333%;\n}\n.c-col.c-col-9 {\n  width: 75%;\n}\n.c-col.c-col-8 {\n  width: 66.66666667%;\n}\n.c-col.c-col-7 {\n  width: 58.33333333%;\n}\n.c-col.c-col-6 {\n  width: 50%;\n}\n.c-col.c-col-5 {\n  width: 41.66666667%;\n}\n.c-col.c-col-4 {\n  width: 33.33333333%;\n}\n.c-col.c-col-3 {\n  width: 25%;\n}\n.c-col.c-col-2 {\n  width: 16.66666667%;\n}\n.c-col.c-col-1 {\n  width: 8.33333333%;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-col" :class="'c-col-' + span">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style lang="less" rel="stylesheet/less">
+	//     .c-col {
+	//         .c-cols(@n, @i: @n) when (@i > 0) {
+	//             &.c-col-@{i} {
+	//                 width: (@i * 100% / @n);
+	//             }
+	//             .c-cols(@n, (@i - 1));
+	//         }
+	//         .c-cols(12);
+	//         display: flex;
+	//         align-items: center;
+	//         justify-content: center;
+	//         word-break: break-all;
+	//         overflow: hidden;
+	//     }
+	// </style>
+	// <script>
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    props: {
+	        span: Number
+	    }
+	};
+	// </script>
+
+/***/ },
+/* 76 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-col\" :class=\"'c-col-' + span\">\n        <slot></slot>\n    </div>";
 
 /***/ }
 /******/ ]);

@@ -10,5 +10,6 @@
  - icon组件：图标库，[查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/icon)
  - button组件：按钮，可调整大小、样式、图标，[查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/button)
  - Message组件：全局提示，可设置持续时间，[查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/message)
+ - 栅格布局：[查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/grid)
 
 ***需要用webpack模块化加载***
