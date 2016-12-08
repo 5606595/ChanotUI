@@ -1,11 +1,8 @@
 <template>
     <i class="jicon" :class="'jicon-' + type"></i>
 </template>
-<style lang="less" rel="stylesheet/less">
-    @default: #1f90e6;
-    @success: #89ce6d;
-    @fail: #fc561f;
-    @warning: #fda929;
+<style scoped lang="less" rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
     .jicon {
         display: inline-block;
         font-family:"iconfont" !important;

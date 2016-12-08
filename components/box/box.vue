@@ -1,4 +1,5 @@
-<style lang="less" rel="stylesheet/less">
+<style lang="less" scoped rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
     .j-box {
         @border: #e9e9e9;
         padding: 50px 30px;

@@ -44,6 +44,11 @@
         </column>
       </row>
     </box>
+    <box>
+      <popover>
+        <c-button type="primary">Hover me.</c-button>
+      </popover>
+    </box>
   </div>
 </template>
 
@@ -54,6 +59,7 @@
   import message from '../components/message'
   import box from '../components/box'
   import { row, column } from '../components/grid'
+  import popover from '../components/popover'
   export default {
     components: {
       'c-button': button,
@@ -62,7 +68,8 @@
       'message': message,
       'icon': icon,
       'row': row,
-      'column': column
+      'column': column,
+      'popover': popover
     },
     data() {
       return {

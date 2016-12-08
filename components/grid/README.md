@@ -70,7 +70,7 @@
  - between: space-between
  - around: space-around
 
-######响应式布局
+######响应式布局, 依照Bootstrap布局方案
 
     <row space="between">
         <column xs="1" sm="6" md="2" lg="2">

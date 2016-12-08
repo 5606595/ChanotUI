@@ -6,9 +6,8 @@
         </span>
     </div>
 </template>
-<style lang="less" rel="stylesheet/less">
-    @border: #e9e9e9;
-    @messagefontcolor: #666;
+<style scoped lang="less" rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
     .j-message {
         padding: 8px 16px;
         border: 1px solid @border;

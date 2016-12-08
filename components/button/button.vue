@@ -1,9 +1,5 @@
-<style lang="less" type="text/less" rel="stylesheet/less">
-    @jblue: #1f90e6;
-    @jbluelight: #46a6ea;
-    @jblueborder: rgba(30, 152, 229, 0.4);
-    @jgrey: #F7F7F7;
-    @jdefault: #DADADA;
+<style lang="less" scoped type="text/less" rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
     .j-btn {
         padding: 6px 16px;
         background: @jgrey;

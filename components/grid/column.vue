@@ -3,7 +3,7 @@
         <slot></slot>
     </div>
 </template>
-<style lang="less" rel="stylesheet/less">
+<style lang="less" scoped rel="stylesheet/less">
     .c-col {
         .c-cols(@n, @i: @n) when (@i > 0) {
             &.c-col-@{i} {
@@ -12,6 +12,9 @@
             .c-cols(@n, (@i - 1));
         }
         .c-cols(12);
+        &.c-col-0 {
+            display: none;
+        }
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,6 +28,9 @@
                 .c-cols(@n, (@i - 1));
             }
             .c-cols(12);
+            &.c-xs-0 {
+                display: none;
+            }
         }
         @media(min-width: 768px) and (max-width: 991px) {
             .c-cols(@n, @i: @n) when (@i > 0) {
@@ -34,6 +40,9 @@
                 .c-cols(@n, (@i - 1));
             }
             .c-cols(12);
+            &.c-sm-0 {
+                display: none;
+            }
         }
         @media(min-width: 992px) and (max-width: 1199px) {
             .c-cols(@n, @i: @n) when (@i > 0) {
@@ -43,6 +52,9 @@
                 .c-cols(@n, (@i - 1));
             }
             .c-cols(12);
+            &.c-md-0 {
+                display: none;
+            }
         }
         @media(min-width: 1200px) {
             .c-cols(@n, @i: @n) when (@i > 0) {
@@ -52,6 +64,9 @@
                 .c-cols(@n, (@i - 1));
             }
             .c-cols(12);
+            &.c-lg-0 {
+                display: none;
+            }
         }
     }
 </style>

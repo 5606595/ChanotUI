@@ -1,5 +1,5 @@
-<style lang="less">
-    @jblue: #3ec8f5;
+<style scoped lang="less" rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
     .spin {
         position: relative;
         width: 20px;
@@ -12,7 +12,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: @jblue;
+            background: @jspin;
             opacity: 0.3;
             transform: scale(0.6);
             animation: jopacity 0.8s infinite linear alternate;

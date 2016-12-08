@@ -1,0 +1,115 @@
+<template>
+    <div>
+        <slot></slot>
+    </div>
+</template>
+<style lang="less" rel="stylesheet/less">
+    @import '../../mixin/mixin.less';
+    .c-popover {
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: inline-block;
+        color: #666;
+        position: absolute;
+        z-index: 30;
+        background: white;
+        box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
+        transform: translate3d(-50%, -100% - 10px, 0);
+        * {
+            box-sizing: border-box;
+        }
+        .arrow {
+            width: 0;
+            height: 0;
+            background: white;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            z-index: 20;
+            border-top: 7px solid rgba(217, 217, 217, 1);
+            border-bottom: none;
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            &:after {
+                position: absolute;
+                content: '';
+                bottom: 2px;
+                left: -8px;
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid white;
+            }
+        }
+        .inner {
+            .title {
+                border-bottom: 1px solid @border;
+                min-width: 177px;
+                padding: 0 16px;
+                height: 32px;
+                line-height: 32px;
+            }
+            .content {
+                padding: 8px 16px;
+            }
+        }
+    }
+</style>
+<script type="text/ecmascript-6">
+    export default {
+        data() {
+            return {
+            }
+        },
+        mounted() {
+            if(this.$el.querySelectorAll('button').length) {
+                let buttons = this.$el.querySelectorAll("button");
+                for(let i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener('mouseover', () => {
+                        if(document.body.querySelector('div[c-num="' + i + '"]')) {
+                            let dom = document.querySelector('div[c-num="' + i + '"]')
+                            dom.style.display = 'block';
+//                            dom.addEventListener('mouseleave', (event) => {
+//                                console.log(event.target)
+//                            }, false)
+//                            buttons[i].addEventListener('mouseleave', (event) => {
+//                                console.log(event.target)
+//                            })
+                        } else {
+                            let dom = document.createElement("div");
+                            dom.innerHTML = '<div class="arrow">\
+                                </div>\
+                                <div class="inner">\
+                                <div class="title">\
+                                title\
+                                </div>\
+                                <div class="content">\
+                                <p>\
+                                content\
+                                </p>\
+                                <p>\
+                                content\
+                                </p>\
+                                </div>\
+                                </div>';
+                            dom.classList.add('c-popover');
+                            dom.setAttribute('c-num', i);
+                            dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
+                            dom.style.top = buttons[i].offsetTop + 'px';
+                            document.body.appendChild(dom)
+//                            dom.addEventListener('mouseleave', (event) => {
+//                                console.log(event.target)
+//                            }, false)
+//                            buttons[i].addEventListener('mouseleave', (event) => {
+//                                console.log(event.target)
+//                            })
+                        }
+
+                    }, false);
+                }
+            }
+        }
+    }
+</script>
