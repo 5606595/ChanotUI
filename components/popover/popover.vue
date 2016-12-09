@@ -14,7 +14,7 @@
         z-index: 30;
         background: white;
         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
-        transform: translate3d(-50%, -100% - 10px, 0);
+        transform: translate3d(-50%, -100% - 5px, 0);
         * {
             box-sizing: border-box;
         }
@@ -22,25 +22,25 @@
             width: 0;
             height: 0;
             background: white;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
             z-index: 20;
-            border-top: 7px solid rgba(217, 217, 217, 1);
+            border-top: 4px solid rgba(217, 217, 217, 1);
             border-bottom: none;
             position: absolute;
-            bottom: -9px;
+            bottom: -5px;
             left: 50%;
             transform: translate3d(-50%, 0, 0);
             &:after {
                 position: absolute;
                 content: '';
                 bottom: 2px;
-                left: -8px;
+                left: -3px;
                 width: 0;
                 height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid white;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 3px solid white;
             }
         }
         .inner {
@@ -67,9 +67,10 @@
             if(this.$el.querySelectorAll('button').length) {
                 let buttons = this.$el.querySelectorAll("button");
                 for(let i = 0; i < buttons.length; i++) {
+                    let dom;
                     buttons[i].addEventListener('mouseover', () => {
                         if(document.body.querySelector('div[c-num="' + i + '"]')) {
-                            let dom = document.querySelector('div[c-num="' + i + '"]')
+                            dom = document.querySelector('div[c-num="' + i + '"]')
                             dom.style.display = 'block';
 //                            dom.addEventListener('mouseleave', (event) => {
 //                                console.log(event.target)
@@ -78,7 +79,7 @@
 //                                console.log(event.target)
 //                            })
                         } else {
-                            let dom = document.createElement("div");
+                            dom = document.createElement("div");
                             dom.innerHTML = '<div class="arrow">\
                                 </div>\
                                 <div class="inner">\
@@ -99,17 +100,25 @@
                             dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
                             dom.style.top = buttons[i].offsetTop + 'px';
                             document.body.appendChild(dom)
-//                            dom.addEventListener('mouseleave', (event) => {
-//                                console.log(event.target)
-//                            }, false)
+                            dom.addEventListener('mouseenter', (event) => {
+                                dom.style.display = "block"
+                                console.log('haha')
+                            }, false)
+//                            dom.addEventListener("mouseenter")
 //                            buttons[i].addEventListener('mouseleave', (event) => {
 //                                console.log(event.target)
 //                            })
                         }
-
+                    }, false);
+                    buttons[i].addEventListener('mouseleave', () => {
+                        console.log(dom)
+                        dom.style.display = "none"
                     }, false);
                 }
             }
+        },
+        methods: {
+
         }
     }
 </script>
