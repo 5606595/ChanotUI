@@ -14,6 +14,7 @@
         z-index: 30;
         background: white;
         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
+        animation: fadein .2s forwards;
         transform: translate3d(-50%, -100% - 5px, 0);
         * {
             box-sizing: border-box;
@@ -55,6 +56,25 @@
                 padding: 8px 16px;
             }
         }
+        &.fadeout {
+            animation: fadeout .2s;
+        }
+    }
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
     }
 </style>
 <script type="text/ecmascript-6">
@@ -68,16 +88,14 @@
                 let buttons = this.$el.querySelectorAll("button");
                 for(let i = 0; i < buttons.length; i++) {
                     let dom;
+                    let timeEvent1;
+                    let timeEvent2;
+                    let animationHandle;
                     buttons[i].addEventListener('mouseover', () => {
                         if(document.body.querySelector('div[c-num="' + i + '"]')) {
+                            window.clearTimeout(timeEvent2);
                             dom = document.querySelector('div[c-num="' + i + '"]')
                             dom.style.display = 'block';
-//                            dom.addEventListener('mouseleave', (event) => {
-//                                console.log(event.target)
-//                            }, false)
-//                            buttons[i].addEventListener('mouseleave', (event) => {
-//                                console.log(event.target)
-//                            })
                         } else {
                             dom = document.createElement("div");
                             dom.innerHTML = '<div class="arrow">\
@@ -100,10 +118,16 @@
                             dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
                             dom.style.top = buttons[i].offsetTop + 'px';
                             document.body.appendChild(dom)
-                            dom.addEventListener('mouseenter', (event) => {
+                            dom.addEventListener('mouseover', (event) => {
+                                window.clearTimeout(timeEvent1);
                                 dom.style.display = "block"
-                                console.log('haha')
                             }, false)
+                            dom.addEventListener('mouseleave', () => {
+                                timeEvent2 = window.setTimeout(() => {
+                                    dom.classList.add('fadeout')
+                                    dom.addEventListener('animationend', animationHandle, false);
+                                }, 30)
+                            }, false);
 //                            dom.addEventListener("mouseenter")
 //                            buttons[i].addEventListener('mouseleave', (event) => {
 //                                console.log(event.target)
@@ -111,9 +135,16 @@
                         }
                     }, false);
                     buttons[i].addEventListener('mouseleave', () => {
-                        console.log(dom)
-                        dom.style.display = "none"
+                        timeEvent1 = window.setTimeout(() => {
+                            dom.classList.add('fadeout')
+                            dom.addEventListener('animationend', animationHandle, false);
+                        }, 30)
                     }, false);
+                    animationHandle = function() {
+                        dom.style.display = "none";
+                        dom.classList.remove('fadeout');
+                        dom.removeEventListener("animationend", animationHandle);
+                    }
                 }
             }
         },

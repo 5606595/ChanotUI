@@ -1957,7 +1957,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-transform: translate3d(-50%, -105%, 0);\n          transform: translate3d(-50%, -105%, 0);\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  z-index: 20;\n  border-top: 4px solid #d9d9d9;\n  border-bottom: none;\n  position: absolute;\n  bottom: -5px;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  bottom: 2px;\n  left: -3px;\n  width: 0;\n  height: 0;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  border-top: 3px solid white;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n", ""]);
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  -webkit-transform: translate3d(-50%, -105%, 0);\n          transform: translate3d(-50%, -105%, 0);\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  z-index: 20;\n  border-top: 4px solid #d9d9d9;\n  border-bottom: none;\n  position: absolute;\n  bottom: -5px;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  bottom: 2px;\n  left: -3px;\n  width: 0;\n  height: 0;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  border-top: 3px solid white;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1987,6 +1987,7 @@
 	//         z-index: 30;
 	//         background: white;
 	//         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
+	//         animation: fadein .2s forwards;
 	//         transform: translate3d(-50%, -100% - 5px, 0);
 	//         * {
 	//             box-sizing: border-box;
@@ -2028,6 +2029,25 @@
 	//                 padding: 8px 16px;
 	//             }
 	//         }
+	//         &.fadeout {
+	//             animation: fadeout .2s;
+	//         }
+	//     }
+	//     @keyframes fadein {
+	//         0% {
+	//             opacity: 0;
+	//         }
+	//         100% {
+	//             opacity: 1;
+	//         }
+	//     }
+	//     @keyframes fadeout {
+	//         0% {
+	//             opacity: 1;
+	//         }
+	//         100% {
+	//             opacity: 0;
+	//         }
 	//     }
 	// </style>
 	// <script type="text/ecmascript-6">
@@ -2044,16 +2064,14 @@
 	
 	                var _loop = function _loop(i) {
 	                    var dom = void 0;
+	                    var timeEvent1 = void 0;
+	                    var timeEvent2 = void 0;
+	                    var animationHandle = void 0;
 	                    buttons[i].addEventListener('mouseover', function () {
 	                        if (document.body.querySelector('div[c-num="' + i + '"]')) {
+	                            window.clearTimeout(timeEvent2);
 	                            dom = document.querySelector('div[c-num="' + i + '"]');
 	                            dom.style.display = 'block';
-	                            //                            dom.addEventListener('mouseleave', (event) => {
-	                            //                                console.log(event.target)
-	                            //                            }, false)
-	                            //                            buttons[i].addEventListener('mouseleave', (event) => {
-	                            //                                console.log(event.target)
-	                            //                            })
 	                        } else {
 	                            dom = document.createElement("div");
 	                            dom.innerHTML = '<div class="arrow">\
@@ -2076,9 +2094,15 @@
 	                            dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
 	                            dom.style.top = buttons[i].offsetTop + 'px';
 	                            document.body.appendChild(dom);
-	                            dom.addEventListener('mouseenter', function (event) {
+	                            dom.addEventListener('mouseover', function (event) {
+	                                window.clearTimeout(timeEvent1);
 	                                dom.style.display = "block";
-	                                console.log('haha');
+	                            }, false);
+	                            dom.addEventListener('mouseleave', function () {
+	                                timeEvent2 = window.setTimeout(function () {
+	                                    dom.classList.add('fadeout');
+	                                    dom.addEventListener('animationend', animationHandle, false);
+	                                }, 30);
 	                            }, false);
 	                            //                            dom.addEventListener("mouseenter")
 	                            //                            buttons[i].addEventListener('mouseleave', (event) => {
@@ -2087,9 +2111,26 @@
 	                        }
 	                    }, false);
 	                    buttons[i].addEventListener('mouseleave', function () {
-	                        console.log(dom);
-	                        dom.style.display = "none";
+	                        timeEvent1 = window.setTimeout(function () {
+	                            dom.classList.add('fadeout');
+	                            dom.addEventListener('animationend', animationHandle, false);
+	                        }, 30);
 	                    }, false);
+	                    animationHandle = function (_animationHandle) {
+	                        function animationHandle() {
+	                            return _animationHandle.apply(this, arguments);
+	                        }
+	
+	                        animationHandle.toString = function () {
+	                            return _animationHandle.toString();
+	                        };
+	
+	                        return animationHandle;
+	                    }(function () {
+	                        dom.style.display = "none";
+	                        dom.classList.remove('fadeout');
+	                        dom.removeEventListener("animationend", animationHandle);
+	                    });
 	                };
 	
 	                for (var i = 0; i < buttons.length; i++) {
