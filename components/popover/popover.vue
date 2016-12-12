@@ -15,33 +15,62 @@
         background: white;
         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
         animation: fadein .2s forwards;
-        transform: translate3d(-50%, -100% - 5px, 0);
+        transform: translate3d(-50%, -100% - 7px, 0);
         * {
-            box-sizing: border-box;
+            box-sizing: border-box
         }
         .arrow {
             width: 0;
             height: 0;
             background: white;
-            border-left: 3px solid transparent;
-            border-right: 3px solid transparent;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
             z-index: 20;
-            border-top: 4px solid rgba(217, 217, 217, 1);
+            border-top: 6px solid rgba(217, 217, 217, 1);
             border-bottom: none;
             position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translate3d(-50%, 0, 0);
+
             &:after {
                 position: absolute;
                 content: '';
-                bottom: 2px;
-                left: -3px;
                 width: 0;
                 height: 0;
-                border-left: 3px solid transparent;
-                border-right: 3px solid transparent;
-                border-top: 3px solid white;
+            }
+            &.top {
+                bottom: -7px;
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+                &:after {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 6px solid white;
+                    bottom: 2px;
+                    left: -5px;
+                }
+            }
+            &.topLeft {
+                bottom: -7px;
+                left: 30%;
+                transform: translate3d(-50%, 0, 0);
+                &:after {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 6px solid white;
+                    bottom: 2px;
+                    left: -5px;
+                }
+            }
+            &.topRight {
+                bottom: -7px;
+                left: 70%;
+                transform: translate3d(-50%, 0, 0);
+                &:after {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 6px solid white;
+                    bottom: 2px;
+                    left: -5px;
+                }
             }
         }
         .inner {
@@ -88,17 +117,21 @@
                 let buttons = this.$el.querySelectorAll("button");
                 for(let i = 0; i < buttons.length; i++) {
                     let dom;
-                    let timeEvent1;
-                    let timeEvent2;
+                    let timeEvent;
                     let animationHandle;
                     buttons[i].addEventListener('mouseover', () => {
-                        if(document.body.querySelector('div[c-num="' + i + '"]')) {
-                            window.clearTimeout(timeEvent2);
-                            dom = document.querySelector('div[c-num="' + i + '"]')
+                        if(dom) {
+                            window.clearTimeout(timeEvent);
                             dom.style.display = 'block';
                         } else {
+                            let arrowClass;
+                            if(this.placement) {
+                                arrowClass = this.placement;
+                            } else {
+                                arrowClass = 'top';
+                            }
                             dom = document.createElement("div");
-                            dom.innerHTML = '<div class="arrow">\
+                            dom.innerHTML = '<div class="arrow ' + arrowClass + '">\
                                 </div>\
                                 <div class="inner">\
                                 <div class="title">\
@@ -119,13 +152,16 @@
                             dom.style.top = buttons[i].offsetTop + 'px';
                             document.body.appendChild(dom)
                             dom.addEventListener('mouseover', (event) => {
-                                window.clearTimeout(timeEvent1);
+                                window.clearTimeout(timeEvent);
                                 dom.style.display = "block"
                             }, false)
                             dom.addEventListener('mouseleave', () => {
-                                timeEvent2 = window.setTimeout(() => {
-                                    dom.classList.add('fadeout')
-                                    dom.addEventListener('animationend', animationHandle, false);
+                                timeEvent = window.setTimeout(() => {
+                                    console.log('domleave')
+                                    if(dom.style.display !== 'none') {
+                                        dom.classList.add('fadeout')
+                                        dom.addEventListener('animationend', animationHandle, false);
+                                    }
                                 }, 30)
                             }, false);
 //                            dom.addEventListener("mouseenter")
@@ -135,21 +171,28 @@
                         }
                     }, false);
                     buttons[i].addEventListener('mouseleave', () => {
-                        timeEvent1 = window.setTimeout(() => {
-                            dom.classList.add('fadeout')
-                            dom.addEventListener('animationend', animationHandle, false);
+                        timeEvent = window.setTimeout(() => {
+                            console.log('buttonleave')
+                            if(dom.style.display !== 'none') {
+                                dom.classList.add('fadeout')
+                                dom.addEventListener('animationend', animationHandle, false);
+                            }
                         }, 30)
                     }, false);
                     animationHandle = function() {
+                        console.log('animation')
                         dom.style.display = "none";
                         dom.classList.remove('fadeout');
-                        dom.removeEventListener("animationend", animationHandle);
+                        dom.removeEventListener("animationend", animationHandle, false);
                     }
                 }
             }
         },
         methods: {
 
+        },
+        props: {
+            placement: String
         }
     }
 </script>

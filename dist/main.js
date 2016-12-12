@@ -547,7 +547,7 @@
 	//       </row>
 	//     </box>
 	//     <box>
-	//       <popover>
+	//       <popover placement="topRight">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
 	//     </box>
@@ -1957,7 +1957,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  -webkit-transform: translate3d(-50%, -105%, 0);\n          transform: translate3d(-50%, -105%, 0);\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  z-index: 20;\n  border-top: 4px solid #d9d9d9;\n  border-bottom: none;\n  position: absolute;\n  bottom: -5px;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  bottom: 2px;\n  left: -3px;\n  width: 0;\n  height: 0;\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n  border-top: 3px solid white;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  -webkit-transform: translate3d(-50%, -107%, 0);\n          transform: translate3d(-50%, -107%, 0);\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  z-index: 20;\n  border-top: 6px solid #d9d9d9;\n  border-bottom: none;\n  position: absolute;\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  width: 0;\n  height: 0;\n}\n.c-popover .arrow.top {\n  bottom: -7px;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.top:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .arrow.topLeft {\n  bottom: -7px;\n  left: 30%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.topLeft:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .arrow.topRight {\n  bottom: -7px;\n  left: 70%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.topRight:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1988,33 +1988,62 @@
 	//         background: white;
 	//         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
 	//         animation: fadein .2s forwards;
-	//         transform: translate3d(-50%, -100% - 5px, 0);
+	//         transform: translate3d(-50%, -100% - 7px, 0);
 	//         * {
-	//             box-sizing: border-box;
+	//             box-sizing: border-box
 	//         }
 	//         .arrow {
 	//             width: 0;
 	//             height: 0;
 	//             background: white;
-	//             border-left: 3px solid transparent;
-	//             border-right: 3px solid transparent;
+	//             border-left: 5px solid transparent;
+	//             border-right: 5px solid transparent;
 	//             z-index: 20;
-	//             border-top: 4px solid rgba(217, 217, 217, 1);
+	//             border-top: 6px solid rgba(217, 217, 217, 1);
 	//             border-bottom: none;
 	//             position: absolute;
-	//             bottom: -5px;
-	//             left: 50%;
-	//             transform: translate3d(-50%, 0, 0);
+	
 	//             &:after {
 	//                 position: absolute;
 	//                 content: '';
-	//                 bottom: 2px;
-	//                 left: -3px;
 	//                 width: 0;
 	//                 height: 0;
-	//                 border-left: 3px solid transparent;
-	//                 border-right: 3px solid transparent;
-	//                 border-top: 3px solid white;
+	//             }
+	//             &.top {
+	//                 bottom: -7px;
+	//                 left: 50%;
+	//                 transform: translate3d(-50%, 0, 0);
+	//                 &:after {
+	//                     border-left: 5px solid transparent;
+	//                     border-right: 5px solid transparent;
+	//                     border-top: 6px solid white;
+	//                     bottom: 2px;
+	//                     left: -5px;
+	//                 }
+	//             }
+	//             &.topLeft {
+	//                 bottom: -7px;
+	//                 left: 30%;
+	//                 transform: translate3d(-50%, 0, 0);
+	//                 &:after {
+	//                     border-left: 5px solid transparent;
+	//                     border-right: 5px solid transparent;
+	//                     border-top: 6px solid white;
+	//                     bottom: 2px;
+	//                     left: -5px;
+	//                 }
+	//             }
+	//             &.topRight {
+	//                 bottom: -7px;
+	//                 left: 70%;
+	//                 transform: translate3d(-50%, 0, 0);
+	//                 &:after {
+	//                     border-left: 5px solid transparent;
+	//                     border-right: 5px solid transparent;
+	//                     border-top: 6px solid white;
+	//                     bottom: 2px;
+	//                     left: -5px;
+	//                 }
 	//             }
 	//         }
 	//         .inner {
@@ -2064,17 +2093,21 @@
 	
 	                var _loop = function _loop(i) {
 	                    var dom = void 0;
-	                    var timeEvent1 = void 0;
-	                    var timeEvent2 = void 0;
+	                    var timeEvent = void 0;
 	                    var animationHandle = void 0;
 	                    buttons[i].addEventListener('mouseover', function () {
-	                        if (document.body.querySelector('div[c-num="' + i + '"]')) {
-	                            window.clearTimeout(timeEvent2);
-	                            dom = document.querySelector('div[c-num="' + i + '"]');
+	                        if (dom) {
+	                            window.clearTimeout(timeEvent);
 	                            dom.style.display = 'block';
 	                        } else {
+	                            var arrowClass = void 0;
+	                            if (_this.placement) {
+	                                arrowClass = _this.placement;
+	                            } else {
+	                                arrowClass = 'top';
+	                            }
 	                            dom = document.createElement("div");
-	                            dom.innerHTML = '<div class="arrow">\
+	                            dom.innerHTML = '<div class="arrow ' + arrowClass + '">\
 	                                </div>\
 	                                <div class="inner">\
 	                                <div class="title">\
@@ -2095,13 +2128,16 @@
 	                            dom.style.top = buttons[i].offsetTop + 'px';
 	                            document.body.appendChild(dom);
 	                            dom.addEventListener('mouseover', function (event) {
-	                                window.clearTimeout(timeEvent1);
+	                                window.clearTimeout(timeEvent);
 	                                dom.style.display = "block";
 	                            }, false);
 	                            dom.addEventListener('mouseleave', function () {
-	                                timeEvent2 = window.setTimeout(function () {
-	                                    dom.classList.add('fadeout');
-	                                    dom.addEventListener('animationend', animationHandle, false);
+	                                timeEvent = window.setTimeout(function () {
+	                                    console.log('domleave');
+	                                    if (dom.style.display !== 'none') {
+	                                        dom.classList.add('fadeout');
+	                                        dom.addEventListener('animationend', animationHandle, false);
+	                                    }
 	                                }, 30);
 	                            }, false);
 	                            //                            dom.addEventListener("mouseenter")
@@ -2111,9 +2147,12 @@
 	                        }
 	                    }, false);
 	                    buttons[i].addEventListener('mouseleave', function () {
-	                        timeEvent1 = window.setTimeout(function () {
-	                            dom.classList.add('fadeout');
-	                            dom.addEventListener('animationend', animationHandle, false);
+	                        timeEvent = window.setTimeout(function () {
+	                            console.log('buttonleave');
+	                            if (dom.style.display !== 'none') {
+	                                dom.classList.add('fadeout');
+	                                dom.addEventListener('animationend', animationHandle, false);
+	                            }
 	                        }, 30);
 	                    }, false);
 	                    animationHandle = function (_animationHandle) {
@@ -2127,9 +2166,10 @@
 	
 	                        return animationHandle;
 	                    }(function () {
+	                        console.log('animation');
 	                        dom.style.display = "none";
 	                        dom.classList.remove('fadeout');
-	                        dom.removeEventListener("animationend", animationHandle);
+	                        dom.removeEventListener("animationend", animationHandle, false);
 	                    });
 	                };
 	
@@ -2140,7 +2180,10 @@
 	        }
 	    },
 	
-	    methods: {}
+	    methods: {},
+	    props: {
+	        placement: String
+	    }
 	};
 	// </script>
 
@@ -2154,7 +2197,7 @@
 /* 63 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"topRight\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

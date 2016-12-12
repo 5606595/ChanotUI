@@ -45,7 +45,7 @@
       </row>
     </box>
     <box>
-      <popover>
+      <popover placement="topRight">
         <c-button type="primary">Hover me.</c-button>
       </popover>
     </box>
