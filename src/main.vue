@@ -45,7 +45,16 @@
       </row>
     </box>
     <box>
-      <popover placement="topRight">
+      <popover placement="left" trigger="click">
+        <c-button type="primary">Hover me.</c-button>
+      </popover>
+      <popover placement="right" trigger="click">
+        <c-button type="primary">Hover me.</c-button>
+      </popover>
+      <popover placement="top" trigger="click">
+        <c-button type="primary">Hover me.</c-button>
+      </popover>
+      <popover placement="bottom" trigger="click">
         <c-button type="primary">Hover me.</c-button>
       </popover>
     </box>

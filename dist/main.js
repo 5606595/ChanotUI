@@ -547,7 +547,16 @@
 	//       </row>
 	//     </box>
 	//     <box>
-	//       <popover placement="topRight">
+	//       <popover placement="left" trigger="click">
+	//         <c-button type="primary">Hover me.</c-button>
+	//       </popover>
+	//       <popover placement="right" trigger="click">
+	//         <c-button type="primary">Hover me.</c-button>
+	//       </popover>
+	//       <popover placement="top" trigger="click">
+	//         <c-button type="primary">Hover me.</c-button>
+	//       </popover>
+	//       <popover placement="bottom" trigger="click">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
 	//     </box>
@@ -1957,7 +1966,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  -webkit-transform: translate3d(-50%, -107%, 0);\n          transform: translate3d(-50%, -107%, 0);\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  z-index: 20;\n  border-top: 6px solid #d9d9d9;\n  border-bottom: none;\n  position: absolute;\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  width: 0;\n  height: 0;\n}\n.c-popover .arrow.top {\n  bottom: -7px;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.top:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .arrow.topLeft {\n  bottom: -7px;\n  left: 30%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.topLeft:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .arrow.topRight {\n  bottom: -7px;\n  left: 70%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover .arrow.topRight:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.popcontainer {\n  float: left;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  /*&-topLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-topRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n  /*&-rightTop .arrow {*/\n  /*top: 15%;*/\n  /*}*/\n  /*&-rightBottom .arrow {*/\n  /*bottom: 15%;*/\n  /*}*/\n  /*&-bottomLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-bottomRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover-top,\n.c-popover-topLeft,\n.c-popover-topRight {\n  -webkit-transform: translate3d(-50%, calc(-100% - 7px), 0);\n          transform: translate3d(-50%, calc(-100% - 7px), 0);\n}\n.c-popover-top .arrow,\n.c-popover-topLeft .arrow,\n.c-popover-topRight .arrow {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid #d9d9d9;\n  border-bottom: none;\n  bottom: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-top .arrow:after,\n.c-popover-topLeft .arrow:after,\n.c-popover-topRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover-top .arrow {\n  left: 50%;\n}\n.c-popover-right,\n.c-popover-rightTop,\n.c-popover-rightBottom {\n  -webkit-transform: translate3d(7px, calc(-50% - 7px), 0);\n          transform: translate3d(7px, calc(-50% - 7px), 0);\n}\n.c-popover-right .arrow,\n.c-popover-rightTop .arrow,\n.c-popover-rightBottom .arrow {\n  border-left: none;\n  border-right: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  left: -7px;\n}\n.c-popover-right .arrow:after,\n.c-popover-rightTop .arrow:after,\n.c-popover-rightBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-right: 6px solid white;\n  top: -5px;\n  left: 2px;\n}\n.c-popover-right .arrow {\n  top: 50%;\n}\n.c-popover-bottom,\n.c-popover-bottomLeft,\n.c-popover-bottomRight {\n  -webkit-transform: translate3d(-50%, 7px, 0);\n          transform: translate3d(-50%, 7px, 0);\n}\n.c-popover-bottom .arrow,\n.c-popover-bottomLeft .arrow,\n.c-popover-bottomRight .arrow {\n  border-top: none;\n  border-right: 5px solid transparent;\n  border-left: 5px solid transparent;\n  border-bottom: 6px solid #d9d9d9;\n  top: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-bottom .arrow:after,\n.c-popover-bottomLeft .arrow:after,\n.c-popover-bottomRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-bottom: 6px solid white;\n  left: -5px;\n  top: 2px;\n}\n.c-popover-bottom .arrow {\n  left: 50%;\n}\n.c-popover-left,\n.c-popover-leftTop,\n.c-popoverleftBottom {\n  -webkit-transform: translate3d(calc(-100% - 7px), -50%, 0);\n          transform: translate3d(calc(-100% - 7px), -50%, 0);\n}\n.c-popover-left .arrow,\n.c-popover-leftTop .arrow,\n.c-popoverleftBottom .arrow {\n  border-right: none;\n  border-left: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  right: -7px;\n  -webkit-transform: translate3d(0, -50%, 0);\n          transform: translate3d(0, -50%, 0);\n}\n.c-popover-left .arrow:after,\n.c-popover-leftTop .arrow:after,\n.c-popoverleftBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 6px solid white;\n  top: -5px;\n  right: 2px;\n}\n.c-popover-left .arrow {\n  top: 50%;\n}\n.c-popover-leftTop .arrow {\n  top: 15%;\n}\n.c-popover-leftBottom .arrow {\n  bottom: 15%;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  z-index: 20;\n  position: absolute;\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  width: 0;\n  height: 0;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1972,12 +1981,15 @@
 	    value: true
 	});
 	// <template>
-	//     <div>
+	//     <div class="popcontainer">
 	//         <slot></slot>
 	//     </div>
 	// </template>
 	// <style lang="less" rel="stylesheet/less">
 	//     @import '../../mixin/mixin.less';
+	//     .popcontainer {
+	//         float: left;
+	//     }
 	//     .c-popover {
 	//         box-sizing: border-box;
 	//         border-radius: 4px;
@@ -1988,62 +2000,128 @@
 	//         background: white;
 	//         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
 	//         animation: fadein .2s forwards;
-	//         transform: translate3d(-50%, -100% - 7px, 0);
 	//         * {
 	//             box-sizing: border-box
+	//         }
+	//         &-top, &-topLeft, &-topRight {
+	//             transform: translate3d(-50%, ~"calc(-100% - 7px)", 0);
+	//             .arrow {
+	//                 border-left: 5px solid transparent;
+	//                 border-right: 5px solid transparent;
+	//                 border-top: 6px solid rgba(217, 217, 217, 1);
+	//                 border-bottom: none;
+	//                 bottom: -7px;
+	//                 transform: translate3d(-50%, 0, 0);
+	//                 &:after {
+	//                     border-left: 5px solid transparent;
+	//                     border-right: 5px solid transparent;
+	//                     border-top: 6px solid white;
+	//                     bottom: 2px;
+	//                     left: -5px;
+	//                 }
+	//             }
+	
+	//         }
+	//         &-top .arrow {
+	//             left: 50%;
+	//         }
+	//         /*&-topLeft .arrow {*/
+	//             /*left: 15%;*/
+	//         /*}*/
+	//         /*&-topRight .arrow {*/
+	//             /*right: 15%;*/
+	//         /*}*/
+	//         &-right, &-rightTop, &-rightBottom {
+	//             transform: translate3d(7px, ~"calc(-50% - 7px)", 0);
+	//             .arrow {
+	//                 border-left: none;
+	//                 border-right: 6px solid rgba(217, 217, 217, 1);
+	//                 border-top: 5px solid transparent;
+	//                 border-bottom: 5px solid transparent;
+	//                 left: -7px;
+	//                 &:after {
+	//                     border-top: 5px solid transparent;
+	//                     border-bottom: 5px solid transparent;
+	//                     border-right: 6px solid white;
+	//                     top: -5px;
+	//                     left: 2px;
+	//                 }
+	//             }
+	//         }
+	//         &-right .arrow {
+	//             top: 50%;
+	//         }
+	//         /*&-rightTop .arrow {*/
+	//             /*top: 15%;*/
+	//         /*}*/
+	//         /*&-rightBottom .arrow {*/
+	//             /*bottom: 15%;*/
+	//         /*}*/
+	//         &-bottom, &-bottomLeft, &-bottomRight {
+	//             transform: translate3d(-50%, 7px, 0);
+	//             .arrow {
+	//                 border-top: none;
+	//                 border-right: 5px solid transparent;
+	//                 border-left: 5px solid transparent;
+	//                 border-bottom: 6px solid rgba(217, 217, 217, 1);
+	//                 top: -7px;
+	//                 transform: translate3d(-50%, 0, 0);
+	//                 &:after {
+	//                     border-left: 5px solid transparent;
+	//                     border-right: 5px solid transparent;
+	//                     border-bottom: 6px solid white;
+	//                     left: -5px;
+	//                     top: 2px;
+	//                 }
+	//             }
+	//         }
+	//         &-bottom .arrow {
+	//             left: 50%;
+	//         }
+	//         /*&-bottomLeft .arrow {*/
+	//             /*left: 15%;*/
+	//         /*}*/
+	//         /*&-bottomRight .arrow {*/
+	//             /*right: 15%;*/
+	//         /*}*/
+	//         &-left, &-leftTop, &leftBottom {
+	//             transform: translate3d(~"calc(-100% - 7px)", -50%, 0);
+	//             .arrow {
+	//                 border-right: none;
+	//                 border-left: 6px solid rgba(217, 217, 217, 1);
+	//                 border-top: 5px solid transparent;
+	//                 border-bottom: 5px solid transparent;
+	//                 right: -7px;
+	//                 transform: translate3d(0, -50%, 0);
+	//                 &:after {
+	//                     border-top: 5px solid transparent;
+	//                     border-bottom: 5px solid transparent;
+	//                     border-left: 6px solid white;
+	//                     top: -5px;
+	//                     right: 2px;
+	//                 }
+	//             }
+	//         }
+	//         &-left .arrow {
+	//             top: 50%;
+	//         }
+	//         &-leftTop .arrow {
+	//             top: 15%;
+	//         }
+	//         &-leftBottom .arrow {
+	//             bottom: 15%;
 	//         }
 	//         .arrow {
 	//             width: 0;
 	//             height: 0;
 	//             background: white;
-	//             border-left: 5px solid transparent;
-	//             border-right: 5px solid transparent;
 	//             z-index: 20;
-	//             border-top: 6px solid rgba(217, 217, 217, 1);
-	//             border-bottom: none;
 	//             position: absolute;
-	
 	//             &:after {
 	//                 position: absolute;
 	//                 content: '';
 	//                 width: 0;
 	//                 height: 0;
-	//             }
-	//             &.top {
-	//                 bottom: -7px;
-	//                 left: 50%;
-	//                 transform: translate3d(-50%, 0, 0);
-	//                 &:after {
-	//                     border-left: 5px solid transparent;
-	//                     border-right: 5px solid transparent;
-	//                     border-top: 6px solid white;
-	//                     bottom: 2px;
-	//                     left: -5px;
-	//                 }
-	//             }
-	//             &.topLeft {
-	//                 bottom: -7px;
-	//                 left: 30%;
-	//                 transform: translate3d(-50%, 0, 0);
-	//                 &:after {
-	//                     border-left: 5px solid transparent;
-	//                     border-right: 5px solid transparent;
-	//                     border-top: 6px solid white;
-	//                     bottom: 2px;
-	//                     left: -5px;
-	//                 }
-	//             }
-	//             &.topRight {
-	//                 bottom: -7px;
-	//                 left: 70%;
-	//                 transform: translate3d(-50%, 0, 0);
-	//                 &:after {
-	//                     border-left: 5px solid transparent;
-	//                     border-right: 5px solid transparent;
-	//                     border-top: 6px solid white;
-	//                     bottom: 2px;
-	//                     left: -5px;
-	//                 }
 	//             }
 	//         }
 	//         .inner {
@@ -2092,22 +2170,18 @@
 	                var buttons = _this.$el.querySelectorAll("button");
 	
 	                var _loop = function _loop(i) {
-	                    var dom = void 0;
-	                    var timeEvent = void 0;
-	                    var animationHandle = void 0;
-	                    buttons[i].addEventListener('mouseover', function () {
-	                        if (dom) {
-	                            window.clearTimeout(timeEvent);
-	                            dom.style.display = 'block';
-	                        } else {
-	                            var arrowClass = void 0;
-	                            if (_this.placement) {
-	                                arrowClass = _this.placement;
-	                            } else {
-	                                arrowClass = 'top';
-	                            }
-	                            dom = document.createElement("div");
-	                            dom.innerHTML = '<div class="arrow ' + arrowClass + '">\
+	                    if (_this.trigger === 'hover') {
+	                        (function () {
+	                            var dom = void 0;
+	                            var timeEvent = void 0;
+	                            var _animationHandle = void 0;
+	                            buttons[i].addEventListener('mouseover', function () {
+	                                if (dom) {
+	                                    window.clearTimeout(timeEvent);
+	                                    dom.style.display = 'block';
+	                                } else {
+	                                    dom = document.createElement("div");
+	                                    dom.innerHTML = '<div class="arrow">\
 	                                </div>\
 	                                <div class="inner">\
 	                                <div class="title">\
@@ -2122,55 +2196,121 @@
 	                                </p>\
 	                                </div>\
 	                                </div>';
-	                            dom.classList.add('c-popover');
-	                            dom.setAttribute('c-num', i);
-	                            dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
-	                            dom.style.top = buttons[i].offsetTop + 'px';
-	                            document.body.appendChild(dom);
-	                            dom.addEventListener('mouseover', function (event) {
-	                                window.clearTimeout(timeEvent);
-	                                dom.style.display = "block";
+	                                    dom.classList.add('c-popover');
+	                                    dom.classList.add('c-popover-' + _this.placement);
+	                                    dom.setAttribute('c-num', i);
+	                                    if (_this.placement === 'top') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + 'px';
+	                                    } else if (_this.placement === 'right') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight / 2 + 'px';
+	                                    } else if (_this.placement === 'bottom') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight + 'px';
+	                                    } else {
+	                                        dom.style.left = buttons[i].offsetLeft + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight / 2 + 'px';
+	                                    }
+	                                    document.body.appendChild(dom);
+	                                    dom.addEventListener('mouseover', function (event) {
+	                                        window.clearTimeout(timeEvent);
+	                                        dom.style.display = "block";
+	                                    }, false);
+	                                    dom.addEventListener('mouseleave', function () {
+	                                        timeEvent = window.setTimeout(function () {
+	                                            if (dom.style.display !== 'none') {
+	                                                dom.classList.add('fadeout');
+	                                                dom.addEventListener('animationend', _animationHandle, false);
+	                                            }
+	                                        }, 30);
+	                                    }, false);
+	                                }
 	                            }, false);
-	                            dom.addEventListener('mouseleave', function () {
+	                            buttons[i].addEventListener('mouseleave', function () {
 	                                timeEvent = window.setTimeout(function () {
-	                                    console.log('domleave');
 	                                    if (dom.style.display !== 'none') {
 	                                        dom.classList.add('fadeout');
-	                                        dom.addEventListener('animationend', animationHandle, false);
+	                                        dom.addEventListener('animationend', _animationHandle, false);
 	                                    }
 	                                }, 30);
 	                            }, false);
-	                            //                            dom.addEventListener("mouseenter")
-	                            //                            buttons[i].addEventListener('mouseleave', (event) => {
-	                            //                                console.log(event.target)
-	                            //                            })
-	                        }
-	                    }, false);
-	                    buttons[i].addEventListener('mouseleave', function () {
-	                        timeEvent = window.setTimeout(function () {
-	                            console.log('buttonleave');
-	                            if (dom.style.display !== 'none') {
-	                                dom.classList.add('fadeout');
-	                                dom.addEventListener('animationend', animationHandle, false);
-	                            }
-	                        }, 30);
-	                    }, false);
-	                    animationHandle = function (_animationHandle) {
-	                        function animationHandle() {
-	                            return _animationHandle.apply(this, arguments);
-	                        }
-	
-	                        animationHandle.toString = function () {
-	                            return _animationHandle.toString();
-	                        };
-	
-	                        return animationHandle;
-	                    }(function () {
-	                        console.log('animation');
-	                        dom.style.display = "none";
-	                        dom.classList.remove('fadeout');
-	                        dom.removeEventListener("animationend", animationHandle, false);
-	                    });
+	                            _animationHandle = function animationHandle() {
+	                                dom.style.display = "none";
+	                                dom.classList.remove('fadeout');
+	                                dom.removeEventListener("animationend", _animationHandle, false);
+	                            };
+	                        })();
+	                    } else if (_this.trigger === 'click') {
+	                        (function () {
+	                            var dom = void 0;
+	                            var displayDom = void 0;
+	                            var _animationHandle2 = void 0;
+	                            var _otherAnimationHandle = void 0;
+	                            buttons[i].addEventListener('click', function () {
+	                                if (dom) {
+	                                    dom.style.display = "block";
+	                                } else {
+	                                    dom = document.createElement("div");
+	                                    dom.innerHTML = '<div class="arrow">\
+	                                </div>\
+	                                <div class="inner">\
+	                                <div class="title">\
+	                                title\
+	                                </div>\
+	                                <div class="content">\
+	                                <p>\
+	                                content\
+	                                </p>\
+	                                <p>\
+	                                content\
+	                                </p>\
+	                                </div>\
+	                                </div>';
+	                                    dom.classList.add('c-popover');
+	                                    dom.classList.add('c-popover-' + _this.placement);
+	                                    dom.setAttribute('c-num', i);
+	                                    if (_this.placement === 'top') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + 'px';
+	                                    } else if (_this.placement === 'right') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight / 2 + 'px';
+	                                    } else if (_this.placement === 'bottom') {
+	                                        dom.style.left = buttons[i].offsetLeft + buttons[i].offsetWidth / 2 + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight + 'px';
+	                                    } else {
+	                                        dom.style.left = buttons[i].offsetLeft + 'px';
+	                                        dom.style.top = buttons[i].offsetTop + buttons[i].offsetHeight / 2 + 'px';
+	                                    }
+	                                    document.body.appendChild(dom);
+	                                }
+	                                displayDom = document.querySelector(".c-popover-display");
+	                                if (displayDom) {
+	                                    if (displayDom === dom) {
+	                                        dom.classList.add('fadeout');
+	                                        dom.addEventListener('animationend', _animationHandle2, false);
+	                                    } else {
+	                                        displayDom.classList.add("fadeout");
+	                                        displayDom.addEventListener("animationend", _otherAnimationHandle, false);
+	                                    }
+	                                } else {
+	                                    dom.classList.add('c-popover-display');
+	                                }
+	                                _animationHandle2 = function animationHandle() {
+	                                    dom.style.display = "none";
+	                                    dom.classList.remove('fadeout');
+	                                    dom.removeEventListener("animationend", _animationHandle2, false);
+	                                };
+	                                _otherAnimationHandle = function otherAnimationHandle() {
+	                                    displayDom.style.display = "none";
+	                                    displayDom.classList.remove('fadeout');
+	                                    displayDom.removeEventListener("animationend", _otherAnimationHandle);
+	                                    dom.classList.add('c-popover-display');
+	                                };
+	                            }, false);
+	                        })();
+	                    }
 	                };
 	
 	                for (var i = 0; i < buttons.length; i++) {
@@ -2182,7 +2322,14 @@
 	
 	    methods: {},
 	    props: {
-	        placement: String
+	        placement: {
+	            type: String,
+	            default: 'top'
+	        },
+	        trigger: {
+	            type: String,
+	            default: 'hover'
+	        }
 	    }
 	};
 	// </script>
@@ -2191,13 +2338,13 @@
 /* 62 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n        <slot></slot>\n    </div>";
+	module.exports = "<div class=\"popcontainer\">\n        <slot></slot>\n    </div>";
 
 /***/ },
 /* 63 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"topRight\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

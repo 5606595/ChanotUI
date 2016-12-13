@@ -1,10 +1,13 @@
 <template>
-    <div>
+    <div class="popcontainer">
         <slot></slot>
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
+    .popcontainer {
+        float: left;
+    }
     .c-popover {
         box-sizing: border-box;
         border-radius: 4px;
@@ -15,62 +18,128 @@
         background: white;
         box-shadow: 2px 2px 2px @border, -1px -1px 2px @border;
         animation: fadein .2s forwards;
-        transform: translate3d(-50%, -100% - 7px, 0);
         * {
             box-sizing: border-box
+        }
+        &-top, &-topLeft, &-topRight {
+            transform: translate3d(-50%, ~"calc(-100% - 7px)", 0);
+            .arrow {
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 6px solid rgba(217, 217, 217, 1);
+                border-bottom: none;
+                bottom: -7px;
+                transform: translate3d(-50%, 0, 0);
+                &:after {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 6px solid white;
+                    bottom: 2px;
+                    left: -5px;
+                }
+            }
+
+        }
+        &-top .arrow {
+            left: 50%;
+        }
+        /*&-topLeft .arrow {*/
+            /*left: 15%;*/
+        /*}*/
+        /*&-topRight .arrow {*/
+            /*right: 15%;*/
+        /*}*/
+        &-right, &-rightTop, &-rightBottom {
+            transform: translate3d(7px, ~"calc(-50% - 7px)", 0);
+            .arrow {
+                border-left: none;
+                border-right: 6px solid rgba(217, 217, 217, 1);
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                left: -7px;
+                &:after {
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-right: 6px solid white;
+                    top: -5px;
+                    left: 2px;
+                }
+            }
+        }
+        &-right .arrow {
+            top: 50%;
+        }
+        /*&-rightTop .arrow {*/
+            /*top: 15%;*/
+        /*}*/
+        /*&-rightBottom .arrow {*/
+            /*bottom: 15%;*/
+        /*}*/
+        &-bottom, &-bottomLeft, &-bottomRight {
+            transform: translate3d(-50%, 7px, 0);
+            .arrow {
+                border-top: none;
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-bottom: 6px solid rgba(217, 217, 217, 1);
+                top: -7px;
+                transform: translate3d(-50%, 0, 0);
+                &:after {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 6px solid white;
+                    left: -5px;
+                    top: 2px;
+                }
+            }
+        }
+        &-bottom .arrow {
+            left: 50%;
+        }
+        /*&-bottomLeft .arrow {*/
+            /*left: 15%;*/
+        /*}*/
+        /*&-bottomRight .arrow {*/
+            /*right: 15%;*/
+        /*}*/
+        &-left, &-leftTop, &leftBottom {
+            transform: translate3d(~"calc(-100% - 7px)", -50%, 0);
+            .arrow {
+                border-right: none;
+                border-left: 6px solid rgba(217, 217, 217, 1);
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                right: -7px;
+                transform: translate3d(0, -50%, 0);
+                &:after {
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-left: 6px solid white;
+                    top: -5px;
+                    right: 2px;
+                }
+            }
+        }
+        &-left .arrow {
+            top: 50%;
+        }
+        &-leftTop .arrow {
+            top: 15%;
+        }
+        &-leftBottom .arrow {
+            bottom: 15%;
         }
         .arrow {
             width: 0;
             height: 0;
             background: white;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
             z-index: 20;
-            border-top: 6px solid rgba(217, 217, 217, 1);
-            border-bottom: none;
             position: absolute;
-
             &:after {
                 position: absolute;
                 content: '';
                 width: 0;
                 height: 0;
-            }
-            &.top {
-                bottom: -7px;
-                left: 50%;
-                transform: translate3d(-50%, 0, 0);
-                &:after {
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 6px solid white;
-                    bottom: 2px;
-                    left: -5px;
-                }
-            }
-            &.topLeft {
-                bottom: -7px;
-                left: 30%;
-                transform: translate3d(-50%, 0, 0);
-                &:after {
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 6px solid white;
-                    bottom: 2px;
-                    left: -5px;
-                }
-            }
-            &.topRight {
-                bottom: -7px;
-                left: 70%;
-                transform: translate3d(-50%, 0, 0);
-                &:after {
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 6px solid white;
-                    bottom: 2px;
-                    left: -5px;
-                }
             }
         }
         .inner {
@@ -116,22 +185,17 @@
             if(this.$el.querySelectorAll('button').length) {
                 let buttons = this.$el.querySelectorAll("button");
                 for(let i = 0; i < buttons.length; i++) {
-                    let dom;
-                    let timeEvent;
-                    let animationHandle;
-                    buttons[i].addEventListener('mouseover', () => {
-                        if(dom) {
-                            window.clearTimeout(timeEvent);
-                            dom.style.display = 'block';
-                        } else {
-                            let arrowClass;
-                            if(this.placement) {
-                                arrowClass = this.placement;
+                    if(this.trigger === 'hover') {
+                        let dom;
+                        let timeEvent;
+                        let animationHandle;
+                        buttons[i].addEventListener('mouseover', () => {
+                            if(dom) {
+                                window.clearTimeout(timeEvent);
+                                dom.style.display = 'block';
                             } else {
-                                arrowClass = 'top';
-                            }
-                            dom = document.createElement("div");
-                            dom.innerHTML = '<div class="arrow ' + arrowClass + '">\
+                                dom = document.createElement("div");
+                                dom.innerHTML = '<div class="arrow">\
                                 </div>\
                                 <div class="inner">\
                                 <div class="title">\
@@ -146,44 +210,118 @@
                                 </p>\
                                 </div>\
                                 </div>';
-                            dom.classList.add('c-popover');
-                            dom.setAttribute('c-num', i);
-                            dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
-                            dom.style.top = buttons[i].offsetTop + 'px';
-                            document.body.appendChild(dom)
-                            dom.addEventListener('mouseover', (event) => {
-                                window.clearTimeout(timeEvent);
-                                dom.style.display = "block"
-                            }, false)
-                            dom.addEventListener('mouseleave', () => {
-                                timeEvent = window.setTimeout(() => {
-                                    console.log('domleave')
-                                    if(dom.style.display !== 'none') {
-                                        dom.classList.add('fadeout')
-                                        dom.addEventListener('animationend', animationHandle, false);
-                                    }
-                                }, 30)
-                            }, false);
-//                            dom.addEventListener("mouseenter")
-//                            buttons[i].addEventListener('mouseleave', (event) => {
-//                                console.log(event.target)
-//                            })
-                        }
-                    }, false);
-                    buttons[i].addEventListener('mouseleave', () => {
-                        timeEvent = window.setTimeout(() => {
-                            console.log('buttonleave')
-                            if(dom.style.display !== 'none') {
-                                dom.classList.add('fadeout')
-                                dom.addEventListener('animationend', animationHandle, false);
+                                dom.classList.add('c-popover');
+                                dom.classList.add('c-popover-' + this.placement);
+                                dom.setAttribute('c-num', i);
+                                if(this.placement === 'top') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
+                                    dom.style.top = buttons[i].offsetTop + 'px';
+                                } else if(this.placement === 'right') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight / 2) + 'px';
+                                } else if(this.placement === 'bottom') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight) + 'px';
+                                } else {
+                                    dom.style.left = (buttons[i].offsetLeft) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight / 2) + 'px';
+                                }
+                                document.body.appendChild(dom)
+                                dom.addEventListener('mouseover', (event) => {
+                                    window.clearTimeout(timeEvent);
+                                    dom.style.display = "block"
+                                }, false)
+                                dom.addEventListener('mouseleave', () => {
+                                    timeEvent = window.setTimeout(() => {
+                                        if(dom.style.display !== 'none') {
+                                            dom.classList.add('fadeout')
+                                            dom.addEventListener('animationend', animationHandle, false);
+                                        }
+                                    }, 30)
+                                }, false);
                             }
-                        }, 30)
-                    }, false);
-                    animationHandle = function() {
-                        console.log('animation')
-                        dom.style.display = "none";
-                        dom.classList.remove('fadeout');
-                        dom.removeEventListener("animationend", animationHandle, false);
+                        }, false);
+                        buttons[i].addEventListener('mouseleave', () => {
+                            timeEvent = window.setTimeout(() => {
+                                if(dom.style.display !== 'none') {
+                                    dom.classList.add('fadeout')
+                                    dom.addEventListener('animationend', animationHandle, false);
+                                }
+                            }, 30)
+                        }, false);
+                        animationHandle = function() {
+                            dom.style.display = "none";
+                            dom.classList.remove('fadeout');
+                            dom.removeEventListener("animationend", animationHandle, false);
+                        }
+                    } else if(this.trigger === 'click') {
+                        let dom;
+                        let displayDom;
+                        let animationHandle;
+                        let otherAnimationHandle;
+                        buttons[i].addEventListener('click', () => {
+                            if(dom) {
+                                dom.style.display = "block";
+                            } else {
+                                dom = document.createElement("div");
+                                dom.innerHTML = '<div class="arrow">\
+                                </div>\
+                                <div class="inner">\
+                                <div class="title">\
+                                title\
+                                </div>\
+                                <div class="content">\
+                                <p>\
+                                content\
+                                </p>\
+                                <p>\
+                                content\
+                                </p>\
+                                </div>\
+                                </div>';
+                                dom.classList.add('c-popover');
+                                dom.classList.add('c-popover-' + this.placement);
+                                dom.setAttribute('c-num', i);
+                                if(this.placement === 'top') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
+                                    dom.style.top = buttons[i].offsetTop + 'px';
+                                } else if(this.placement === 'right') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight / 2) + 'px';
+                                } else if(this.placement === 'bottom') {
+                                    dom.style.left = (buttons[i].offsetLeft + buttons[i].offsetWidth / 2) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight) + 'px';
+                                } else {
+                                    dom.style.left = (buttons[i].offsetLeft) + 'px';
+                                    dom.style.top = (buttons[i].offsetTop + buttons[i].offsetHeight / 2) + 'px';
+                                }
+                                document.body.appendChild(dom)
+                            }
+                            displayDom = document.querySelector(".c-popover-display");
+                            if(displayDom) {
+                                if(displayDom === dom) {
+                                    dom.classList.add('fadeout');
+                                    dom.addEventListener('animationend', animationHandle, false);
+                                } else {
+                                    displayDom.classList.add("fadeout");
+                                    displayDom.addEventListener("animationend", otherAnimationHandle, false);
+                                }
+                            } else {
+                                dom.classList.add('c-popover-display');
+                            }
+                            animationHandle = function() {
+                                dom.style.display = "none";
+                                dom.classList.remove('fadeout');
+                                dom.removeEventListener("animationend", animationHandle, false);
+                            }
+                            otherAnimationHandle = function() {
+                                displayDom.style.display = "none";
+                                displayDom.classList.remove('fadeout');
+                                displayDom.removeEventListener("animationend", otherAnimationHandle);
+                                dom.classList.add('c-popover-display');
+                            }
+                        }, false);
+
                     }
                 }
             }
@@ -192,7 +330,14 @@
 
         },
         props: {
-            placement: String
+            placement: {
+                type: String,
+                default: 'top'
+            },
+            trigger: {
+                type: String,
+                default: 'hover'
+            }
         }
     }
 </script>
