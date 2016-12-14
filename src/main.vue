@@ -51,7 +51,7 @@
       <popover placement="right" trigger="click">
         <c-button type="primary">Hover me.</c-button>
       </popover>
-      <popover placement="top" trigger="click">
+      <popover placement="top" trigger="click" title="<h2>这是标题</h2>" content="<p>内容</p>">
         <c-button type="primary">Hover me.</c-button>
       </popover>
       <popover placement="bottom" trigger="click">

@@ -1,12 +1,12 @@
 <template>
-    <div class="popcontainer">
+    <div class="c-popcontainer">
         <slot></slot>
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
-    .popcontainer {
-        float: left;
+    .c-popcontainer {
+        display: inline-block;
     }
     .c-popover {
         box-sizing: border-box;
@@ -257,8 +257,20 @@
                     } else if(this.trigger === 'click') {
                         let dom;
                         let displayDom;
-                        let animationHandle;
-                        let otherAnimationHandle;
+                        let animationHandle = function() {
+                            dom.style.display = "none";
+                            dom.classList.remove('fadeout');
+                            dom.classList.remove('c-popover-display');
+                            dom.removeEventListener("animationend", animationHandle, false);
+                        }
+
+                        let otherAnimationHandle = function() {
+                            displayDom.style.display = "none";
+                            displayDom.classList.remove('fadeout');
+                            displayDom.classList.remove('c-popover-display')
+                            displayDom.removeEventListener("animationend", otherAnimationHandle, false);
+                            dom.classList.add('c-popover-display');
+                        }
                         buttons[i].addEventListener('click', () => {
                             if(dom) {
                                 dom.style.display = "block";
@@ -267,17 +279,12 @@
                                 dom.innerHTML = '<div class="arrow">\
                                 </div>\
                                 <div class="inner">\
-                                <div class="title">\
-                                title\
-                                </div>\
-                                <div class="content">\
-                                <p>\
-                                content\
-                                </p>\
-                                <p>\
-                                content\
-                                </p>\
-                                </div>\
+                                <div class="title">' +
+                                this.title +
+                                '</div>\
+                                <div class="content">' +
+                                this.content +
+                                '</div>\
                                 </div>';
                                 dom.classList.add('c-popover');
                                 dom.classList.add('c-popover-' + this.placement);
@@ -309,22 +316,33 @@
                             } else {
                                 dom.classList.add('c-popover-display');
                             }
-                            animationHandle = function() {
-                                dom.style.display = "none";
-                                dom.classList.remove('fadeout');
-                                dom.removeEventListener("animationend", animationHandle, false);
-                            }
-                            otherAnimationHandle = function() {
-                                displayDom.style.display = "none";
-                                displayDom.classList.remove('fadeout');
-                                displayDom.removeEventListener("animationend", otherAnimationHandle);
-                                dom.classList.add('c-popover-display');
-                            }
                         }, false);
 
                     }
                 }
             }
+            let displayDom;
+            let animationHandle = function() {
+                displayDom.style.display = "none";
+                displayDom.classList.remove("fadeout");
+                displayDom.classList.remove("c-popover-display");
+                displayDom.removeEventListener("animationend", animationHandle, false);
+            }
+            document.body.addEventListener("click", (event) => {
+                displayDom = document.querySelector(".c-popover-display");
+                console.log()
+                if(displayDom) {
+                    let dom = event.target;
+                    while(dom !== document.body) {
+                        if(dom === displayDom || dom.className.indexOf("c-popcontainer") !== -1) {
+                            return;
+                        }
+                        dom = dom.parentNode;
+                    }
+                    displayDom.classList.add("fadeout");
+                    displayDom.addEventListener("animationend", animationHandle, false);
+                }
+            }, false);
         },
         methods: {
 
@@ -337,6 +355,14 @@
             trigger: {
                 type: String,
                 default: 'hover'
+            },
+            title: {
+                type: String,
+                default: "This is title"
+            },
+            content: {
+                type: String,
+                default: "This is content"
             }
         }
     }
