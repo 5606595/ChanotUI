@@ -58,6 +58,11 @@
         <c-button type="primary">Hover me.</c-button>
       </popover>
     </box>
+    <box>
+      <treeselect>
+
+      </treeselect>
+    </box>
   </div>
 </template>
 
@@ -69,6 +74,7 @@
   import box from '../components/box'
   import { row, column } from '../components/grid'
   import popover from '../components/popover'
+  import treeselect from '../components/treeselect'
   export default {
     components: {
       'c-button': button,
@@ -78,7 +84,8 @@
       'icon': icon,
       'row': row,
       'column': column,
-      'popover': popover
+      'popover': popover,
+      'treeselect': treeselect
     },
     data() {
       return {
