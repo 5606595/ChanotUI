@@ -45,16 +45,16 @@
       </row>
     </box>
     <box>
-      <popover placement="left" trigger="click">
+      <popover placement="left">
         <c-button type="primary">Hover me.</c-button>
       </popover>
-      <popover placement="right" trigger="click">
+      <popover placement="right">
         <c-button type="primary">Hover me.</c-button>
       </popover>
-      <popover placement="top" trigger="click" title="<h2>这是标题</h2>" content="<p>内容</p>">
+      <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>">
         <c-button type="primary">Hover me.</c-button>
       </popover>
-      <popover placement="bottom" trigger="click">
+      <popover placement="bottom">
         <c-button type="primary">Hover me.</c-button>
       </popover>
     </box>

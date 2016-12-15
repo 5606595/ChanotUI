@@ -530,16 +530,16 @@
 	//       </row>
 	//     </box>
 	//     <box>
-	//       <popover placement="left" trigger="click">
+	//       <popover placement="left">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
-	//       <popover placement="right" trigger="click">
+	//       <popover placement="right">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
-	//       <popover placement="top" trigger="click" title="<h2>这是标题</h2>" content="<p>内容</p>">
+	//       <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
-	//       <popover placement="bottom" trigger="click">
+	//       <popover placement="bottom">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
 	//     </box>
@@ -897,7 +897,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-63dfef65] {\n  font-size: 12px;\n}\n.jicon[_v-63dfef65] {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward[_v-63dfef65] {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward[_v-63dfef65]:before {\n  content: \"\\E601\";\n}\n.jicon-prompt[_v-63dfef65] {\n  color: #1f90e6;\n}\n.jicon-prompt[_v-63dfef65]:before {\n  content: \"\\E620\";\n}\n.jicon-success[_v-63dfef65] {\n  color: #89ce6d;\n}\n.jicon-success[_v-63dfef65]:before {\n  content: \"\\E63A\";\n}\n.jicon-fail[_v-63dfef65] {\n  color: #fc561f;\n}\n.jicon-fail[_v-63dfef65]:before {\n  content: \"\\E613\";\n}\n.jicon-warning[_v-63dfef65] {\n  color: #fda929;\n}\n.jicon-warning[_v-63dfef65]:before {\n  content: \"\\E6D4\";\n}\n.jicon-search[_v-63dfef65]:before {\n  content: \"\\E600\";\n}\n.jicon-backward[_v-63dfef65]:before {\n  content: \"\\E60A\";\n}\n.jicon-loading[_v-63dfef65] {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading[_v-63dfef65]:before {\n  content: '\\E637';\n}\n.jicon-download[_v-63dfef65]:before {\n  content: '\\E621';\n}\n.jicon-down[_v-63dfef65]:before {\n  content: '\\E653';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.eot');\n  src: url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.woff') format('woff'), url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.ttf') format('truetype'), url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.svg#iconfont') format('svg');\n}\n", ""]);
+	exports.push([module.id, "*[_v-63dfef65] {\n  font-size: 12px;\n}\n.jicon[_v-63dfef65] {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward[_v-63dfef65] {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward[_v-63dfef65]:before {\n  content: \"\\E601\";\n}\n.jicon-prompt[_v-63dfef65] {\n  color: #1f90e6;\n}\n.jicon-prompt[_v-63dfef65]:before {\n  content: \"\\E620\";\n}\n.jicon-success[_v-63dfef65] {\n  color: #89ce6d;\n}\n.jicon-success[_v-63dfef65]:before {\n  content: \"\\E63A\";\n}\n.jicon-fail[_v-63dfef65] {\n  color: #fc561f;\n}\n.jicon-fail[_v-63dfef65]:before {\n  content: \"\\E613\";\n}\n.jicon-warning[_v-63dfef65] {\n  color: #fda929;\n}\n.jicon-warning[_v-63dfef65]:before {\n  content: \"\\E6D4\";\n}\n.jicon-search[_v-63dfef65]:before {\n  content: \"\\E600\";\n}\n.jicon-backward[_v-63dfef65]:before {\n  content: \"\\E60A\";\n}\n.jicon-loading[_v-63dfef65] {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading[_v-63dfef65]:before {\n  content: '\\E637';\n}\n.jicon-download[_v-63dfef65]:before {\n  content: '\\E621';\n}\n.jicon-down[_v-63dfef65]:before {\n  content: '\\E69D';\n}\n.jicon-right[_v-63dfef65]:before {\n  content: '\\E67A';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');\n}\n", ""]);
 	
 	// exports
 
@@ -959,7 +959,8 @@
 	//         }
 	//     }
 	//     .jicon-download:before { content: '\e621' }
-	//     .jicon-down:before { content: '\e653' }
+	//     .jicon-down:before { content: '\e69d' }
+	//     .jicon-right:before { content: '\e67a' }
 	//     @keyframes loading {
 	//         0% {
 	//             transform: rotate(0deg);
@@ -973,11 +974,11 @@
 	//     }
 	//     @font-face {
 	//         font-family: 'iconfont';  /* project id 191439 */
-	//         src: url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.eot');
-	//         src: url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.eot?#iefix') format('embedded-opentype'),
-	//         url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.woff') format('woff'),
-	//         url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.ttf') format('truetype'),
-	//         url('//at.alicdn.com/t/font_9yhg4tdw8r7wrk9.svg#iconfont') format('svg');
+	//         src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');
+	//         src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'),
+	//         url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'),
+	//         url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'),
+	//         url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');
 	//     }
 	// </style>
 	// <script>
@@ -2398,7 +2399,8 @@
 /* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(72)
+	__webpack_require__(66)
+	__webpack_require__(76)
 	module.exports = __webpack_require__(68)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -2416,84 +2418,13 @@
 	})()}
 
 /***/ },
-/* 66 */,
-/* 67 */,
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _icon = __webpack_require__(34);
-	
-	var _icon2 = _interopRequireDefault(_icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	    data: function data() {
-	        return {};
-	    },
-	
-	    components: {
-	        'icon': _icon2.default
-	    }
-	};
-	// </script>
-	// <template>
-	//     <div class="c-treeselect">
-	//         <icon type="down"></icon>
-	//     </div>
-	// </template>
-	// <style scoped lang="less" rel="stylesheet/less">
-	//     @import '../../mixin/mixin.less';
-	//     .c-treeselect {
-	//         width: 300px;
-	//         height: 25px;
-	//         border: 1px solid @border;
-	//         border-radius: 4px;
-	//         transition: all .2s linear;
-	//         position: relative;
-	//         padding-right: 24px;
-	//         box-sizing: border-box;
-	//         &:hover {
-	//             border-color: @jbluelight;
-	//             cursor: pointer;
-	//         }
-	//         .jicon-down {
-	//             font-size: 12px;
-	//             position: absolute;
-	//             right: 6px;
-	//             top: 6px;
-	//         }
-	//     }
-	// </style>
-	// <script>
-
-/***/ },
-/* 69 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"c-treeselect\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n    </div>";
-
-/***/ },
-/* 70 */
-/***/ function(module, exports) {
-
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" trigger=\"click\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n  </div>";
-
-/***/ },
-/* 71 */,
-/* 72 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(73);
+	var content = __webpack_require__(67);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(17)(content, {});
@@ -2513,7 +2444,7 @@
 	}
 
 /***/ },
-/* 73 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(16)();
@@ -2521,7 +2452,251 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n}\n", ""]);
+	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _icon = __webpack_require__(34);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    data: function data() {
+	        return {
+	            isDisplay: false,
+	            domCreated: false,
+	            treeDom: null
+	        };
+	    },
+	
+	    components: {
+	        'icon': _icon2.default
+	    },
+	    methods: {
+	        clickEvent: function clickEvent(event) {
+	            if (!this.isDisplay) {
+	                this.display();
+	            } else {
+	                this.hide();
+	            }
+	        },
+	        display: function display() {
+	            var treeSelectDom = this.$el;
+	            var iconDown = treeSelectDom.querySelector(".jicon-down");
+	            treeSelectDom.classList.add('c-treeselect-clicked');
+	            iconDown.classList.add("jicon-down-display");
+	            this.isDisplay = true;
+	            if (this.domCreated) {} else {
+	                var newDom = document.createElement("div");
+	                newDom.classList.add('c-treeselect-hide');
+	                newDom.innerHTML = ' <div class="c-treeselect-input">\
+	                            <input />\
+	                            </div>\
+	                            <div class="content">\
+	                            <div class="open">\
+	                                <i class="jicon jicon-right"></i>\
+	                                <span>parent 1</span>\
+	                            </div>\
+	                            </div>';
+	                var rect = this.$el.getBoundingClientRect();
+	                newDom.style.width = rect.width + 'px';
+	                newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
+	                newDom.style.left = rect.left + document.body.scrollLeft + 'px';
+	                document.body.appendChild(newDom);
+	                this.treeDom = newDom;
+	            }
+	        },
+	        hide: function hide() {
+	            var treeSelectDom = this.$el;
+	            var iconDown = treeSelectDom.querySelector(".jicon-down");
+	            treeSelectDom.classList.remove('c-treeselect-clicked');
+	            iconDown.classList.remove("jicon-down-display");
+	            this.isDisplay = false;
+	            var newDom = this.treeDom;
+	            newDom.classList.add('c-treeselect-hide-fade');
+	            newDom.addEventListener("animationend", this.fadeHandle, false);
+	        },
+	        fadeHandle: function fadeHandle() {
+	            var newDom = this.treeDom;
+	            newDom.style.display = "none";
+	            newDom.classList.remove("c-treeselect-hide-fade");
+	            newDom.removeEventListener("animationend", this.fadeHandle, false);
+	        }
+	    }
+	};
+	// </script>
+	// <template>
+	//     <div class="c-treeselect" @click="clickEvent">
+	//         <icon type="down"></icon>
+	
+	//     </div>
+	// </template>
+	// <style scoped lang="less" rel="stylesheet/less">
+	//     @import '../../mixin/mixin.less';
+	//     .c-treeselect {
+	//         width: 300px;
+	//         height: 25px;
+	//         border: 1px solid @border;
+	//         border-radius: 4px;
+	//         transition: all .2s linear;
+	//         position: relative;
+	//         padding-right: 24px;
+	//         box-sizing: border-box;
+	//         &-clicked {
+	//             border-color: @jbluelight;
+	//             &:after {
+	//                 content: '';
+	//                 width: 300px;
+	//                 height: 25px;
+	//                 position: absolute;
+	//                 top: -3px;
+	//                 left: -3px;
+	//                 border: 2px solid @borderthin;
+	//                 border-radius: 6px;
+	//             }
+	//         }
+	//         &:hover {
+	//             border-color: @jbluelight;
+	//             cursor: pointer;
+	//         }
+	//         .jicon-down {
+	//             font-size: 12px;
+	//             position: absolute;
+	//             right: 6px;
+	//             top: 6px;
+	//             transition: all .2s linear;
+	//             &-display {
+	//                 transform: rotate(180deg);
+	//             }
+	//         }
+	//     }
+	// </style>
+	// <style lang="less" rel="stylesheet/less">
+	//     @import '../../mixin/mixin.less';
+	//     .c-treeselect-hide {
+	//         position: absolute;
+	//         border: 1px solid @border;
+	//         border-radius: 4px;
+	//         box-shadow: 0px 1px 6px @boxshadow, 0px 0px 6px @boxshadow;
+	//         padding: 5px;
+	//         box-sizing: border-box;
+	//         animation: c-treeselect-hide-display .2s linear forwards;
+	//         .c-treeselect-input {
+	//             border: 1px solid @border;
+	//             border-radius: 4px;
+	//             width: 100%;
+	//             height: 30px;
+	//             padding: 0 5px;
+	//             box-sizing: border-box;
+	//             input {
+	//                 width: 100%;
+	//                 height: 26px;
+	//                 line-height: 26px;
+	//                 border: none;
+	//                 outline: none;
+	//             }
+	//         }
+	//         .jicon-right {
+	//             transition: all .2s linear;
+	//         }
+	//         .open {
+	//             .jicon-right {
+	//                 transform: rotate(90deg);
+	//             }
+	//         }
+	//         &-fade {
+	//             animation: c-treeselect-hide-fadeout .1s linear;
+	//         }
+	//     }
+	//     @keyframes c-treeselect-hide-display {
+	//         0% {
+	//             opacity: 0;
+	//             transform: scaleY(0.6);
+	//         }
+	//         100% {
+	//             opacity: 1;
+	//             transform: scaleY(1);
+	//         }
+	//     }
+	//     @keyframes c-treeselect-hide-fadeout {
+	//         0% {
+	//             opacity: 1;
+	//             transform: scaleY(1);
+	//         }
+	//         100% {
+	//             opacity: 0;
+	//             transform: scaleY(0.6);
+	//         }
+	//     }
+	// </style>
+	// <script>
+
+/***/ },
+/* 69 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n\n    </div>";
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n  </div>";
+
+/***/ },
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(77);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(17)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-05c0c976&file=treeselect.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./treeselect.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-05c0c976&file=treeselect.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./treeselect.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-treeselect-hide {\n  position: absolute;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  box-shadow: 0px 1px 6px #EAEAEA, 0px 0px 6px #EAEAEA;\n  padding: 5px;\n  box-sizing: border-box;\n  -webkit-animation: c-treeselect-hide-display 0.2s linear forwards;\n          animation: c-treeselect-hide-display 0.2s linear forwards;\n}\n.c-treeselect-hide .c-treeselect-input {\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  width: 100%;\n  height: 30px;\n  padding: 0 5px;\n  box-sizing: border-box;\n}\n.c-treeselect-hide .c-treeselect-input input {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  border: none;\n  outline: none;\n}\n.c-treeselect-hide .jicon-right {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect-hide .open .jicon-right {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.c-treeselect-hide-fade {\n  -webkit-animation: c-treeselect-hide-fadeout 0.1s linear;\n          animation: c-treeselect-hide-fadeout 0.1s linear;\n}\n@-webkit-keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n@keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n", ""]);
 	
 	// exports
 
