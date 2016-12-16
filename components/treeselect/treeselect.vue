@@ -69,12 +69,29 @@
                 outline: none;
             }
         }
-        .jicon-right {
-            transition: all .2s linear;
-        }
-        .open {
+        .content {
             .jicon-right {
-                transform: rotate(90deg);
+                transition: all .2s linear;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .open {
+                margin: 20px 0;
+                color: @messagefontcolor;
+                .jicon-right {
+                    font-size: 12px;
+                    margin: 0 5px;
+                    transform: rotate(90deg);
+                }
+            }
+            span {
+                padding: 5px;
+                border-radius: 2px;
+                &:hover {
+                    cursor: pointer;
+                    background: @hoverpadding;
+                }
             }
         }
         &-fade {

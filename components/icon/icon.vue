@@ -1,7 +1,7 @@
 <template>
     <i class="jicon" :class="'jicon-' + type"></i>
 </template>
-<style scoped lang="less" rel="stylesheet/less">
+<style  lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
     .jicon {
         display: inline-block;
