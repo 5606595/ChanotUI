@@ -845,11 +845,11 @@
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(73)
+	__webpack_require__(24)
 	module.exports = __webpack_require__(26)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(75)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(27)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -863,8 +863,46 @@
 	})()}
 
 /***/ },
-/* 24 */,
-/* 25 */,
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(25);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(17)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.jicon-download:before {\n  content: '\\E621';\n}\n.jicon-down:before {\n  content: '\\E69D';\n}\n.jicon-right:before {\n  content: '\\E67A';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 26 */
 /***/ function(module, exports) {
 
@@ -957,7 +995,12 @@
 	// </script>
 
 /***/ },
-/* 27 */,
+/* 27 */
+/***/ function(module, exports) {
+
+	module.exports = "<i class=\"jicon\" :class=\"'jicon-' + type\"></i>";
+
+/***/ },
 /* 28 */
 /***/ function(module, exports) {
 
@@ -2409,7 +2452,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
+	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect .selectContent[_v-05c0c976] {\n  height: 25px;\n  line-height: 25px;\n  width: 100%;\n  padding: 0 10px;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
 	
 	// exports
 
@@ -2475,7 +2518,8 @@
 	        return {
 	            isDisplay: false,
 	            domCreated: false,
-	            treeDom: null
+	            treeDom: null,
+	            input: null
 	        };
 	    },
 	
@@ -2491,15 +2535,23 @@
 	            }
 	        },
 	        display: function display() {
+	            var _this = this;
+	
+	            console.log(this.selectOpt.parent);
 	            var treeSelectDom = this.$el;
 	            var iconDown = treeSelectDom.querySelector(".jicon-down");
 	            treeSelectDom.classList.add('c-treeselect-clicked');
 	            iconDown.classList.add("jicon-down-display");
 	            this.isDisplay = true;
-	            if (this.domCreated) {} else {
-	                var newDom = document.createElement("div");
-	                newDom.classList.add('c-treeselect-hide');
-	                newDom.innerHTML = ' <div class="c-treeselect-input">\
+	            if (this.domCreated) {
+	                var newDom = this.treeDom;
+	                var input = this.input;
+	                newDom.style.display = "block";
+	                input.focus();
+	            } else {
+	                var _newDom = document.createElement("div");
+	                _newDom.classList.add('c-treeselect-hide');
+	                _newDom.innerHTML = ' <div class="c-treeselect-input">\
 	                            <input />\
 	                            </div>\
 	                            <div class="content">\
@@ -2509,11 +2561,21 @@
 	                            </div>\
 	                            </div>';
 	                var rect = this.$el.getBoundingClientRect();
-	                newDom.style.width = rect.width + 'px';
-	                newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
-	                newDom.style.left = rect.left + document.body.scrollLeft + 'px';
-	                document.body.appendChild(newDom);
-	                this.treeDom = newDom;
+	                _newDom.style.width = rect.width + 'px';
+	                _newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
+	                _newDom.style.left = rect.left + document.body.scrollLeft + 'px';
+	                document.body.appendChild(_newDom);
+	                var _input = _newDom.querySelector("input");
+	                this.input = _input;
+	                _input.focus();
+	                this.treeDom = _newDom;
+	                this.domCreated = true;
+	                _newDom.addEventListener("click", function (event) {
+	                    if (event.target.nodeName.toLowerCase() === "span") {
+	                        _this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+	                        _this.hide();
+	                    }
+	                }, false);
 	            }
 	        },
 	        hide: function hide() {
@@ -2532,13 +2594,21 @@
 	            newDom.classList.remove("c-treeselect-hide-fade");
 	            newDom.removeEventListener("animationend", this.fadeHandle, false);
 	        }
+	    },
+	    props: {
+	        selectOpt: {
+	            type: Object,
+	            default: {
+	                parent: null
+	            }
+	        }
 	    }
 	};
 	// </script>
 	// <template>
 	//     <div class="c-treeselect" @click="clickEvent">
 	//         <icon type="down"></icon>
-	
+	//         <div class="selectContent"></div>
 	//     </div>
 	// </template>
 	// <style scoped lang="less" rel="stylesheet/less">
@@ -2552,6 +2622,13 @@
 	//         position: relative;
 	//         padding-right: 24px;
 	//         box-sizing: border-box;
+	//         .selectContent {
+	//             height: 25px;
+	//             line-height: 25px;
+	//             width: 100%;
+	//             padding: 0 10px;
+	//             box-sizing: border-box;
+	//         }
 	//         &-clicked {
 	//             border-color: @jbluelight;
 	//             &:after {
@@ -2656,65 +2733,19 @@
 	//         }
 	//     }
 	// </style>
-	// <script>
+	// <script type="text/ecmascript-6">
 
 /***/ },
 /* 71 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n\n    </div>";
+	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n        <div class=\"selectContent\" _v-05c0c976=\"\"></div>\n    </div>";
 
 /***/ },
 /* 72 */
 /***/ function(module, exports) {
 
 	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n  </div>";
-
-/***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(74);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-63dfef65&file=icon.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.jicon-download:before {\n  content: '\\E621';\n}\n.jicon-down:before {\n  content: '\\E69D';\n}\n.jicon-right:before {\n  content: '\\E67A';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 75 */
-/***/ function(module, exports) {
-
-	module.exports = "<i class=\"jicon\" :class=\"'jicon-' + type\"></i>";
 
 /***/ }
 /******/ ]);

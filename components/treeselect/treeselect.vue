@@ -1,7 +1,7 @@
 <template>
     <div class="c-treeselect" @click="clickEvent">
         <icon type="down"></icon>
-
+        <div class="selectContent"></div>
     </div>
 </template>
 <style scoped lang="less" rel="stylesheet/less">
@@ -15,6 +15,13 @@
         position: relative;
         padding-right: 24px;
         box-sizing: border-box;
+        .selectContent {
+            height: 25px;
+            line-height: 25px;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
         &-clicked {
             border-color: @jbluelight;
             &:after {
@@ -119,14 +126,15 @@
         }
     }
 </style>
-<script>
+<script type="text/ecmascript-6">
     import icon from '../icon'
     export default{
         data() {
             return {
                 isDisplay: false,
                 domCreated: false,
-                treeDom: null
+                treeDom: null,
+                input: null
             }
         },
         components: {
@@ -141,13 +149,17 @@
                 }
             },
             display() {
+                console.log(this.selectOpt.parent)
                 let treeSelectDom = this.$el;
                 let iconDown = treeSelectDom.querySelector(".jicon-down");
                 treeSelectDom.classList.add('c-treeselect-clicked')
                 iconDown.classList.add("jicon-down-display");
                 this.isDisplay = true;
                 if(this.domCreated) {
-
+                    let newDom = this.treeDom;
+                    let input = this.input;
+                    newDom.style.display = "block";
+                    input.focus();
                 } else {
                     let newDom = document.createElement("div");
                     newDom.classList.add('c-treeselect-hide')
@@ -159,13 +171,23 @@
                                 <i class="jicon jicon-right"></i>\
                                 <span>parent 1</span>\
                             </div>\
-                            </div>'
+                            </div>';
                     let rect = this.$el.getBoundingClientRect();
                     newDom.style.width = rect.width + 'px';
                     newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
                     newDom.style.left = rect.left + document.body.scrollLeft + 'px';
                     document.body.appendChild(newDom);
+                    let input = newDom.querySelector("input");
+                    this.input = input;
+                    input.focus();
                     this.treeDom = newDom;
+                    this.domCreated = true;
+                    newDom.addEventListener("click", (event) => {
+                        if(event.target.nodeName.toLowerCase() === "span") {
+                            this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+                            this.hide();
+                        }
+                    }, false);
                 }
             },
             hide() {
@@ -183,6 +205,14 @@
                 newDom.style.display = "none";
                 newDom.classList.remove("c-treeselect-hide-fade");
                 newDom.removeEventListener("animationend", this.fadeHandle, false);
+            }
+        },
+        props: {
+            selectOpt: {
+                type: Object,
+                default: {
+                    parent: null
+                }
             }
         }
     }
