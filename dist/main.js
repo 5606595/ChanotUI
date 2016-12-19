@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(13);
 
 
 /***/ },
@@ -59,12 +59,13 @@
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _main = __webpack_require__(13);
+	var _main = __webpack_require__(14);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -74,14 +75,14 @@
 	window.app = app;
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(14)
-	module.exports = __webpack_require__(18)
+	__webpack_require__(15)
+	module.exports = __webpack_require__(19)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(72)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(78)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -95,16 +96,16 @@
 	})()}
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(16);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -121,10 +122,10 @@
 	}
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -135,7 +136,7 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -190,7 +191,7 @@
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -442,7 +443,7 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -451,35 +452,33 @@
 	  value: true
 	});
 	
-	var _button = __webpack_require__(19);
+	var _button = __webpack_require__(20);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _spin = __webpack_require__(29);
+	var _spin = __webpack_require__(30);
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
-	var _icon = __webpack_require__(34);
+	var _icon = __webpack_require__(35);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _message = __webpack_require__(35);
+	var _message = __webpack_require__(36);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
-	var _box = __webpack_require__(41);
+	var _box = __webpack_require__(42);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
-	var _grid = __webpack_require__(47);
+	var _grid = __webpack_require__(48);
 	
-	var _popover = __webpack_require__(58);
+	var _popover = __webpack_require__(59);
 	
 	var _popover2 = _interopRequireDefault(_popover);
 	
-	var _treeselect = __webpack_require__(64);
-	
-	var _treeselect2 = _interopRequireDefault(_treeselect);
+	var _treeselect = __webpack_require__(65);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -536,7 +535,7 @@
 	//       <popover placement="right">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
-	//       <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>">
+	//       <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">
 	//         <c-button type="primary">Hover me.</c-button>
 	//       </popover>
 	//       <popover placement="bottom">
@@ -544,7 +543,7 @@
 	//       </popover>
 	//     </box>
 	//     <box>
-	//       <treeselect>
+	//       <treeselect :selectopt="option">
 	
 	//       </treeselect>
 	//     </box>
@@ -562,12 +561,29 @@
 	    'row': _grid.row,
 	    'column': _grid.column,
 	    'popover': _popover2.default,
-	    'treeselect': _treeselect2.default
+	    'treeselect': _treeselect.treeselect
 	  },
 	  data: function data() {
 	    return {
 	      name: 'just-vue',
-	      loading: false
+	      loading: false,
+	      option: [{
+	        content: "parent",
+	        title: "这是parent",
+	        children: [{
+	          content: "parent1",
+	          title: "parent1",
+	          children: [{
+	            content: "child1",
+	            title: "child1",
+	            children: null
+	          }]
+	        }, {
+	          content: "child2",
+	          title: "child2",
+	          children: null
+	        }]
+	      }]
 	    };
 	  },
 	
@@ -577,14 +593,14 @@
 	// </script>
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(20)
-	module.exports = __webpack_require__(22)
+	__webpack_require__(21)
+	module.exports = __webpack_require__(23)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(28)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(29)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -598,16 +614,16 @@
 	})()}
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(21);
+	var content = __webpack_require__(22);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -624,10 +640,10 @@
 	}
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -638,7 +654,7 @@
 
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -647,7 +663,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(23);
+	var _icon = __webpack_require__(24);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -842,14 +858,14 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(24)
-	module.exports = __webpack_require__(26)
+	__webpack_require__(25)
+	module.exports = __webpack_require__(27)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(27)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(28)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -863,16 +879,16 @@
 	})()}
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(25);
+	var content = __webpack_require__(26);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -889,10 +905,10 @@
 	}
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -903,7 +919,7 @@
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -912,7 +928,7 @@
 	    value: true
 	});
 	// <template>
-	//     <i class="jicon" :class="'jicon-' + type"></i>
+	//     <i class="jicon" :class="['jicon-' + type, jclass]"></i>
 	// </template>
 	// <style  lang="less" rel="stylesheet/less">
 	//     @import '../../mixin/mixin.less';
@@ -989,32 +1005,33 @@
 	
 	    components: {},
 	    props: {
-	        type: String
+	        type: String,
+	        jclass: String
 	    }
 	};
 	// </script>
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
-	module.exports = "<i class=\"jicon\" :class=\"'jicon-' + type\"></i>";
+	module.exports = "<i class=\"jicon\" :class=\"['jicon-' + type, jclass]\"></i>";
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = "<button class=\"j-btn\" :class=\"[type, size, btnShape, { loading: loading }]\" :disabled=\"disabled\" @click=\"clickEvent\" _v-610020c5=\"\">\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <icon v-if=\"exists\" :type=\"iconType\" _v-610020c5=\"\"></icon>\n        <slot _v-610020c5=\"\"></slot>\n    </button>";
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(30)
-	module.exports = __webpack_require__(32)
+	__webpack_require__(31)
+	module.exports = __webpack_require__(33)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(33)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(34)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1028,16 +1045,16 @@
 	})()}
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(31);
+	var content = __webpack_require__(32);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1054,10 +1071,10 @@
 	}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1068,7 +1085,7 @@
 
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1162,13 +1179,13 @@
 	// </script>
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"jspin-container\" _v-4fe71505=\"\">\n        <div class=\"spin\" _v-4fe71505=\"\">\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n        </div>\n        <div class=\"jsay\" _v-4fe71505=\"\">\n            <span _v-4fe71505=\"\">{{ tips }}</span>\n        </div>\n    </div>";
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1177,7 +1194,7 @@
 	  value: true
 	});
 	
-	var _icon = __webpack_require__(23);
+	var _icon = __webpack_require__(24);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1188,7 +1205,7 @@
 	                                   */
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1197,7 +1214,7 @@
 	    value: true
 	});
 	
-	var _message = __webpack_require__(36);
+	var _message = __webpack_require__(37);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
@@ -1283,14 +1300,14 @@
 	    */
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(37)
-	module.exports = __webpack_require__(39)
+	__webpack_require__(38)
+	module.exports = __webpack_require__(40)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(40)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(41)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1304,16 +1321,16 @@
 	})()}
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(38);
+	var content = __webpack_require__(39);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1330,10 +1347,10 @@
 	}
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1344,7 +1361,7 @@
 
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1353,7 +1370,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(23);
+	var _icon = __webpack_require__(24);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1456,13 +1473,13 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-message\" v-if=\"show\" _v-1e199ad6=\"\">\n        <icon :type=\"newType\" _v-1e199ad6=\"\"></icon>\n        <span class=\"message\" _v-1e199ad6=\"\">\n            <slot _v-1e199ad6=\"\"></slot>\n        </span>\n    </div>";
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1471,7 +1488,7 @@
 	  value: true
 	});
 	
-	var _box = __webpack_require__(42);
+	var _box = __webpack_require__(43);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
@@ -1482,14 +1499,14 @@
 	                                  */
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(43)
-	module.exports = __webpack_require__(45)
+	__webpack_require__(44)
+	module.exports = __webpack_require__(46)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(46)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(47)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1503,16 +1520,16 @@
 	})()}
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(44);
+	var content = __webpack_require__(45);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1529,10 +1546,10 @@
 	}
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1543,7 +1560,7 @@
 
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1575,13 +1592,13 @@
 	// </script>
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-box\" _v-36efc21d=\"\">\n        <slot _v-36efc21d=\"\"></slot>\n    </div>";
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1591,11 +1608,11 @@
 	});
 	exports.column = exports.row = undefined;
 	
-	var _row = __webpack_require__(48);
+	var _row = __webpack_require__(49);
 	
 	var _row2 = _interopRequireDefault(_row);
 	
-	var _column = __webpack_require__(53);
+	var _column = __webpack_require__(54);
 	
 	var _column2 = _interopRequireDefault(_column);
 	
@@ -1608,14 +1625,14 @@
 	exports.column = _column2.default;
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(49)
-	module.exports = __webpack_require__(51)
+	__webpack_require__(50)
+	module.exports = __webpack_require__(52)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(52)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(53)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1629,16 +1646,16 @@
 	})()}
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(50);
+	var content = __webpack_require__(51);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1655,10 +1672,10 @@
 	}
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1669,7 +1686,7 @@
 
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1727,20 +1744,20 @@
 	// </script>
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-row\" :style=\"justifyContent\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(54)
-	module.exports = __webpack_require__(56)
+	__webpack_require__(55)
+	module.exports = __webpack_require__(57)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(57)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(58)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1754,16 +1771,16 @@
 	})()}
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(55);
+	var content = __webpack_require__(56);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1780,10 +1797,10 @@
 	}
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1794,7 +1811,7 @@
 
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1898,13 +1915,13 @@
 	// </script>
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-col\" :class=\"[cspan, cxs, csm, cmd, clg]\" _v-6efc49d5=\"\">\n        <slot _v-6efc49d5=\"\"></slot>\n    </div>";
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1913,7 +1930,7 @@
 	  value: true
 	});
 	
-	var _popover = __webpack_require__(59);
+	var _popover = __webpack_require__(60);
 	
 	var _popover2 = _interopRequireDefault(_popover);
 	
@@ -1924,14 +1941,14 @@
 	                                      */
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(60)
-	module.exports = __webpack_require__(62)
+	__webpack_require__(61)
+	module.exports = __webpack_require__(63)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(63)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(64)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1945,16 +1962,16 @@
 	})()}
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(61);
+	var content = __webpack_require__(62);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1971,10 +1988,10 @@
 	}
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
@@ -1985,7 +2002,7 @@
 
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2370,13 +2387,13 @@
 	// </script>
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-popcontainer\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2384,27 +2401,34 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.treenode = exports.treeselect = undefined;
 	
-	var _treeselect = __webpack_require__(65);
+	var _treeselect = __webpack_require__(66);
 	
 	var _treeselect2 = _interopRequireDefault(_treeselect);
 	
+	var _treenode = __webpack_require__(73);
+	
+	var _treenode2 = _interopRequireDefault(_treenode);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _treeselect2.default; /**
-	                                         * Created by jorten on 2016/12/14.
-	                                         */
+	/**
+	 * Created by jorten on 2016/12/14.
+	 */
+	exports.treeselect = _treeselect2.default;
+	exports.treenode = _treenode2.default;
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(66)
-	__webpack_require__(68)
-	module.exports = __webpack_require__(70)
+	__webpack_require__(67)
+	__webpack_require__(69)
+	module.exports = __webpack_require__(71)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(72)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2418,16 +2442,16 @@
 	})()}
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(67);
+	var content = __webpack_require__(68);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2444,30 +2468,30 @@
 	}
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect .selectContent[_v-05c0c976] {\n  height: 25px;\n  line-height: 25px;\n  width: 100%;\n  padding: 0 10px;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
+	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect.selected .selectContent[_v-05c0c976] {\n  color: black;\n}\n.c-treeselect.selected:hover .clear[_v-05c0c976] {\n  display: block;\n}\n.c-treeselect .selectContent[_v-05c0c976] {\n  height: 25px;\n  line-height: 25px;\n  width: 100%;\n  padding: 0 10px;\n  color: #CCC;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .clear[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  z-index: 30;\n  background: white;\n  color: grey;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  display: none;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(69);
+	var content = __webpack_require__(70);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
+	var update = __webpack_require__(18)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2484,21 +2508,21 @@
 	}
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(16)();
+	exports = module.exports = __webpack_require__(17)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-treeselect-hide {\n  position: absolute;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  box-shadow: 0px 1px 6px #EAEAEA, 0px 0px 6px #EAEAEA;\n  padding: 5px;\n  box-sizing: border-box;\n  -webkit-animation: c-treeselect-hide-display 0.2s linear forwards;\n          animation: c-treeselect-hide-display 0.2s linear forwards;\n}\n.c-treeselect-hide .c-treeselect-input {\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  width: 100%;\n  height: 30px;\n  padding: 0 5px;\n  box-sizing: border-box;\n}\n.c-treeselect-hide .c-treeselect-input input {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  border: none;\n  outline: none;\n}\n.c-treeselect-hide .content .jicon-right {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect-hide .content .jicon-right:hover {\n  cursor: pointer;\n}\n.c-treeselect-hide .content .open {\n  margin: 20px 0;\n  color: #666;\n}\n.c-treeselect-hide .content .open .jicon-right {\n  font-size: 12px;\n  margin: 0 5px;\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.c-treeselect-hide .content span {\n  padding: 5px;\n  border-radius: 2px;\n}\n.c-treeselect-hide .content span:hover {\n  cursor: pointer;\n  background: #e7f4fd;\n}\n.c-treeselect-hide-fade {\n  -webkit-animation: c-treeselect-hide-fadeout 0.1s linear;\n          animation: c-treeselect-hide-fadeout 0.1s linear;\n}\n@-webkit-keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n@keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n", ""]);
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\n.c-treeselect-hide {\n  position: absolute;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  box-shadow: 0px 1px 6px #EAEAEA, 0px 0px 6px #EAEAEA;\n  padding: 5px;\n  background: white;\n  box-sizing: border-box;\n  -webkit-animation: c-treeselect-hide-display 0.2s linear forwards;\n          animation: c-treeselect-hide-display 0.2s linear forwards;\n}\n.c-treeselect-hide .c-treeselect-input {\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  width: 100%;\n  height: 30px;\n  padding: 0 5px;\n  box-sizing: border-box;\n}\n.c-treeselect-hide .c-treeselect-input input {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  border: none;\n  outline: none;\n}\n.c-treeselect-hide .content div {\n  margin: 20px 0;\n  color: #666;\n}\n.c-treeselect-hide .content div .jicon-right {\n  font-size: 12px;\n  margin: 0 5px;\n}\n.c-treeselect-hide .content .jicon-right {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect-hide .content .jicon-right:hover {\n  cursor: pointer;\n}\n.c-treeselect-hide .content .open > .jicon-right {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.c-treeselect-hide .content .close > .jicon-right {\n  -webkit-transform: rotate(0deg);\n          transform: rotate(0deg);\n}\n.c-treeselect-hide .content .parent .parent {\n  padding: 0 22px;\n}\n.c-treeselect-hide .content .parent .children {\n  padding: 0 44px;\n}\n.c-treeselect-hide .content span {\n  padding: 5px;\n  border-radius: 2px;\n}\n.c-treeselect-hide .content span:hover {\n  cursor: pointer;\n  background: #e7f4fd;\n}\n.c-treeselect-hide-fade {\n  -webkit-animation: c-treeselect-hide-fadeout 0.1s linear;\n          animation: c-treeselect-hide-fadeout 0.1s linear;\n}\n@-webkit-keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n@keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2507,7 +2531,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(34);
+	var _icon = __webpack_require__(35);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -2528,6 +2552,15 @@
 	    },
 	    methods: {
 	        clickEvent: function clickEvent(event) {
+	            console.log(event.target);
+	            if (event.target.className.indexOf("clear") !== -1) {
+	                this.$el.querySelector(".selectContent").textContent = "";
+	                this.$el.classList.remove("selected");
+	                if (this.isDisplay) {
+	                    this.hide();
+	                }
+	                return;
+	            }
 	            if (!this.isDisplay) {
 	                this.display();
 	            } else {
@@ -2537,7 +2570,6 @@
 	        display: function display() {
 	            var _this = this;
 	
-	            console.log(this.selectOpt.parent);
 	            var treeSelectDom = this.$el;
 	            var iconDown = treeSelectDom.querySelector(".jicon-down");
 	            treeSelectDom.classList.add('c-treeselect-clicked');
@@ -2549,33 +2581,62 @@
 	                newDom.style.display = "block";
 	                input.focus();
 	            } else {
-	                var _newDom = document.createElement("div");
-	                _newDom.classList.add('c-treeselect-hide');
-	                _newDom.innerHTML = ' <div class="c-treeselect-input">\
+	                (function () {
+	                    var newDom = document.createElement("div");
+	                    newDom.classList.add('c-treeselect-hide');
+	                    newDom.innerHTML = ' <div class="c-treeselect-input">\
 	                            <input />\
 	                            </div>\
-	                            <div class="content">\
-	                            <div class="open">\
-	                                <i class="jicon jicon-right"></i>\
-	                                <span>parent 1</span>\
-	                            </div>\
 	                            </div>';
-	                var rect = this.$el.getBoundingClientRect();
-	                _newDom.style.width = rect.width + 'px';
-	                _newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
-	                _newDom.style.left = rect.left + document.body.scrollLeft + 'px';
-	                document.body.appendChild(_newDom);
-	                var _input = _newDom.querySelector("input");
-	                this.input = _input;
-	                _input.focus();
-	                this.treeDom = _newDom;
-	                this.domCreated = true;
-	                _newDom.addEventListener("click", function (event) {
-	                    if (event.target.nodeName.toLowerCase() === "span") {
-	                        _this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+	                    var content = document.createElement("div");
+	                    content.classList.add("content");
+	                    _this.mapNode(content, _this.selectopt);
+	                    newDom.appendChild(content);
+	                    var rect = _this.$el.getBoundingClientRect();
+	                    newDom.style.width = rect.width + 'px';
+	                    newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
+	                    newDom.style.left = rect.left + document.body.scrollLeft + 'px';
+	                    document.body.appendChild(newDom);
+	                    var input = newDom.querySelector("input");
+	                    _this.input = input;
+	                    input.focus();
+	                    _this.treeDom = newDom;
+	                    _this.domCreated = true;
+	                    newDom.addEventListener("click", function (event) {
+	                        if (event.target.nodeName.toLowerCase() === "span") {
+	                            _this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+	                            _this.$el.classList.add("selected");
+	                            _this.hide();
+	                        }
+	                        if (event.target.nodeName.toLowerCase() === "i") {
+	                            var parent = event.target.parentNode;
+	                            var children = parent.getElementsByTagName("div")[0];
+	                            if (parent.className.indexOf("open") !== -1) {
+	                                parent.classList.remove("open");
+	                                parent.classList.add("close");
+	                                children.style.display = "none";
+	                            } else {
+	                                parent.classList.remove("close");
+	                                parent.classList.add("open");
+	                                children.style.display = "block";
+	                            }
+	                        }
+	                    }, false);
+	                    input.addEventListener("keyup", function (event) {
+	                        var matchStr = input.value;
+	                        console.log(matchStr);
+	                    }, false);
+	                    document.body.addEventListener("click", function (event) {
+	                        var dom = event.target;
+	                        while (dom && dom !== document.body) {
+	                            if (dom === _this.treeDom || dom === _this.$el) {
+	                                return;
+	                            }
+	                            dom = dom.parentNode;
+	                        }
 	                        _this.hide();
-	                    }
-	                }, false);
+	                    }, false);
+	                })();
 	            }
 	        },
 	        hide: function hide() {
@@ -2593,14 +2654,39 @@
 	            newDom.style.display = "none";
 	            newDom.classList.remove("c-treeselect-hide-fade");
 	            newDom.removeEventListener("animationend", this.fadeHandle, false);
+	        },
+	        mapNode: function mapNode(node, obj) {
+	            for (var i in obj) {
+	                var child = document.createElement("div");
+	                if (obj[i].children) {
+	                    child.innerHTML = "<i class='jicon jicon-right'></i><span title='" + obj[i].title + "'>" + obj[i].content + "</span><div class='innerContent'></div>";
+	                    child.classList.add("open");
+	                    child.classList.add("parent");
+	                    this.mapNode(child.getElementsByClassName("innerContent")[0], obj[i].children);
+	                } else {
+	                    child.innerHTML = "<span title='" + obj[i].title + "'>" + obj[i].content + "</span>";
+	                    child.classList.add("children");
+	                }
+	                node.appendChild(child);
+	            }
 	        }
 	    },
 	    props: {
-	        selectOpt: {
-	            type: Object,
-	            default: {
-	                parent: null
-	            }
+	        selectopt: {
+	            type: Array,
+	            default: [{
+	                content: 'parent',
+	                title: 'this is a parent',
+	                children: [{
+	                    content: 'child1',
+	                    title: 'haha',
+	                    children: null
+	                }, {
+	                    content: 'child2',
+	                    title: 'hehe',
+	                    children: null
+	                }]
+	            }]
 	        }
 	    }
 	};
@@ -2608,12 +2694,25 @@
 	// <template>
 	//     <div class="c-treeselect" @click="clickEvent">
 	//         <icon type="down"></icon>
-	//         <div class="selectContent"></div>
+	//         <icon type="fail" jclass="clear"></icon>
+	//         <div class="selectContent">
+	//             Please a select
+	//         </div>
 	//     </div>
 	// </template>
 	// <style scoped lang="less" rel="stylesheet/less">
 	//     @import '../../mixin/mixin.less';
 	//     .c-treeselect {
+	//         &.selected {
+	//             .selectContent {
+	//                 color: black;
+	//             }
+	//             &:hover {
+	//                 .clear {
+	//                     display: block;
+	//                 }
+	//             }
+	//         }
 	//         width: 300px;
 	//         height: 25px;
 	//         border: 1px solid @border;
@@ -2627,6 +2726,7 @@
 	//             line-height: 25px;
 	//             width: 100%;
 	//             padding: 0 10px;
+	//             color: @placeholder;
 	//             box-sizing: border-box;
 	//         }
 	//         &-clicked {
@@ -2645,6 +2745,17 @@
 	//         &:hover {
 	//             border-color: @jbluelight;
 	//             cursor: pointer;
+	//         }
+	//         .clear {
+	//             font-size: 12px;
+	//             position: absolute;
+	//             right: 6px;
+	//             top: 6px;
+	//             z-index: 30;
+	//             background: white;
+	//             color: grey;
+	//             transition: all .2s linear;
+	//             display: none;
 	//         }
 	//         .jicon-down {
 	//             font-size: 12px;
@@ -2666,6 +2777,7 @@
 	//         border-radius: 4px;
 	//         box-shadow: 0px 1px 6px @boxshadow, 0px 0px 6px @boxshadow;
 	//         padding: 5px;
+	//         background: white;
 	//         box-sizing: border-box;
 	//         animation: c-treeselect-hide-display .2s linear forwards;
 	//         .c-treeselect-input {
@@ -2684,6 +2796,14 @@
 	//             }
 	//         }
 	//         .content {
+	//             div {
+	//                 margin: 20px 0;
+	//                 color: @messagefontcolor;
+	//                 .jicon-right {
+	//                     font-size: 12px;
+	//                     margin: 0 5px;
+	//                 }
+	//             }
 	//             .jicon-right {
 	//                 transition: all .2s linear;
 	//                 &:hover {
@@ -2691,12 +2811,21 @@
 	//                 }
 	//             }
 	//             .open {
-	//                 margin: 20px 0;
-	//                 color: @messagefontcolor;
-	//                 .jicon-right {
-	//                     font-size: 12px;
-	//                     margin: 0 5px;
+	//                 & > .jicon-right {
 	//                     transform: rotate(90deg);
+	//                 }
+	//             }
+	//             .close {
+	//                 & > .jicon-right {
+	//                     transform: rotate(0deg);
+	//                 }
+	//             }
+	//             .parent {
+	//                 .parent {
+	//                     padding: 0 22px;
+	//                 }
+	//                 .children {
+	//                     padding: 0 44px;
 	//                 }
 	//             }
 	//             span {
@@ -2736,16 +2865,108 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 71 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n        <div class=\"selectContent\" _v-05c0c976=\"\"></div>\n    </div>";
-
-/***/ },
 /* 72 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n  </div>";
+	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n        <icon type=\"fail\" jclass=\"clear\" _v-05c0c976=\"\"></icon>\n        <div class=\"selectContent\" _v-05c0c976=\"\">\n            Please a select\n        </div>\n    </div>";
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(74)
+	module.exports = __webpack_require__(76)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(77)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/treeselect/treenode.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(75);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(18)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-096ed98b&file=treenode.vue&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./treenode.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-096ed98b&file=treenode.vue&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./treenode.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(17)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 76 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="">
+	//     </div>
+	// </template>
+	// <style scoped>
+	// </style>
+	// <script>
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+
+/***/ },
+/* 77 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"\" _v-096ed98b=\"\">\n    </div>";
+
+/***/ },
+/* 78 */
+/***/ function(module, exports) {
+
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

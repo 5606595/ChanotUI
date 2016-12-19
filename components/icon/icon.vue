@@ -1,5 +1,5 @@
 <template>
-    <i class="jicon" :class="'jicon-' + type"></i>
+    <i class="jicon" :class="['jicon-' + type, jclass]"></i>
 </template>
 <style  lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
@@ -69,13 +69,14 @@
     }
 </style>
 <script>
-    export default{
-        data(){
+    export default {
+        data() {
             return {}
         },
-        components:{},
+        components: {},
         props: {
-            type: String
+            type: String,
+            jclass: String
         }
     }
 </script>

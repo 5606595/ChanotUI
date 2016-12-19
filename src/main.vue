@@ -51,7 +51,7 @@
       <popover placement="right">
         <c-button type="primary">Hover me.</c-button>
       </popover>
-      <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>">
+      <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">
         <c-button type="primary">Hover me.</c-button>
       </popover>
       <popover placement="bottom">
@@ -59,7 +59,7 @@
       </popover>
     </box>
     <box>
-      <treeselect>
+      <treeselect :selectopt="option">
 
       </treeselect>
     </box>
@@ -74,7 +74,7 @@
   import box from '../components/box'
   import { row, column } from '../components/grid'
   import popover from '../components/popover'
-  import treeselect from '../components/treeselect'
+  import { treeselect } from '../components/treeselect'
   export default {
     components: {
       'c-button': button,
@@ -85,12 +85,29 @@
       'row': row,
       'column': column,
       'popover': popover,
-      'treeselect': treeselect
+      'treeselect': treeselect,
     },
     data() {
       return {
         name: 'just-vue',
-        loading: false
+        loading: false,
+        option: [{
+          content: "parent",
+          title: "这是parent",
+          children: [{
+            content: "parent1",
+            title: "parent1",
+            children: [{
+              content: "child1",
+              title: "child1",
+              children: null
+            }]
+          }, {
+            content: "child2",
+            title: "child2",
+            children: null
+          }]
+        }]
       }
     },
     computed: {},

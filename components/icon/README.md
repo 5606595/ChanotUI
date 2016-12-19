@@ -29,4 +29,12 @@
     <c-icon type="forward" />
     <c-icon type="backward" />
     <c-icon type="search" />
+    <c-icon type="download" />
+    <c-icon type="loading" />
+    <c-icon type="down" />
+    <c-icon type="right" />
+
+#####可以给icon设置class
+
+    <c-icon type="success" jclass="clear" />
 

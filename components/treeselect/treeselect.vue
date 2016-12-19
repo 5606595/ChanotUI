@@ -1,12 +1,25 @@
 <template>
     <div class="c-treeselect" @click="clickEvent">
         <icon type="down"></icon>
-        <div class="selectContent"></div>
+        <icon type="fail" jclass="clear"></icon>
+        <div class="selectContent">
+            Please a select
+        </div>
     </div>
 </template>
 <style scoped lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
     .c-treeselect {
+        &.selected {
+            .selectContent {
+                color: black;
+            }
+            &:hover {
+                .clear {
+                    display: block;
+                }
+            }
+        }
         width: 300px;
         height: 25px;
         border: 1px solid @border;
@@ -20,6 +33,7 @@
             line-height: 25px;
             width: 100%;
             padding: 0 10px;
+            color: @placeholder;
             box-sizing: border-box;
         }
         &-clicked {
@@ -38,6 +52,17 @@
         &:hover {
             border-color: @jbluelight;
             cursor: pointer;
+        }
+        .clear {
+            font-size: 12px;
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            z-index: 30;
+            background: white;
+            color: grey;
+            transition: all .2s linear;
+            display: none;
         }
         .jicon-down {
             font-size: 12px;
@@ -59,6 +84,7 @@
         border-radius: 4px;
         box-shadow: 0px 1px 6px @boxshadow, 0px 0px 6px @boxshadow;
         padding: 5px;
+        background: white;
         box-sizing: border-box;
         animation: c-treeselect-hide-display .2s linear forwards;
         .c-treeselect-input {
@@ -77,6 +103,14 @@
             }
         }
         .content {
+            div {
+                margin: 20px 0;
+                color: @messagefontcolor;
+                .jicon-right {
+                    font-size: 12px;
+                    margin: 0 5px;
+                }
+            }
             .jicon-right {
                 transition: all .2s linear;
                 &:hover {
@@ -84,12 +118,21 @@
                 }
             }
             .open {
-                margin: 20px 0;
-                color: @messagefontcolor;
-                .jicon-right {
-                    font-size: 12px;
-                    margin: 0 5px;
+                & > .jicon-right {
                     transform: rotate(90deg);
+                }
+            }
+            .close {
+                & > .jicon-right {
+                    transform: rotate(0deg);
+                }
+            }
+            .parent {
+                .parent {
+                    padding: 0 22px;
+                }
+                .children {
+                    padding: 0 44px;
                 }
             }
             span {
@@ -142,6 +185,15 @@
         },
         methods: {
             clickEvent(event) {
+                console.log(event.target);
+                if(event.target.className.indexOf("clear") !== -1) {
+                    this.$el.querySelector(".selectContent").textContent = "";
+                    this.$el.classList.remove("selected");
+                    if(this.isDisplay) {
+                        this.hide();
+                    }
+                    return;
+                }
                 if(!this.isDisplay) {
                     this.display()
                 } else {
@@ -149,7 +201,6 @@
                 }
             },
             display() {
-                console.log(this.selectOpt.parent)
                 let treeSelectDom = this.$el;
                 let iconDown = treeSelectDom.querySelector(".jicon-down");
                 treeSelectDom.classList.add('c-treeselect-clicked')
@@ -166,12 +217,11 @@
                     newDom.innerHTML = ' <div class="c-treeselect-input">\
                             <input />\
                             </div>\
-                            <div class="content">\
-                            <div class="open">\
-                                <i class="jicon jicon-right"></i>\
-                                <span>parent 1</span>\
-                            </div>\
                             </div>';
+                    let content = document.createElement("div");
+                    content.classList.add("content");
+                    this.mapNode(content, this.selectopt);
+                    newDom.appendChild(content);
                     let rect = this.$el.getBoundingClientRect();
                     newDom.style.width = rect.width + 'px';
                     newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
@@ -185,8 +235,36 @@
                     newDom.addEventListener("click", (event) => {
                         if(event.target.nodeName.toLowerCase() === "span") {
                             this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+                            this.$el.classList.add("selected");
                             this.hide();
                         }
+                        if(event.target.nodeName.toLowerCase() === "i") {
+                            let parent = event.target.parentNode;
+                            let children = parent.getElementsByTagName("div")[0];
+                            if(parent.className.indexOf("open") !== -1) {
+                                parent.classList.remove("open");
+                                parent.classList.add("close");
+                                children.style.display ="none";
+                            } else {
+                                parent.classList.remove("close")
+                                parent.classList.add("open")
+                                children.style.display = "block";
+                            }
+                        }
+                    }, false);
+                    input.addEventListener("keyup", (event) => {
+                        let matchStr = input.value;
+                        console.log(matchStr);
+                    }, false)
+                    document.body.addEventListener("click", (event) => {
+                        let dom = event.target;
+                        while(dom && dom !== document.body) {
+                            if(dom === this.treeDom || dom === this.$el) {
+                                return;
+                            }
+                            dom = dom.parentNode;
+                        }
+                        this.hide();
                     }, false);
                 }
             },
@@ -205,14 +283,39 @@
                 newDom.style.display = "none";
                 newDom.classList.remove("c-treeselect-hide-fade");
                 newDom.removeEventListener("animationend", this.fadeHandle, false);
+            },
+            mapNode(node, obj) {
+                for(let i in obj) {
+                    let child = document.createElement("div");
+                    if(obj[i].children) {
+                        child.innerHTML = "<i class='jicon jicon-right'></i><span title='" + obj[i].title + "'>" + obj[i].content + "</span><div class='innerContent'></div>";
+                        child.classList.add("open");
+                        child.classList.add("parent");
+                        this.mapNode(child.getElementsByClassName("innerContent")[0], obj[i].children);
+                    } else {
+                        child.innerHTML = "<span title='" + obj[i].title + "'>" + obj[i].content + "</span>"
+                        child.classList.add("children");
+                    }
+                    node.appendChild(child);
+                }
             }
         },
         props: {
-            selectOpt: {
-                type: Object,
-                default: {
-                    parent: null
-                }
+            selectopt: {
+                type: Array,
+                default: [{
+                    content: 'parent',
+                    title: 'this is a parent',
+                    children: [{
+                        content: 'child1',
+                        title: 'haha',
+                        children: null
+                    }, {
+                        content: 'child2',
+                        title: 'hehe',
+                        children: null
+                    }]
+                }]
             }
         }
     }
