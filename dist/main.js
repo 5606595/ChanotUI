@@ -2552,7 +2552,6 @@
 	    },
 	    methods: {
 	        clickEvent: function clickEvent(event) {
-	            console.log(event.target);
 	            if (event.target.className.indexOf("clear") !== -1) {
 	                this.$el.querySelector(".selectContent").textContent = "";
 	                this.$el.classList.remove("selected");
@@ -2581,62 +2580,57 @@
 	                newDom.style.display = "block";
 	                input.focus();
 	            } else {
-	                (function () {
-	                    var newDom = document.createElement("div");
-	                    newDom.classList.add('c-treeselect-hide');
-	                    newDom.innerHTML = ' <div class="c-treeselect-input">\
+	                var _newDom = document.createElement("div");
+	                _newDom.classList.add('c-treeselect-hide');
+	                _newDom.innerHTML = ' <div class="c-treeselect-input">\
 	                            <input />\
 	                            </div>\
 	                            </div>';
-	                    var content = document.createElement("div");
-	                    content.classList.add("content");
-	                    _this.mapNode(content, _this.selectopt);
-	                    newDom.appendChild(content);
-	                    var rect = _this.$el.getBoundingClientRect();
-	                    newDom.style.width = rect.width + 'px';
-	                    newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
-	                    newDom.style.left = rect.left + document.body.scrollLeft + 'px';
-	                    document.body.appendChild(newDom);
-	                    var input = newDom.querySelector("input");
-	                    _this.input = input;
-	                    input.focus();
-	                    _this.treeDom = newDom;
-	                    _this.domCreated = true;
-	                    newDom.addEventListener("click", function (event) {
-	                        if (event.target.nodeName.toLowerCase() === "span") {
-	                            _this.$el.querySelector(".selectContent").textContent = event.target.textContent;
-	                            _this.$el.classList.add("selected");
-	                            _this.hide();
-	                        }
-	                        if (event.target.nodeName.toLowerCase() === "i") {
-	                            var parent = event.target.parentNode;
-	                            var children = parent.getElementsByTagName("div")[0];
-	                            if (parent.className.indexOf("open") !== -1) {
-	                                parent.classList.remove("open");
-	                                parent.classList.add("close");
-	                                children.style.display = "none";
-	                            } else {
-	                                parent.classList.remove("close");
-	                                parent.classList.add("open");
-	                                children.style.display = "block";
-	                            }
-	                        }
-	                    }, false);
-	                    input.addEventListener("keyup", function (event) {
-	                        var matchStr = input.value;
-	                        console.log(matchStr);
-	                    }, false);
-	                    document.body.addEventListener("click", function (event) {
-	                        var dom = event.target;
-	                        while (dom && dom !== document.body) {
-	                            if (dom === _this.treeDom || dom === _this.$el) {
-	                                return;
-	                            }
-	                            dom = dom.parentNode;
-	                        }
+	                var content = document.createElement("div");
+	                content.classList.add("content");
+	                this.mapNode(content, this.selectopt);
+	                _newDom.appendChild(content);
+	                var rect = this.$el.getBoundingClientRect();
+	                _newDom.style.width = rect.width + 'px';
+	                _newDom.style.top = rect.top + document.body.scrollTop + rect.height + 3 + 'px';
+	                _newDom.style.left = rect.left + document.body.scrollLeft + 'px';
+	                document.body.appendChild(_newDom);
+	                var _input = _newDom.querySelector("input");
+	                this.input = _input;
+	                _input.focus();
+	                this.treeDom = _newDom;
+	                this.domCreated = true;
+	                _newDom.addEventListener("click", function (event) {
+	                    if (event.target.nodeName.toLowerCase() === "span") {
+	                        _this.$el.querySelector(".selectContent").textContent = event.target.textContent;
+	                        _this.$el.classList.add("selected");
 	                        _this.hide();
-	                    }, false);
-	                })();
+	                    }
+	                    if (event.target.nodeName.toLowerCase() === "i") {
+	                        var parent = event.target.parentNode;
+	                        var children = parent.getElementsByTagName("div")[0];
+	                        if (parent.className.indexOf("open") !== -1) {
+	                            parent.classList.remove("open");
+	                            parent.classList.add("close");
+	                            children.style.display = "none";
+	                        } else {
+	                            parent.classList.remove("close");
+	                            parent.classList.add("open");
+	                            children.style.display = "block";
+	                        }
+	                    }
+	                }, false);
+	                _input.addEventListener("keyup", this.nodeMatch, false);
+	                document.body.addEventListener("click", function (event) {
+	                    var dom = event.target;
+	                    while (dom && dom !== document.body) {
+	                        if (dom === _this.treeDom || dom === _this.$el) {
+	                            return;
+	                        }
+	                        dom = dom.parentNode;
+	                    }
+	                    _this.hide();
+	                }, false);
 	            }
 	        },
 	        hide: function hide() {
@@ -2667,7 +2661,45 @@
 	                    child.innerHTML = "<span title='" + obj[i].title + "'>" + obj[i].content + "</span>";
 	                    child.classList.add("children");
 	                }
+	                obj[i].dom = child;
+	                obj[i].parent = node;
 	                node.appendChild(child);
+	            }
+	        },
+	        nodeMatch: function nodeMatch() {
+	            var _this2 = this;
+	
+	            var option = this.selectopt;
+	            var input = this.input;
+	            var inputContent = input.value;
+	            option.map(function (data) {
+	                _this2.matchMap(inputContent, data);
+	            });
+	        },
+	        matchMap: function matchMap(content, opt) {
+	            var _this3 = this;
+	
+	            if (opt.content.indexOf(content) !== -1) {
+	                this.displayAll(opt.dom);
+	                return;
+	            } else {
+	                opt.dom.style.display = "none";
+	            }
+	            if (opt.children) {
+	                opt.children.map(function (data) {
+	                    _this3.matchMap(content, data);
+	                });
+	            }
+	        },
+	        displayAll: function displayAll(dom) {
+	            var temp = dom;
+	            while (temp.className.indexOf("content") == -1) {
+	                temp.style.display = "block";
+	                temp = temp.parentNode;
+	            }
+	            var divs = dom.getElementsByTagName("div");
+	            for (var i = 0; i < divs.length; i++) {
+	                divs[i].style.display = "block";
 	            }
 	        }
 	    },

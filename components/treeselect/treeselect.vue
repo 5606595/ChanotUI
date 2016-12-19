@@ -177,7 +177,7 @@
                 isDisplay: false,
                 domCreated: false,
                 treeDom: null,
-                input: null
+                input: null,
             }
         },
         components: {
@@ -185,7 +185,6 @@
         },
         methods: {
             clickEvent(event) {
-                console.log(event.target);
                 if(event.target.className.indexOf("clear") !== -1) {
                     this.$el.querySelector(".selectContent").textContent = "";
                     this.$el.classList.remove("selected");
@@ -252,10 +251,7 @@
                             }
                         }
                     }, false);
-                    input.addEventListener("keyup", (event) => {
-                        let matchStr = input.value;
-                        console.log(matchStr);
-                    }, false)
+                    input.addEventListener("keyup", this.nodeMatch, false)
                     document.body.addEventListener("click", (event) => {
                         let dom = event.target;
                         while(dom && dom !== document.body) {
@@ -296,7 +292,41 @@
                         child.innerHTML = "<span title='" + obj[i].title + "'>" + obj[i].content + "</span>"
                         child.classList.add("children");
                     }
+                    obj[i].dom = child;
+                    obj[i].parent = node;
                     node.appendChild(child);
+                }
+            },
+            nodeMatch() {
+                let option = this.selectopt;
+                let input = this.input;
+                let inputContent = input.value;
+                option.map((data) => {
+                    this.matchMap(inputContent, data);
+                })
+            },
+            matchMap(content, opt) {
+                if(opt.content.indexOf(content) !== -1) {
+                    this.displayAll(opt.dom);
+                    return;
+                } else {
+                    opt.dom.style.display = "none";
+                }
+                if(opt.children) {
+                    opt.children.map((data) => {
+                        this.matchMap(content, data);
+                    })
+                }
+            },
+            displayAll(dom) {
+                let temp = dom;
+                while(temp.className.indexOf("content") == -1) {
+                    temp.style.display = "block";
+                    temp = temp.parentNode;
+                }
+                let divs = dom.getElementsByTagName("div");
+                for(let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "block";
                 }
             }
         },
