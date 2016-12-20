@@ -106,6 +106,7 @@
             div {
                 margin: 20px 0;
                 color: @messagefontcolor;
+                transition: all .2s ease-in;
                 .jicon-right {
                     font-size: 12px;
                     margin: 0 5px;
@@ -135,13 +136,23 @@
                     padding: 0 44px;
                 }
             }
+            .strong {
+                & > span {
+                    font-weight: 700;
+                }
+            }
             span {
                 padding: 5px;
                 border-radius: 2px;
+                transition: font-weight .2s ease-in;
                 &:hover {
                     cursor: pointer;
                     background: @hoverpadding;
                 }
+            }
+            .notfound {
+                padding: 0 5px;
+                color: @placeholder;
             }
         }
         &-fade {
@@ -178,6 +189,8 @@
                 domCreated: false,
                 treeDom: null,
                 input: null,
+                isMatched: false,
+                notFound: null
             }
         },
         components: {
@@ -298,15 +311,39 @@
                 }
             },
             nodeMatch() {
+                this.isMatched = false;
                 let option = this.selectopt;
                 let input = this.input;
                 let inputContent = input.value;
+                let strongs = this.treeDom.querySelectorAll(".strong");
+                for(let i = 0; i < strongs.length; i++) {
+                    strongs[i].classList.remove("strong");
+                }
                 option.map((data) => {
                     this.matchMap(inputContent, data);
+                    if(inputContent) {
+                        this.strongMap(inputContent, data);
+                    }
                 })
+                if(!this.isMatched) {
+                    if(this.notFound) {
+                        this.notFound.style.display = "block";
+                    } else {
+                        let notFound = document.createElement("div");
+                        notFound.textContent = "Not Found";
+                        notFound.classList.add("notfound");
+                        this.notFound = notFound;
+                        this.treeDom.querySelector(".content").appendChild(notFound);
+                    }
+                } else {
+                    if(this.notFound) {
+                       this.notFound.style.display = "none";
+                    }
+                }
             },
             matchMap(content, opt) {
                 if(opt.content.indexOf(content) !== -1) {
+                    this.isMatched = true;
                     this.displayAll(opt.dom);
                     return;
                 } else {
@@ -327,6 +364,16 @@
                 let divs = dom.getElementsByTagName("div");
                 for(let i = 0; i < divs.length; i++) {
                     divs[i].style.display = "block";
+                }
+            },
+            strongMap(content, opt) {
+                if(opt.content.indexOf(content) !== -1) {
+                    opt.dom.classList.add("strong");
+                }
+                if(opt.children) {
+                    opt.children.map((data) => {
+                        this.strongMap(content, data);
+                    })
                 }
             }
         },
