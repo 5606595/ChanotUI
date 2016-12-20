@@ -63,6 +63,14 @@
 
       </treeselect>
     </box>
+    <box>
+      <transfer></transfer>
+    </box>
+    <box>
+      <checkbox>Haha</checkbox>
+      <checkbox>Hehe</checkbox>
+      <checkbox>Xixi</checkbox>
+    </box>
   </div>
 </template>
 
@@ -75,6 +83,8 @@
   import { row, column } from '../components/grid'
   import popover from '../components/popover'
   import { treeselect } from '../components/treeselect'
+  import transfer from '../components/transfer'
+  import checkbox from '../components/checkbox'
   export default {
     components: {
       'c-button': button,
@@ -86,6 +96,8 @@
       'column': column,
       'popover': popover,
       'treeselect': treeselect,
+      'transfer': transfer,
+      'checkbox': checkbox
     },
     data() {
       return {
