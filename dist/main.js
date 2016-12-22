@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(13);
+	module.exports = __webpack_require__(15);
 
 
 /***/ },
@@ -60,12 +60,14 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _main = __webpack_require__(14);
+	var _main = __webpack_require__(16);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -75,14 +77,14 @@
 	window.app = app;
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(15)
-	module.exports = __webpack_require__(19)
+	__webpack_require__(17)
+	module.exports = __webpack_require__(21)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(78)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(94)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -96,16 +98,16 @@
 	})()}
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(16);
+	var content = __webpack_require__(18);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -122,10 +124,10 @@
 	}
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -136,7 +138,7 @@
 
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -191,7 +193,7 @@
 	};
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -443,7 +445,7 @@
 
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -452,41 +454,39 @@
 	  value: true
 	});
 	
-	var _button = __webpack_require__(20);
+	var _button = __webpack_require__(22);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _spin = __webpack_require__(30);
+	var _spin = __webpack_require__(32);
 	
 	var _spin2 = _interopRequireDefault(_spin);
 	
-	var _icon = __webpack_require__(35);
+	var _icon = __webpack_require__(37);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _message = __webpack_require__(36);
+	var _message = __webpack_require__(38);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
-	var _box = __webpack_require__(42);
+	var _box = __webpack_require__(44);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
-	var _grid = __webpack_require__(48);
+	var _grid = __webpack_require__(50);
 	
-	var _popover = __webpack_require__(59);
+	var _popover = __webpack_require__(61);
 	
 	var _popover2 = _interopRequireDefault(_popover);
 	
-	var _treeselect = __webpack_require__(65);
+	var _treeselect = __webpack_require__(67);
 	
 	var _transfer = __webpack_require__(80);
 	
 	var _transfer2 = _interopRequireDefault(_transfer);
 	
-	var _checkbox = __webpack_require__(87);
-	
-	var _checkbox2 = _interopRequireDefault(_checkbox);
+	var _checkbox = __webpack_require__(86);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -562,6 +562,7 @@
 	//       <checkbox>Haha</checkbox>
 	//       <checkbox>Hehe</checkbox>
 	//       <checkbox>Xixi</checkbox>
+	//       <checkboxgroup :options="array"></checkboxgroup>
 	//     </box>
 	//   </div>
 	// </template>
@@ -579,7 +580,8 @@
 	    'popover': _popover2.default,
 	    'treeselect': _treeselect.treeselect,
 	    'transfer': _transfer2.default,
-	    'checkbox': _checkbox2.default
+	    'checkbox': _checkbox.checkbox,
+	    'checkboxgroup': _checkbox.checkboxgroup
 	  },
 	  data: function data() {
 	    return {
@@ -601,7 +603,8 @@
 	          title: "child2",
 	          children: null
 	        }]
-	      }]
+	      }],
+	      array: ['mimi', 'nini', 'hihi']
 	    };
 	  },
 	
@@ -611,14 +614,14 @@
 	// </script>
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(21)
-	module.exports = __webpack_require__(23)
+	__webpack_require__(23)
+	module.exports = __webpack_require__(25)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(29)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(31)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -632,16 +635,16 @@
 	})()}
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(22);
+	var content = __webpack_require__(24);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -658,10 +661,10 @@
 	}
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -672,7 +675,7 @@
 
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -681,7 +684,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(24);
+	var _icon = __webpack_require__(26);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -876,14 +879,14 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(25)
-	module.exports = __webpack_require__(27)
+	__webpack_require__(27)
+	module.exports = __webpack_require__(29)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(28)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(30)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -897,16 +900,16 @@
 	})()}
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(26);
+	var content = __webpack_require__(28);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -923,10 +926,10 @@
 	}
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -937,7 +940,7 @@
 
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1030,26 +1033,26 @@
 	// </script>
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "<i class=\"jicon\" :class=\"['jicon-' + type, jclass]\"></i>";
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = "<button class=\"j-btn\" :class=\"[type, size, btnShape, { loading: loading }]\" :disabled=\"disabled\" @click=\"clickEvent\" _v-610020c5=\"\">\n        <!--<transition name=\"btnclick\" v-on:after-enter=\"enterCancelled\">-->\n            <!--<p v-if=\"show\" class=\"clicked\"></p>-->\n        <!--</transition>-->\n        <!--<i v-if=\"icon\" class=\"jicon\" :class=\"'jicon-' + icon\"></i>-->\n        <icon v-if=\"exists\" :type=\"iconType\" _v-610020c5=\"\"></icon>\n        <slot _v-610020c5=\"\"></slot>\n    </button>";
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(31)
-	module.exports = __webpack_require__(33)
+	__webpack_require__(33)
+	module.exports = __webpack_require__(35)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(34)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(36)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1063,16 +1066,16 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(32);
+	var content = __webpack_require__(34);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1089,10 +1092,10 @@
 	}
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1103,7 +1106,7 @@
 
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1197,13 +1200,13 @@
 	// </script>
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"jspin-container\" _v-4fe71505=\"\">\n        <div class=\"spin\" _v-4fe71505=\"\">\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n            <i class=\"dot\" _v-4fe71505=\"\"></i>\n        </div>\n        <div class=\"jsay\" _v-4fe71505=\"\">\n            <span _v-4fe71505=\"\">{{ tips }}</span>\n        </div>\n    </div>";
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1212,7 +1215,7 @@
 	  value: true
 	});
 	
-	var _icon = __webpack_require__(24);
+	var _icon = __webpack_require__(26);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1223,7 +1226,7 @@
 	                                   */
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1232,7 +1235,7 @@
 	    value: true
 	});
 	
-	var _message = __webpack_require__(37);
+	var _message = __webpack_require__(39);
 	
 	var _message2 = _interopRequireDefault(_message);
 	
@@ -1318,14 +1321,14 @@
 	    */
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(38)
-	module.exports = __webpack_require__(40)
+	__webpack_require__(40)
+	module.exports = __webpack_require__(42)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(41)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(43)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1339,16 +1342,16 @@
 	})()}
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(39);
+	var content = __webpack_require__(41);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1365,10 +1368,10 @@
 	}
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1379,7 +1382,7 @@
 
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1388,7 +1391,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(24);
+	var _icon = __webpack_require__(26);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -1491,13 +1494,13 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-message\" v-if=\"show\" _v-1e199ad6=\"\">\n        <icon :type=\"newType\" _v-1e199ad6=\"\"></icon>\n        <span class=\"message\" _v-1e199ad6=\"\">\n            <slot _v-1e199ad6=\"\"></slot>\n        </span>\n    </div>";
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1506,7 +1509,7 @@
 	  value: true
 	});
 	
-	var _box = __webpack_require__(43);
+	var _box = __webpack_require__(45);
 	
 	var _box2 = _interopRequireDefault(_box);
 	
@@ -1517,14 +1520,14 @@
 	                                  */
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(44)
-	module.exports = __webpack_require__(46)
+	__webpack_require__(46)
+	module.exports = __webpack_require__(48)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(47)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(49)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1538,16 +1541,16 @@
 	})()}
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(45);
+	var content = __webpack_require__(47);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1564,10 +1567,10 @@
 	}
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1578,7 +1581,7 @@
 
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1610,13 +1613,13 @@
 	// </script>
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"j-box\" _v-36efc21d=\"\">\n        <slot _v-36efc21d=\"\"></slot>\n    </div>";
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1626,11 +1629,11 @@
 	});
 	exports.column = exports.row = undefined;
 	
-	var _row = __webpack_require__(49);
+	var _row = __webpack_require__(51);
 	
 	var _row2 = _interopRequireDefault(_row);
 	
-	var _column = __webpack_require__(54);
+	var _column = __webpack_require__(56);
 	
 	var _column2 = _interopRequireDefault(_column);
 	
@@ -1643,14 +1646,14 @@
 	exports.column = _column2.default;
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(50)
-	module.exports = __webpack_require__(52)
+	__webpack_require__(52)
+	module.exports = __webpack_require__(54)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(53)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(55)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1664,16 +1667,16 @@
 	})()}
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(51);
+	var content = __webpack_require__(53);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1690,10 +1693,10 @@
 	}
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1704,7 +1707,7 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1762,20 +1765,20 @@
 	// </script>
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-row\" :style=\"justifyContent\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(55)
-	module.exports = __webpack_require__(57)
+	__webpack_require__(57)
+	module.exports = __webpack_require__(59)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(58)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(60)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1789,16 +1792,16 @@
 	})()}
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(56);
+	var content = __webpack_require__(58);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1815,10 +1818,10 @@
 	}
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -1829,7 +1832,7 @@
 
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1933,13 +1936,13 @@
 	// </script>
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-col\" :class=\"[cspan, cxs, csm, cmd, clg]\" _v-6efc49d5=\"\">\n        <slot _v-6efc49d5=\"\"></slot>\n    </div>";
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1948,7 +1951,7 @@
 	  value: true
 	});
 	
-	var _popover = __webpack_require__(60);
+	var _popover = __webpack_require__(62);
 	
 	var _popover2 = _interopRequireDefault(_popover);
 	
@@ -1959,14 +1962,14 @@
 	                                      */
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(61)
-	module.exports = __webpack_require__(63)
+	__webpack_require__(63)
+	module.exports = __webpack_require__(65)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(64)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(66)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1980,16 +1983,16 @@
 	})()}
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(62);
+	var content = __webpack_require__(64);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2006,10 +2009,10 @@
 	}
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -2020,7 +2023,7 @@
 
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2405,13 +2408,13 @@
 	// </script>
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-popcontainer\">\n        <slot></slot>\n    </div>";
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2421,11 +2424,11 @@
 	});
 	exports.treenode = exports.treeselect = undefined;
 	
-	var _treeselect = __webpack_require__(66);
+	var _treeselect = __webpack_require__(68);
 	
 	var _treeselect2 = _interopRequireDefault(_treeselect);
 	
-	var _treenode = __webpack_require__(73);
+	var _treenode = __webpack_require__(75);
 	
 	var _treenode2 = _interopRequireDefault(_treenode);
 	
@@ -2438,15 +2441,15 @@
 	exports.treenode = _treenode2.default;
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(67)
 	__webpack_require__(69)
-	module.exports = __webpack_require__(71)
+	__webpack_require__(71)
+	module.exports = __webpack_require__(73)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(72)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(74)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2460,16 +2463,16 @@
 	})()}
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(68);
+	var content = __webpack_require__(70);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2486,10 +2489,10 @@
 	}
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -2500,16 +2503,16 @@
 
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(70);
+	var content = __webpack_require__(72);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2526,10 +2529,10 @@
 	}
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -2540,7 +2543,7 @@
 
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2549,7 +2552,7 @@
 	    value: true
 	});
 	
-	var _icon = __webpack_require__(35);
+	var _icon = __webpack_require__(37);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -2964,20 +2967,20 @@
 	// <script type="text/ecmascript-6">
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-treeselect\" @click=\"clickEvent\" _v-05c0c976=\"\">\n        <icon type=\"down\" _v-05c0c976=\"\"></icon>\n        <icon type=\"fail\" jclass=\"clear\" _v-05c0c976=\"\"></icon>\n        <div class=\"selectContent\" _v-05c0c976=\"\">\n            Please a select\n        </div>\n    </div>";
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(74)
-	module.exports = __webpack_require__(76)
+	__webpack_require__(76)
+	module.exports = __webpack_require__(78)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(77)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(79)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2991,16 +2994,16 @@
 	})()}
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(75);
+	var content = __webpack_require__(77);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -3017,10 +3020,10 @@
 	}
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -3031,7 +3034,7 @@
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3056,19 +3059,12 @@
 	// </script>
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"\" _v-096ed98b=\"\">\n    </div>";
 
 /***/ },
-/* 78 */
-/***/ function(module, exports) {
-
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n    <box _v-415b7153=\"\">\n      <transfer _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n    </box>\n  </div>";
-
-/***/ },
-/* 79 */,
 /* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3119,7 +3115,7 @@
 	var content = __webpack_require__(83);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -3139,7 +3135,7 @@
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -3233,8 +3229,7 @@
 	module.exports = "<div class=\"c-transfer\" _v-1cfd56a5=\"\">\n        <div class=\"transfercont transfer-from\" _v-1cfd56a5=\"\">\n            <ul v-for=\"source in sourcedata\" _v-1cfd56a5=\"\">\n                <li :title=\"source.title\" :disabled=\"source.disabled\" _v-1cfd56a5=\"\">\n                    <input type=\"checkbox\" _v-1cfd56a5=\"\">\n                    {{ source.content }}\n                </li>\n            </ul>\n        </div>\n        <div class=\"transfercont transfer-symbol\" _v-1cfd56a5=\"\">\n\n        </div>\n        <div class=\"transfercont transfer-to\" _v-1cfd56a5=\"\">\n\n        </div>\n    </div>";
 
 /***/ },
-/* 86 */,
-/* 87 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3242,27 +3237,34 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.checkboxgroup = exports.checkbox = undefined;
 	
-	var _checkbox = __webpack_require__(88);
+	var _checkbox = __webpack_require__(87);
 	
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 	
+	var _checkboxgroup = __webpack_require__(96);
+	
+	var _checkboxgroup2 = _interopRequireDefault(_checkboxgroup);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _checkbox2.default; /**
-	                                       * Created by jorten on 2016/12/20.
-	                                       */
+	/**
+	 * Created by jorten on 2016/12/20.
+	 */
+	exports.checkbox = _checkbox2.default;
+	exports.checkboxgroup = _checkboxgroup2.default;
 
 /***/ },
-/* 88 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(88)
 	__webpack_require__(90)
-	__webpack_require__(96)
-	module.exports = __webpack_require__(93)
+	module.exports = __webpack_require__(92)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(92)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(93)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3276,17 +3278,16 @@
 	})()}
 
 /***/ },
-/* 89 */,
-/* 90 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(91);
+	var content = __webpack_require__(89);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -3303,10 +3304,10 @@
 	}
 
 /***/ },
-/* 91 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
@@ -3317,13 +3318,47 @@
 
 
 /***/ },
-/* 92 */
-/***/ function(module, exports) {
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"checkboxcont\" :class=\"{'checkboxcont-selected': isSelected}\" @click=\"clickevent\" _v-435aacb6=\"\">\n        <span class=\"j-checkbox\" _v-435aacb6=\"\">\n            <input type=\"checkbox\" _v-435aacb6=\"\">\n        </span>\n        <slot _v-435aacb6=\"\"></slot>\n    </div>";
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(91);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(20)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-435aacb6&file=checkbox.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./checkbox.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-435aacb6&file=checkbox.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./checkbox.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
-/* 93 */
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(19)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "* {\n  font-size: 12px;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.checkboxcont-selected-last .j-checkbox {\n  border-color: #46a6ea;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 92 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3331,14 +3366,14 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected}" @click="clickevent">
-	//         <span class="j-checkbox">
-	//             <input type="checkbox" />
-	//         </span>
-	//         <slot></slot>
-	//     </div>
-	// </template>
+	//     <template>
+	//         <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected}" @click="clickevent">
+	//             <span class="j-checkbox">
+	//                 <input type="checkbox" />
+	//             </span>
+	//             <slot></slot>
+	//         </div>
+	//     </template>
 	// <style lang="less" scoped rel="stylesheet/less">
 	//     @import '../../mixin/mixin.less';
 	//     .checkboxcont {
@@ -3396,24 +3431,26 @@
 	// <style lang="less" rel="stylesheet/less">
 	//     @import '../../mixin/mixin.less';
 	//     .checkboxcont-selected-last .j-checkbox {
-	//         border-color: @jbluelight!important;
+	//         border-color: @jbluelight;
 	//     }
 	// </style>
-	// <script>
+	//     <script>
 	exports.default = {
 	    data: function data() {
 	        return {
-	            isSelected: true
+	            isSelected: false
 	        };
 	    },
 	
 	    methods: {
 	        clickevent: function clickevent(event) {
-	            if (selected) {
-	                selected.classList.remove("checkboxcont-selected-last");
+	            var selectedLast = document.querySelector(".checkboxcont-selected-last");
+	            if (selectedLast) {
+	                selectedLast.classList.remove("checkboxcont-selected-last");
 	            }
 	            if (this.isSelected) {
 	                this.isSelected = false;
+	                this.$el.classList.add("checkboxcont-selected-last");
 	            } else {
 	                this.isSelected = true;
 	            }
@@ -3423,25 +3460,57 @@
 	// </script>
 
 /***/ },
-/* 94 */,
+/* 93 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"checkboxcont\" :class=\"{'checkboxcont-selected': isSelected}\" @click=\"clickevent\" _v-435aacb6=\"\">\n            <span class=\"j-checkbox\" _v-435aacb6=\"\">\n                <input type=\"checkbox\" _v-435aacb6=\"\">\n            </span>\n            <slot _v-435aacb6=\"\"></slot>\n        </div>";
+
+/***/ },
+/* 94 */
+/***/ function(module, exports) {
+
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n    <box _v-415b7153=\"\">\n      <transfer _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <checkboxgroup :options=\"array\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n  </div>";
+
+/***/ },
 /* 95 */,
 /* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(97)
+	module.exports = __webpack_require__(99)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(100)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/checkbox/checkboxgroup.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(97);
+	var content = __webpack_require__(98);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
+	var update = __webpack_require__(20)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-435aacb6&file=checkbox.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./checkbox.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-435aacb6&file=checkbox.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./checkbox.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3451,18 +3520,68 @@
 	}
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(17)();
+	exports = module.exports = __webpack_require__(19)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.checkboxcont-selected-last .j-checkbox {\n  border-color: #46a6ea !important;\n}\n", ""]);
+	exports.push([module.id, "", ""]);
 	
 	// exports
 
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _checkbox = __webpack_require__(87);
+	
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    components: {
+	        'checkbox': _checkbox2.default
+	    },
+	    data: function data() {
+	        return {};
+	    },
+	
+	    props: {
+	        options: {
+	            type: Array
+	        }
+	    },
+	    methods: {}
+	};
+	// </script>
+	// <template>
+	//     <div class="j-checkboxgroup">
+	//         <checkbox v-for="option in options">
+	//             {{ option }}
+	//         </checkbox>
+	//     </div>
+	// </template>
+	// <style lang="less">
+	
+	// </style>
+	// <script>
+
+/***/ },
+/* 100 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"j-checkboxgroup\">\n        <checkbox v-for=\"option in options\">\n            {{ option }}\n        </checkbox>\n    </div>";
 
 /***/ }
 /******/ ]);

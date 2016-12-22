@@ -70,6 +70,7 @@
       <checkbox>Haha</checkbox>
       <checkbox>Hehe</checkbox>
       <checkbox>Xixi</checkbox>
+      <checkboxgroup :options="array"></checkboxgroup>
     </box>
   </div>
 </template>
@@ -84,7 +85,7 @@
   import popover from '../components/popover'
   import { treeselect } from '../components/treeselect'
   import transfer from '../components/transfer'
-  import checkbox from '../components/checkbox'
+  import { checkbox, checkboxgroup } from '../components/checkbox'
   export default {
     components: {
       'c-button': button,
@@ -97,7 +98,8 @@
       'popover': popover,
       'treeselect': treeselect,
       'transfer': transfer,
-      'checkbox': checkbox
+      'checkbox': checkbox,
+      'checkboxgroup': checkboxgroup
     },
     data() {
       return {
@@ -119,7 +121,8 @@
             title: "child2",
             children: null
           }]
-        }]
+        }],
+        array: ['mimi', 'nini', 'hihi']
       }
     },
     computed: {},
