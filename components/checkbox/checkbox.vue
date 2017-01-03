@@ -1,11 +1,11 @@
-    <template>
-        <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected}" @click="clickevent">
-            <span class="j-checkbox">
-                <input type="checkbox" />
-            </span>
-            <slot></slot>
-        </div>
-    </template>
+<template>
+    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected}" @click="clickevent">
+        <span class="j-checkbox">
+            <input type="checkbox" />
+        </span>
+        <slot></slot>
+    </div>
+</template>
 <style lang="less" scoped rel="stylesheet/less">
     @import '../../mixin/mixin.less';
     .checkboxcont {
@@ -66,27 +66,27 @@
         border-color: @jbluelight;
     }
 </style>
-    <script>
-        export default {
-            data() {
-                return {
-                    isSelected: false
+<script>
+    export default {
+        data() {
+            return {
+                isSelected: false
+            }
+
+        },
+        methods: {
+            clickevent(event) {
+                let selectedLast = document.querySelector(".checkboxcont-selected-last");
+                if(selectedLast) {
+                    selectedLast.classList.remove("checkboxcont-selected-last")
                 }
-                
-            },
-            methods: {
-    clickevent(event) {
-        let selectedLast = document.querySelector(".checkboxcont-selected-last");
-        if(selectedLast) {
-            selectedLast.classList.remove("checkboxcont-selected-last")
-        }
-        if(this.isSelected) {
-            this.isSelected = false;
-            this.$el.classList.add("checkboxcont-selected-last")
-        } else {
-            this.isSelected = true;
-        }
+                if(this.isSelected) {
+                    this.isSelected = false;
+                    this.$el.classList.add("checkboxcont-selected-last")
+                } else {
+                    this.isSelected = true;
+                }
+            }
+        },
     }
-            },
-        }
-    </script>
+</script>
