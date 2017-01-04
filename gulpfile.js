@@ -47,7 +47,7 @@ function getConfig(opt) {
             loaders: [
                 { test: /\.vue$/, loader: 'vue' },
                 { test: /\.json$/, loader: 'json' },
-                { test: /\.js$/, loader: 'babel-loader?presets[]=es2015&plugins[]=transform-runtime' },
+                { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
                 { test: /\.(?:jpg|svg|jpeg|gif|png)$/, loader: 'url?limit=8192' },
                 { test: /\.(woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=50000&name=[path][name].[ext]'}
             ]

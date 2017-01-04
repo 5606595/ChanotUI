@@ -1,5 +1,5 @@
 <template>
-    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected}" @click="clickevent">
+    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast}" @click="clickevent">
         <span class="j-checkbox">
             <input type="checkbox" />
         </span>
@@ -59,30 +59,42 @@
             }
         }
     }
-</style>
-<style lang="less" rel="stylesheet/less">
-    @import '../../mixin/mixin.less';
     .checkboxcont-selected-last .j-checkbox {
         border-color: @jbluelight;
     }
 </style>
 <script>
+    import Vuex from 'vuex';
+    const store = new Vuex.Store({
+        state: {
+            dom: null
+        },
+        mutations: {
+            addDom(state, payload) {
+                state.dom = payload;
+            },
+            clickDom(state) {
+                if(state.dom) {
+                    state.dom.isSelectedLast = false;
+                }
+            }
+        }
+    })
     export default {
         data() {
             return {
-                isSelected: false
+                isSelected: false,
+                isSelectedLast: false
             }
-
         },
+        store,
         methods: {
             clickevent(event) {
-                let selectedLast = document.querySelector(".checkboxcont-selected-last");
-                if(selectedLast) {
-                    selectedLast.classList.remove("checkboxcont-selected-last")
-                }
+                store.commit("clickDom");
                 if(this.isSelected) {
                     this.isSelected = false;
-                    this.$el.classList.add("checkboxcont-selected-last")
+                    this.isSelectedLast = true;
+                    store.commit("addDom", this);
                 } else {
                     this.isSelected = true;
                 }
