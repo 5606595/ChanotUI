@@ -85,7 +85,7 @@
 	module.exports = __webpack_require__(22)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(100)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(99)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3245,7 +3245,7 @@
 	
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 	
-	var _checkboxgroup = __webpack_require__(95);
+	var _checkboxgroup = __webpack_require__(94);
 	
 	var _checkboxgroup2 = _interopRequireDefault(_checkboxgroup);
 	
@@ -3262,10 +3262,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(89)
-	module.exports = __webpack_require__(93)
+	module.exports = __webpack_require__(91)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(94)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(93)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3313,15 +3313,13 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-435aacb6] {\n  font-size: 12px;\n}\nbody[_v-435aacb6] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.checkboxcont[_v-435aacb6] {\n  display: inline-block;\n}\n.checkboxcont[_v-435aacb6]:hover {\n  cursor: pointer;\n}\n.checkboxcont:hover .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.j-checkbox[_v-435aacb6] {\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  display: inline-block;\n  border: 1px solid #e9e9e9;\n  border-radius: 3px;\n  line-height: 12px;\n  vertical-align: -3px;\n  margin: 0 5px;\n  z-index: 20;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox input[_v-435aacb6] {\n  opacity: 0;\n  position: absolute;\n  left: 0;\n  top: 0;\n  visibility: hidden;\n  /*display: none;*/\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 4px;\n  height: 7px;\n  border: 2px solid white;\n  border-top: none;\n  border-left: none;\n  position: absolute;\n  left: 3px;\n  top: 0;\n  z-index: 30;\n  -webkit-transform: rotate(45deg) scale(1);\n          transform: rotate(45deg) scale(1);\n}\n.checkboxcont-selected-last .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n", ""]);
+	exports.push([module.id, "*[_v-435aacb6] {\n  font-size: 12px;\n}\nbody[_v-435aacb6] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.checkboxcont[_v-435aacb6] {\n  display: inline-block;\n}\n.checkboxcont[_v-435aacb6]:hover {\n  cursor: pointer;\n}\n.checkboxcont:hover .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.j-checkbox[_v-435aacb6] {\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  display: inline-block;\n  border: 1px solid #e9e9e9;\n  border-radius: 3px;\n  line-height: 12px;\n  vertical-align: -3px;\n  margin: 0 5px;\n  z-index: 20;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox[_v-435aacb6]:after {\n  border-color: white;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox input[_v-435aacb6] {\n  opacity: 0;\n  position: absolute;\n  left: 0;\n  top: 0;\n  visibility: hidden;\n  /*display: none;*/\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 4px;\n  height: 7px;\n  border: 2px solid white;\n  border-top: none;\n  border-left: none;\n  position: absolute;\n  left: 3px;\n  top: 0;\n  z-index: 30;\n  -webkit-transform: rotate(45deg) scale(1);\n          transform: rotate(45deg) scale(1);\n}\n.checkboxcont-selected-last .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 6px;\n  height: 7px;\n  border: 2px solid white;\n  border-top: none;\n  border-left: none;\n  border-right: none;\n  position: absolute;\n  left: 3px;\n  top: -1px;\n  z-index: 30;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3330,7 +3328,7 @@
 	    value: true
 	});
 	
-	var _vuex = __webpack_require__(101);
+	var _vuex = __webpack_require__(92);
 	
 	var _vuex2 = _interopRequireDefault(_vuex);
 	
@@ -3351,7 +3349,7 @@
 	        }
 	    }
 	}); // <template>
-	//     <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast}" @click="clickevent">
+	//     <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast, 'checkboxcont-notall': isNotAll }" @click="clickevent">
 	//         <span class="j-checkbox">
 	//             <input type="checkbox" />
 	//         </span>
@@ -3383,6 +3381,10 @@
 	//         margin: 0 5px;
 	//         z-index: 20;
 	//         transition: all .2s linear;
+	//         &:after {
+	//             border-color: white;
+	//             transition: all .2s linear;
+	//         }
 	//         input {
 	//             opacity: 0;
 	//             position: absolute;
@@ -3414,13 +3416,31 @@
 	//     .checkboxcont-selected-last .j-checkbox {
 	//         border-color: @jbluelight;
 	//     }
+	//     .checkboxcont-notall .j-checkbox {
+	//         background: @jbluelight;
+	//         border-color: @jbluelight;
+	//         &:after {
+	//             content: '';
+	//             width: 6px;
+	//             height: 7px;
+	//             border: 2px solid white;
+	//             border-top: none;
+	//             border-left: none;
+	//             border-right: none;
+	//             position: absolute;
+	//             left: 3px;
+	//             top: -1px;
+	//             z-index: 30;
+	//         }
+	//     }
 	// </style>
 	// <script>
 	exports.default = {
 	    data: function data() {
 	        return {
 	            isSelected: false,
-	            isSelectedLast: false
+	            isSelectedLast: false,
+	            isNotAll: true
 	        };
 	    },
 	
@@ -3433,6 +3453,9 @@
 	                this.isSelectedLast = true;
 	                store.commit("addDom", this);
 	            } else {
+	                if (this.isNotAll) {
+	                    this.isNotAll = false;
+	                }
 	                this.isSelected = true;
 	            }
 	        }
@@ -3441,130 +3464,7 @@
 	// </script>
 
 /***/ },
-/* 94 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"checkboxcont\" :class=\"{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast}\" @click=\"clickevent\" _v-435aacb6=\"\">\n        <span class=\"j-checkbox\" _v-435aacb6=\"\">\n            <input type=\"checkbox\" _v-435aacb6=\"\">\n        </span>\n        <slot _v-435aacb6=\"\"></slot>\n    </div>";
-
-/***/ },
-/* 95 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(96)
-	module.exports = __webpack_require__(98)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(99)
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "/Users/jorten/github/ChanotUI/components/checkbox/checkboxgroup.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-	  }
-	})()}
-
-/***/ },
-/* 96 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(97);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(21)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 97 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(20)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 98 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _checkbox = __webpack_require__(88);
-	
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	    components: {
-	        'checkbox': _checkbox2.default
-	    },
-	    data: function data() {
-	        return {};
-	    },
-	
-	    props: {
-	        options: {
-	            type: Array
-	        }
-	    },
-	    methods: {}
-	};
-	// </script>
-	// <template>
-	//     <div class="j-checkboxgroup">
-	//         <checkbox v-for="option in options">
-	//             {{ option }}
-	//         </checkbox>
-	//     </div>
-	// </template>
-	// <style lang="less">
-	
-	// </style>
-	// <script>
-
-/***/ },
-/* 99 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"j-checkboxgroup\">\n        <checkbox v-for=\"option in options\">\n            {{ option }}\n        </checkbox>\n    </div>";
-
-/***/ },
-/* 100 */
-/***/ function(module, exports) {
-
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n    <box _v-415b7153=\"\">\n      <transfer _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <checkboxgroup :options=\"array\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n  </div>";
-
-/***/ },
-/* 101 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -4328,6 +4228,129 @@
 	return index;
 	
 	})));
+
+/***/ },
+/* 93 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"checkboxcont\" :class=\"{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast, 'checkboxcont-notall': isNotAll }\" @click=\"clickevent\" _v-435aacb6=\"\">\n        <span class=\"j-checkbox\" _v-435aacb6=\"\">\n            <input type=\"checkbox\" _v-435aacb6=\"\">\n        </span>\n        <slot _v-435aacb6=\"\"></slot>\n    </div>";
+
+/***/ },
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(95)
+	module.exports = __webpack_require__(97)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(98)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/checkbox/checkboxgroup.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(96);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(21)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-095fbaaa&file=checkboxgroup.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./checkboxgroup.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(20)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _checkbox = __webpack_require__(88);
+	
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    components: {
+	        'checkbox': _checkbox2.default
+	    },
+	    data: function data() {
+	        return {};
+	    },
+	
+	    props: {
+	        options: {
+	            type: Array
+	        }
+	    },
+	    methods: {}
+	};
+	// </script>
+	// <template>
+	//     <div class="j-checkboxgroup">
+	//         <checkbox v-for="option in options">
+	//             {{ option }}
+	//         </checkbox>
+	//     </div>
+	// </template>
+	// <style lang="less">
+	
+	// </style>
+	// <script>
+
+/***/ },
+/* 98 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"j-checkboxgroup\">\n        <checkbox v-for=\"option in options\">\n            {{ option }}\n        </checkbox>\n    </div>";
+
+/***/ },
+/* 99 */
+/***/ function(module, exports) {
+
+	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n    <box _v-415b7153=\"\">\n      <transfer _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <checkboxgroup :options=\"array\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

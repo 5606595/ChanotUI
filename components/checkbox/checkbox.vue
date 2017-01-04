@@ -1,5 +1,5 @@
 <template>
-    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast}" @click="clickevent">
+    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast, 'checkboxcont-notall': isNotAll }" @click="clickevent">
         <span class="j-checkbox">
             <input type="checkbox" />
         </span>
@@ -31,6 +31,10 @@
         margin: 0 5px;
         z-index: 20;
         transition: all .2s linear;
+        &:after {
+            border-color: white;
+            transition: all .2s linear;
+        }
         input {
             opacity: 0;
             position: absolute;
@@ -62,6 +66,23 @@
     .checkboxcont-selected-last .j-checkbox {
         border-color: @jbluelight;
     }
+    .checkboxcont-notall .j-checkbox {
+        background: @jbluelight;
+        border-color: @jbluelight;
+        &:after {
+            content: '';
+            width: 6px;
+            height: 7px;
+            border: 2px solid white;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            position: absolute;
+            left: 3px;
+            top: -1px;
+            z-index: 30;
+        }
+    }
 </style>
 <script>
     import Vuex from 'vuex';
@@ -84,7 +105,8 @@
         data() {
             return {
                 isSelected: false,
-                isSelectedLast: false
+                isSelectedLast: false,
+                isNotAll: true
             }
         },
         store,
@@ -96,6 +118,9 @@
                     this.isSelectedLast = true;
                     store.commit("addDom", this);
                 } else {
+                    if(this.isNotAll) {
+                        this.isNotAll = false;
+                    }
                     this.isSelected = true;
                 }
             }
