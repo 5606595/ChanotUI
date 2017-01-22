@@ -1,5 +1,5 @@
 <template>
-    <div class="checkboxcont" :class="{'checkboxcont-selected': isSelected, 'checkboxcont-selected-last': isSelectedLast, 'checkboxcont-notall': isNotAll }" @click="clickevent">
+    <div class="checkboxcont" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
         <span class="j-checkbox">
             <input type="checkbox" />
         </span>
@@ -52,9 +52,8 @@
                 content: '';
                 width: 4px;
                 height: 7px;
-                border: 2px solid white;
-                border-top: none;
-                border-left: none;
+                border-right: 2px solid white;
+                border-bottom: 2px solid white;
                 position: absolute;
                 left: 3px;
                 top: 0;
@@ -73,10 +72,7 @@
             content: '';
             width: 6px;
             height: 7px;
-            border: 2px solid white;
-            border-top: none;
-            border-left: none;
-            border-right: none;
+            border-bottom: 2px solid white;
             position: absolute;
             left: 3px;
             top: -1px;
@@ -96,7 +92,7 @@
             },
             clickDom(state) {
                 if(state.dom) {
-                    state.dom.isSelectedLast = false;
+                    state.dom.isselectedLast = false;
                 }
             }
         }
@@ -104,25 +100,34 @@
     export default {
         data() {
             return {
-                isSelected: false,
-                isSelectedLast: false,
-                isNotAll: true
+                isselectedLast: false,
+            }
+        },
+        props: {
+            isnotall: {
+                type: Boolean,
+                default: false
+            },
+            isselected: {
+                type: Boolean,
+                default: false
             }
         },
         store,
         methods: {
             clickevent(event) {
                 store.commit("clickDom");
-                if(this.isSelected) {
-                    this.isSelected = false;
-                    this.isSelectedLast = true;
+                if(this.isselected) {
+                    this.isselected = false;
+                    this.isselectedLast = true;
                     store.commit("addDom", this);
                 } else {
-                    if(this.isNotAll) {
-                        this.isNotAll = false;
+                    if(this.isnotall) {
+                        this.isnotall = false;
                     }
-                    this.isSelected = true;
+                    this.isselected = true;
                 }
+                this.$emit("change", this.$el.textContent.trim());
             }
         },
     }

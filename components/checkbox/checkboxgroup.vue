@@ -1,14 +1,15 @@
 <template>
     <div class="j-checkboxgroup">
-        <checkbox v-for="option in options">
-            {{ option }}
-        </checkbox>
+        <div class="detail">
+            <checkbox v-for="(option, index) in options" v-bind:isselected="values.indexOf(option) !== -1" @change="changeEvent">
+                {{ option }}
+            </checkbox>
+        </div>
     </div>
 </template>
-<style lang="less">
-
+<style lang="less" scoped rel="stylesheet/less">
 </style>
-<script>
+<script type="text/ecmascript-6">
     import checkbox from './checkbox.vue'
     export default {
         components: {
@@ -16,14 +17,29 @@
         },
         data() {
             return {
-
             }
+        },
+        computed: {
+
         },
         props: {
             options: {
                 type: Array
+            },
+            values: {
+                type: Array
             }
         },
-        methods: {}
+        methods: {
+            changeEvent(param) {
+                let i = this.values.indexOf(param);
+                if(i === -1) {
+                    this.values.push(param);
+                } else {
+                    this.values.splice(i, 1);
+                }
+                this.$emit("change");
+            }
+        }
     }
 </script>

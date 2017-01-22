@@ -11,6 +11,11 @@
     height: 50px;
     color: white;
   }
+  .group {
+    margin: 20px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #DDD;
+  }
 </style>
 <template>
   <div>
@@ -70,7 +75,12 @@
       <checkbox>Haha</checkbox>
       <checkbox>Hehe</checkbox>
       <checkbox>Xixi</checkbox>
-      <checkboxgroup :options="array"></checkboxgroup>
+      <div class="group">
+        <checkbox :isnotall="notall" :isselected="checkall" @change="allEvent">
+          CheckAll
+        </checkbox>
+      </div>
+      <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
   </div>
 </template>
@@ -86,6 +96,8 @@
   import { treeselect } from '../components/treeselect'
   import transfer from '../components/transfer'
   import { checkbox, checkboxgroup } from '../components/checkbox'
+  let checkAllList = ["apple", "banana", "pear"];
+  let defaultList = [];
   export default {
     components: {
       'c-button': button,
@@ -122,10 +134,34 @@
             children: null
           }]
         }],
-        array: ['mimi', 'nini', 'hihi']
+        array: checkAllList,
+        checkList: defaultList
       }
     },
-    computed: {},
-    methods: {}
+    computed: {
+      checkall() {
+        return this.checkList.length === this.array.length
+      },
+      notall() {
+        return this.checkList.length && this.checkList.length !== this.array.length
+      }
+    },
+    methods: {
+      allEvent() {
+        if(this.notall) {
+          this.checkList = [];
+          for(let i = 0; i < checkAllList.length; i++) {
+            this.checkList[i] = checkAllList[i];
+          }
+        } else if(this.checkall) {
+          this.checkList = [];
+        } else {
+          this.checkList = [];
+          for(let i = 0; i < checkAllList.length; i++) {
+            this.checkList[i] = checkAllList[i];
+          }
+        }
+      }
+    }
   }
 </script>
