@@ -28,18 +28,18 @@
       <!--<icon type="warning"/>-->
       <!--<icon type="search"/>-->
     <!--</box>-->
-    <!--<box>-->
-      <!--<c-button size="large">large</c-button>-->
-      <!--<c-button type="primary">default</c-button>-->
-      <!--<c-button size="small" type="primary">small</c-button>-->
-      <!--<c-button type="primary" size="large" icon="search" shape="circle"></c-button>-->
-      <!--<c-button type="primary" icon="search" shape="circle"></c-button>-->
-      <!--<c-button type="primary" icon="search" shape="circle" size="small"></c-button>-->
-      <!--<c-button type="primary" icon="search" size="small">click me</c-button>-->
-      <!--<c-button icon="forward" size="small" type="primary">Go froward</c-button>-->
-      <!--<c-button icon="download" size="small" type="primary">download</c-button>-->
-      <!--<c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>-->
-    <!--</box>-->
+    <box>
+      <c-button size="large">large</c-button>
+      <c-button type="primary">default</c-button>
+      <c-button size="small" type="primary">small</c-button>
+      <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
+      <c-button type="primary" icon="search" shape="circle"></c-button>
+      <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
+      <c-button type="primary" icon="search" size="small">click me</c-button>
+      <c-button icon="forward" size="small" type="primary">Go froward</c-button>
+      <c-button icon="download" size="small" type="primary">download</c-button>
+      <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
+    </box>
     <!--<box>-->
       <!--<row space="between">-->
         <!--<column xs="1" sm="6" md="2" lg="2">-->
@@ -70,7 +70,7 @@
       <!--</treeselect>-->
     <!--</box>-->
     <box>
-      <transfer :sourcedata="sourcedata"></transfer>
+      <transfer :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
     </box>
     <box>
       <checkbox>Haha</checkbox>
@@ -141,6 +141,9 @@
           content: "hahaha"
         }, {
           content: "mxoamoxsa"
+        }],
+        targetdata: [{
+          content: 'pppp'
         }]
       }
     },

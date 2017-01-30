@@ -4,7 +4,7 @@
         @border: #e9e9e9;
         padding: 50px 30px;
         box-sizing: border-box;
-        width: 500px;
+        min-width: 500px;
         min-height: 200px;
         margin: 20px;
         border: 1px solid @border;

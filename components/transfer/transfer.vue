@@ -14,12 +14,20 @@
             </div>
         </div>
         <div class="transfer-symbol">
-            <c-button type="primary" icon="backward" size="small"></c-button>
-            <c-button type="primary" icon="forward" size="small"></c-button>
+            <c-button type="primary" icon="backward" size="small" :disabled="!targetvalue.length"></c-button>
+            <c-button type="primary" icon="forward" size="small" :disabled="!sourcevalue.length"></c-button>
         </div>
         <div class="transfercont transfer-to">
             <div class="transfer-top">
-
+                <checkbox :isnotall="targetisnotall" :isselected="targetisall" @change="targetAllEvent">
+                    {{ toNum }} items
+                </checkbox>
+                <span class="from-title">
+                    {{ title[1] }}
+                </span>
+            </div>
+            <div class="transfer-content">
+                <checkboxgroup :options="targetdata" @change="sourceChangeEvent" :values="targetvalue"></checkboxgroup>
             </div>
         </div>
     </div>
@@ -27,6 +35,7 @@
 <style lang="less" rel="stylesheet/less">
     @import '../../mixin/mixin.less';
     .transfer-content {
+        height: 168px;
         .j-checkboxgroup {
             .detail {
                 .checkboxcont {
@@ -43,14 +52,22 @@
             }
         }
     }
+    .transfer-symbol {
+        padding-top: 65px;
+        .small {
+            padding: 2px 8px!important;
+            border-radius: 0px;
+            display: block;
+        }
+    }
 </style>
 <style lang="less" scoped rel="stylesheet/less">
     @import '../../mixin/mixin.less';
     .c-transfer {
         display: flex;
+        padding: 0 20px;
         .transfercont {
             border: 1px solid @border;
-            margin: 0 20px;
             box-sizing: border-box;
             input {
                 transition: all .2s linear;
@@ -59,11 +76,9 @@
                     cursor: pointer;
                 }
             }
-
             .transfer-top {
                 padding: 10px;
                 border-bottom: 1px solid @boxshadow;
-
             }
         }
     }
@@ -85,7 +100,8 @@
             return {
                 fromSelected: [],
                 toSelected: [],
-                sourcevalue: []
+                sourcevalue: [],
+                targetvalue: []
             }
         },
         computed: {
@@ -96,10 +112,16 @@
                 return this.targetdata.length
             },
             sourceisall() {
-                return this.sourcedata.length === this.sourcevalue.length
+                return this.sourcedata.length && this.sourcedata.length === this.sourcevalue.length
             },
             sourceisnotall() {
                 return this.sourcevalue.length && this.sourcevalue.length !== this.sourcedata.length
+            },
+            targetisall() {
+                return this.targetdata.length && this.targetdata.length === this.targetvalue.length
+            },
+            targetisnotall() {
+                return this.targetvalue.length && this.targetvalue.length !== this.targetdata.length
             }
         },
         components: {
@@ -147,6 +169,32 @@
                             this.sourcevalue[i] = this.sourcedata[i].content;
                         } else {
                             this.sourcevalue[i] = this.sourcedata[i];
+                        }
+                    }
+                }
+            },
+            targetChangeEvent() {
+
+            },
+            targetAllEvent() {
+                if(this.targetisnotall) {
+                    this.targetvalue = [];
+                    for(let i = 0; i < this.targetdata.length; i++) {
+                        if(Object.prototype.toString.call(this.targetdata[i]) === "[object Object]") {
+                            this.targetvalue[i] = this.targetdata[i].content;
+                        } else {
+                            this.targetvalue[i] = this.targetdata[i];
+                        }
+                    }
+                } else if(this.targetisall) {
+                    this.targetvalue = [];
+                } else {
+                    this.targetvalue = [];
+                    for(let i = 0; i < this.targetdata.length; i++) {
+                        if(Object.prototype.toString.call(this.targetdata[i]) === "[object Object]") {
+                            this.targetvalue[i] = this.targetdata[i].content;
+                        } else {
+                            this.targetvalue[i] = this.targetdata[i];
                         }
                     }
                 }
