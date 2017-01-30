@@ -1,8 +1,8 @@
 <template>
     <div class="j-checkboxgroup">
         <div class="detail">
-            <checkbox v-for="(option, index) in options" v-bind:isselected="values.indexOf(option) !== -1" @change="changeEvent">
-                {{ option }}
+            <checkbox v-for="(option, index) in dealOptions" :title="option.title" v-bind:isselected="values.indexOf(option.content) !== -1" @change="changeEvent">
+                {{ option.content }}
             </checkbox>
         </div>
     </div>
@@ -20,14 +20,43 @@
             }
         },
         computed: {
-
+            dealOptions() {
+                let arr = [];
+                this.options.map((data, index) => {
+                    if(data.content) {
+                        if(data.title) {
+                            arr[index] = {
+                                content: data.content,
+                                title: data.title
+                            }
+                        } else {
+                            arr[index] = {
+                                content: data.content,
+                                title: data.content
+                            }
+                        }
+                    } else {
+                        arr[index] = {
+                            content: data,
+                            title: data
+                        }
+                    }
+                });
+                return arr
+            }
         },
         props: {
             options: {
-                type: Array
+                type: Array,
+                default: []
             },
             values: {
-                type: Array
+                type: Array,
+                default: []
+            },
+            titles: {
+                type: Array,
+                default: []
             }
         },
         methods: {

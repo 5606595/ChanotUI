@@ -5,7 +5,7 @@
         padding: 50px 30px;
         box-sizing: border-box;
         width: 500px;
-        height: 200px;
+        min-height: 200px;
         margin: 20px;
         border: 1px solid @border;
         border-radius: 10px;

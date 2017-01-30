@@ -3,6 +3,7 @@ var vue = require('vue-loader')
 var named = require('vinyl-named')
 var webpack = require('gulp-webpack')
 var htmlone = require('gulp-htmlone')
+var browserSync = require('browser-sync');
 
 
 var autoprefixer = require('autoprefixer')
@@ -20,6 +21,7 @@ gulp.task('bundle', function () {
         .pipe(webpack(getConfig()))
         .pipe(gulp.dest('dist/'))
 })
+
 
 gulp.task('watch', function () {
     return gulp.src(mapFiles(appList, 'js'))

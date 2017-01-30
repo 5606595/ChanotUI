@@ -16,60 +16,61 @@
     padding-bottom: 2px;
     border-bottom: 1px solid #DDD;
   }
+
 </style>
 <template>
   <div>
-    <box>
-      <spin tips="loading..."></spin>
-      <icon type="success"/>
-      <icon type="fail"/>
-      <icon type="prompt"/>
-      <icon type="warning"/>
-      <icon type="search"/>
-    </box>
-    <box>
-      <c-button size="large">large</c-button>
-      <c-button type="primary">default</c-button>
-      <c-button size="small" type="primary">small</c-button>
-      <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
-      <c-button type="primary" icon="search" shape="circle"></c-button>
-      <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
-      <c-button type="primary" icon="search" size="small">click me</c-button>
-      <c-button icon="forward" size="small" type="primary">Go froward</c-button>
-      <c-button icon="download" size="small" type="primary">download</c-button>
-      <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
-    </box>
-    <box>
-      <row space="between">
-        <column xs="1" sm="6" md="2" lg="2">
-          haha
-        </column>
-        <column xs="10" sm="6" md="8" lg="10">
-          hehe
-        </column>
-      </row>
-    </box>
-    <box>
-      <popover placement="left">
-        <c-button type="primary">Hover me.</c-button>
-      </popover>
-      <popover placement="right">
-        <c-button type="primary">Hover me.</c-button>
-      </popover>
-      <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">
-        <c-button type="primary">Hover me.</c-button>
-      </popover>
-      <popover placement="bottom">
-        <c-button type="primary">Hover me.</c-button>
-      </popover>
-    </box>
-    <box>
-      <treeselect :selectopt="option">
+    <!--<box>-->
+      <!--<spin tips="loading..."></spin>-->
+      <!--<icon type="success"/>-->
+      <!--<icon type="fail"/>-->
+      <!--<icon type="prompt"/>-->
+      <!--<icon type="warning"/>-->
+      <!--<icon type="search"/>-->
+    <!--</box>-->
+    <!--<box>-->
+      <!--<c-button size="large">large</c-button>-->
+      <!--<c-button type="primary">default</c-button>-->
+      <!--<c-button size="small" type="primary">small</c-button>-->
+      <!--<c-button type="primary" size="large" icon="search" shape="circle"></c-button>-->
+      <!--<c-button type="primary" icon="search" shape="circle"></c-button>-->
+      <!--<c-button type="primary" icon="search" shape="circle" size="small"></c-button>-->
+      <!--<c-button type="primary" icon="search" size="small">click me</c-button>-->
+      <!--<c-button icon="forward" size="small" type="primary">Go froward</c-button>-->
+      <!--<c-button icon="download" size="small" type="primary">download</c-button>-->
+      <!--<c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>-->
+    <!--</box>-->
+    <!--<box>-->
+      <!--<row space="between">-->
+        <!--<column xs="1" sm="6" md="2" lg="2">-->
+          <!--haha-->
+        <!--</column>-->
+        <!--<column xs="10" sm="6" md="8" lg="10">-->
+          <!--hehe-->
+        <!--</column>-->
+      <!--</row>-->
+    <!--</box>-->
+    <!--<box>-->
+      <!--<popover placement="left">-->
+        <!--<c-button type="primary">Hover me.</c-button>-->
+      <!--</popover>-->
+      <!--<popover placement="right">-->
+        <!--<c-button type="primary">Hover me.</c-button>-->
+      <!--</popover>-->
+      <!--<popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">-->
+        <!--<c-button type="primary">Hover me.</c-button>-->
+      <!--</popover>-->
+      <!--<popover placement="bottom">-->
+        <!--<c-button type="primary">Hover me.</c-button>-->
+      <!--</popover>-->
+    <!--</box>-->
+    <!--<box>-->
+      <!--<treeselect :selectopt="option">-->
 
-      </treeselect>
-    </box>
+      <!--</treeselect>-->
+    <!--</box>-->
     <box>
-      <transfer></transfer>
+      <transfer :sourcedata="sourcedata"></transfer>
     </box>
     <box>
       <checkbox>Haha</checkbox>
@@ -135,7 +136,12 @@
           }]
         }],
         array: checkAllList,
-        checkList: defaultList
+        checkList: defaultList,
+        sourcedata: [{
+          content: "hahaha"
+        }, {
+          content: "mxoamoxsa"
+        }]
       }
     },
     computed: {

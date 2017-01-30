@@ -1,9 +1,11 @@
 <template>
-    <div class="checkboxcont" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
+    <div class="checkboxcont" :title="title" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
         <span class="j-checkbox">
             <input type="checkbox" />
         </span>
-        <slot></slot>
+        <span class="j-content">
+            <slot></slot>
+        </span>
     </div>
 </template>
 <style lang="less" scoped rel="stylesheet/less">
@@ -19,7 +21,7 @@
     }
     .j-checkbox {
         position: relative;
-        top: 0;
+        top: 3px;
         left: 0;
         width: 12px;
         height: 12px;
@@ -27,7 +29,6 @@
         border: 1px solid @border;
         border-radius: 3px;
         line-height: 12px;
-        vertical-align: -3px;
         margin: 0 5px;
         z-index: 20;
         transition: all .2s linear;
@@ -41,7 +42,6 @@
             left: 0;
             top: 0;
             visibility: hidden;
-            /*display: none;*/
         }
     }
     .checkboxcont-selected {
@@ -111,6 +111,10 @@
             isselected: {
                 type: Boolean,
                 default: false
+            },
+            title: {
+                type: String,
+                default: null
             }
         },
         store,
@@ -127,7 +131,7 @@
                     }
                     this.isselected = true;
                 }
-                this.$emit("change", this.$el.textContent.trim());
+                this.$emit("change", this.$el.querySelector(".j-content").textContent.trim());
             }
         },
     }

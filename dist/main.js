@@ -488,7 +488,7 @@
 	
 	var _transfer2 = _interopRequireDefault(_transfer);
 	
-	var _checkbox = __webpack_require__(87);
+	var _checkbox = __webpack_require__(93);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -510,60 +510,61 @@
 	//     padding-bottom: 2px;
 	//     border-bottom: 1px solid #DDD;
 	//   }
+	
 	// </style>
 	// <template>
 	//   <div>
-	//     <box>
-	//       <spin tips="loading..."></spin>
-	//       <icon type="success"/>
-	//       <icon type="fail"/>
-	//       <icon type="prompt"/>
-	//       <icon type="warning"/>
-	//       <icon type="search"/>
-	//     </box>
-	//     <box>
-	//       <c-button size="large">large</c-button>
-	//       <c-button type="primary">default</c-button>
-	//       <c-button size="small" type="primary">small</c-button>
-	//       <c-button type="primary" size="large" icon="search" shape="circle"></c-button>
-	//       <c-button type="primary" icon="search" shape="circle"></c-button>
-	//       <c-button type="primary" icon="search" shape="circle" size="small"></c-button>
-	//       <c-button type="primary" icon="search" size="small">click me</c-button>
-	//       <c-button icon="forward" size="small" type="primary">Go froward</c-button>
-	//       <c-button icon="download" size="small" type="primary">download</c-button>
-	//       <c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>
-	//     </box>
-	//     <box>
-	//       <row space="between">
-	//         <column xs="1" sm="6" md="2" lg="2">
-	//           haha
-	//         </column>
-	//         <column xs="10" sm="6" md="8" lg="10">
-	//           hehe
-	//         </column>
-	//       </row>
-	//     </box>
-	//     <box>
-	//       <popover placement="left">
-	//         <c-button type="primary">Hover me.</c-button>
-	//       </popover>
-	//       <popover placement="right">
-	//         <c-button type="primary">Hover me.</c-button>
-	//       </popover>
-	//       <popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">
-	//         <c-button type="primary">Hover me.</c-button>
-	//       </popover>
-	//       <popover placement="bottom">
-	//         <c-button type="primary">Hover me.</c-button>
-	//       </popover>
-	//     </box>
-	//     <box>
-	//       <treeselect :selectopt="option">
+	//     <!--<box>-->
+	//       <!--<spin tips="loading..."></spin>-->
+	//       <!--<icon type="success"/>-->
+	//       <!--<icon type="fail"/>-->
+	//       <!--<icon type="prompt"/>-->
+	//       <!--<icon type="warning"/>-->
+	//       <!--<icon type="search"/>-->
+	//     <!--</box>-->
+	//     <!--<box>-->
+	//       <!--<c-button size="large">large</c-button>-->
+	//       <!--<c-button type="primary">default</c-button>-->
+	//       <!--<c-button size="small" type="primary">small</c-button>-->
+	//       <!--<c-button type="primary" size="large" icon="search" shape="circle"></c-button>-->
+	//       <!--<c-button type="primary" icon="search" shape="circle"></c-button>-->
+	//       <!--<c-button type="primary" icon="search" shape="circle" size="small"></c-button>-->
+	//       <!--<c-button type="primary" icon="search" size="small">click me</c-button>-->
+	//       <!--<c-button icon="forward" size="small" type="primary">Go froward</c-button>-->
+	//       <!--<c-button icon="download" size="small" type="primary">download</c-button>-->
+	//       <!--<c-button :loading="loading" type="primary" @click="loading = true">我收起看不见的结果</c-button>-->
+	//     <!--</box>-->
+	//     <!--<box>-->
+	//       <!--<row space="between">-->
+	//         <!--<column xs="1" sm="6" md="2" lg="2">-->
+	//           <!--haha-->
+	//         <!--</column>-->
+	//         <!--<column xs="10" sm="6" md="8" lg="10">-->
+	//           <!--hehe-->
+	//         <!--</column>-->
+	//       <!--</row>-->
+	//     <!--</box>-->
+	//     <!--<box>-->
+	//       <!--<popover placement="left">-->
+	//         <!--<c-button type="primary">Hover me.</c-button>-->
+	//       <!--</popover>-->
+	//       <!--<popover placement="right">-->
+	//         <!--<c-button type="primary">Hover me.</c-button>-->
+	//       <!--</popover>-->
+	//       <!--<popover placement="top" title="<h2>这是标题</h2>" content="<p>内容</p>" trigger="click">-->
+	//         <!--<c-button type="primary">Hover me.</c-button>-->
+	//       <!--</popover>-->
+	//       <!--<popover placement="bottom">-->
+	//         <!--<c-button type="primary">Hover me.</c-button>-->
+	//       <!--</popover>-->
+	//     <!--</box>-->
+	//     <!--<box>-->
+	//       <!--<treeselect :selectopt="option">-->
 	
-	//       </treeselect>
-	//     </box>
+	//       <!--</treeselect>-->
+	//     <!--</box>-->
 	//     <box>
-	//       <transfer></transfer>
+	//       <transfer :sourcedata="sourcedata"></transfer>
 	//     </box>
 	//     <box>
 	//       <checkbox>Haha</checkbox>
@@ -619,7 +620,12 @@
 	        }]
 	      }],
 	      array: checkAllList,
-	      checkList: defaultList
+	      checkList: defaultList,
+	      sourcedata: [{
+	        content: "hahaha"
+	      }, {
+	        content: "mxoamoxsa"
+	      }]
 	    };
 	  },
 	
@@ -707,7 +713,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-610020c5] {\n  font-size: 12px;\n}\nbody[_v-610020c5] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.j-btn[_v-610020c5] {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading[_v-610020c5] {\n  background: #46a6ea !important;\n  color: white!important;\n}\n.j-btn.loading i[_v-610020c5] {\n  color: white;\n}\n.j-btn.loading[_v-610020c5]:hover {\n  cursor: default;\n  border: 1px solid #DADADA;\n}\n.j-btn[_v-610020c5]:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary[_v-610020c5] {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i[_v-610020c5] {\n  color: white;\n}\n.j-btn.primary[_v-610020c5]:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large[_v-610020c5] {\n  padding: 8px 20px;\n}\n.j-btn.small[_v-610020c5] {\n  padding: 4px 12px;\n}\n.j-btn[disabled][_v-610020c5] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i[_v-610020c5] {\n  color: #AAA;\n}\n.j-btn[disabled][_v-610020c5]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked[_v-610020c5] {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked[_v-610020c5]:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle[_v-610020c5] {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large[_v-610020c5] {\n  padding: 8px;\n}\n.j-btn.shape-circle.small[_v-610020c5] {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".j-btn[_v-610020c5] {\n  padding: 6px 16px;\n  background: #F7F7F7;\n  border: 1px solid #DADADA;\n  border-radius: 4px;\n  box-sizing: border-box;\n  -webkit-transition: all .1s linear;\n  transition: all .1s linear;\n  outline: none;\n  font-size: 14px;\n  margin: 10px;\n  position: relative;\n  /*.btnclick-enter-active {*/\n  /*transition: all .2s ease-out;*/\n  /*transform: scaleX(1.2) scaleY(1.4)*/\n  /*}*/\n  /*.btnclick-enter {*/\n  /*transform: scale(1);*/\n  /*}*/\n}\n.j-btn.loading[_v-610020c5] {\n  background: #46a6ea !important;\n  color: white!important;\n}\n.j-btn.loading i[_v-610020c5] {\n  color: white;\n}\n.j-btn.loading[_v-610020c5]:hover {\n  cursor: default;\n  border: 1px solid #DADADA;\n}\n.j-btn[_v-610020c5]:hover {\n  cursor: pointer;\n  color: #1f90e6;\n  background: none;\n  border-color: #1f90e6;\n}\n.j-btn.primary[_v-610020c5] {\n  background-color: #1f90e6;\n  border-color: #1f90e6;\n  color: white;\n}\n.j-btn.primary i[_v-610020c5] {\n  color: white;\n}\n.j-btn.primary[_v-610020c5]:hover {\n  background-color: #46a6ea;\n  border-color: #46a6ea;\n}\n.j-btn.large[_v-610020c5] {\n  padding: 8px 20px;\n}\n.j-btn.small[_v-610020c5] {\n  padding: 4px 12px;\n}\n.j-btn[disabled][_v-610020c5] {\n  background-color: #F7F7F7;\n  border-color: #DADADA;\n  color: #AAA;\n}\n.j-btn[disabled] i[_v-610020c5] {\n  color: #AAA;\n}\n.j-btn[disabled][_v-610020c5]:hover {\n  border-color: #DADADA;\n  background-color: #F7F7F7;\n  cursor: not-allowed;\n}\n.j-btn.priclicked[_v-610020c5] {\n  background-color: #1f90e6 !important;\n}\n.j-btn.clicked[_v-610020c5]:after {\n  content: '';\n  left: -1px;\n  top: -1px;\n  right: -1px;\n  bottom: -1px;\n  position: absolute;\n  border-radius: inherit;\n  box-sizing: border-box;\n  border: 0px solid rgba(30, 152, 229, 0.4);\n  margin: 0;\n  -webkit-animation: pray .2s linear forwards;\n          animation: pray .2s linear forwards;\n}\n.j-btn.shape-circle[_v-610020c5] {\n  padding: 6px;\n  border-radius: 50%;\n}\n.j-btn.shape-circle.large[_v-610020c5] {\n  padding: 8px;\n}\n.j-btn.shape-circle.small[_v-610020c5] {\n  padding: 4px;\n}\n@-webkit-keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n@keyframes pray {\n  to {\n    left: -6px;\n    top: -6px;\n    right: -6px;\n    bottom: -6px;\n    border-width: 6px;\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -972,7 +978,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.jicon-download:before {\n  content: '\\E621';\n}\n.jicon-down:before {\n  content: '\\E69D';\n}\n.jicon-right:before {\n  content: '\\E67A';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');\n}\n", ""]);
+	exports.push([module.id, ".jicon {\n  display: inline-block;\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.jicon-forward {\n  float: right;\n  margin-top: 1px;\n  margin-left: 1px;\n}\n.jicon-forward:before {\n  content: \"\\E601\";\n}\n.jicon-prompt {\n  color: #1f90e6;\n}\n.jicon-prompt:before {\n  content: \"\\E620\";\n}\n.jicon-success {\n  color: #89ce6d;\n}\n.jicon-success:before {\n  content: \"\\E63A\";\n}\n.jicon-fail {\n  color: #fc561f;\n}\n.jicon-fail:before {\n  content: \"\\E613\";\n}\n.jicon-warning {\n  color: #fda929;\n}\n.jicon-warning:before {\n  content: \"\\E6D4\";\n}\n.jicon-search:before {\n  content: \"\\E600\";\n}\n.jicon-backward:before {\n  content: \"\\E60A\";\n}\n.jicon-loading {\n  color: #1f90e6;\n  -webkit-animation: loading .5s linear infinite;\n          animation: loading .5s linear infinite;\n}\n.jicon-loading:before {\n  content: '\\E637';\n}\n.jicon-download:before {\n  content: '\\E621';\n}\n.jicon-down:before {\n  content: '\\E69D';\n}\n.jicon-right:before {\n  content: '\\E67A';\n}\n@-webkit-keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@keyframes loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n@font-face {\n  font-family: 'iconfont';\n  /* project id 191439 */\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');\n  src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'), url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');\n}\n", ""]);
 	
 	// exports
 
@@ -1138,7 +1144,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-4fe71505] {\n  font-size: 12px;\n}\nbody[_v-4fe71505] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.spin[_v-4fe71505] {\n  position: relative;\n  width: 20px;\n  height: 20px;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n  -webkit-animation: jrotate 3s infinite linear;\n          animation: jrotate 3s infinite linear;\n  margin: auto;\n}\n.spin .dot[_v-4fe71505] {\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: #3ec8f5;\n  opacity: 0.3;\n  -webkit-transform: scale(0.6);\n          transform: scale(0.6);\n  -webkit-animation: jopacity 0.8s infinite linear alternate;\n          animation: jopacity 0.8s infinite linear alternate;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(1) {\n  left: 0;\n  top: 0;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(2) {\n  right: 0;\n  top: 0;\n  -webkit-animation-delay: 0.4s;\n          animation-delay: 0.4s;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(3) {\n  right: 0;\n  bottom: 0;\n  -webkit-animation-delay: 0.8s;\n          animation-delay: 0.8s;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(4) {\n  left: 0;\n  bottom: 0;\n  -webkit-animation-delay: 1.2s;\n          animation-delay: 1.2s;\n}\n.jsay[_v-4fe71505] {\n  text-align: center;\n  margin-top: 10px;\n}\n@-webkit-keyframes jopacity {\n  0% {\n    opacity: .3;\n    -webkit-transform: scale(0.6);\n            transform: scale(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n  }\n}\n@keyframes jopacity {\n  0% {\n    opacity: .3;\n    -webkit-transform: scale(0.6);\n            transform: scale(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n  }\n}\n@-webkit-keyframes jrotate {\n  0% {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n  }\n  100% {\n    -webkit-transform: rotate(405deg);\n            transform: rotate(405deg);\n  }\n}\n@keyframes jrotate {\n  0% {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n  }\n  100% {\n    -webkit-transform: rotate(405deg);\n            transform: rotate(405deg);\n  }\n}\n", ""]);
+	exports.push([module.id, ".spin[_v-4fe71505] {\n  position: relative;\n  width: 20px;\n  height: 20px;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n  -webkit-animation: jrotate 3s infinite linear;\n          animation: jrotate 3s infinite linear;\n  margin: auto;\n}\n.spin .dot[_v-4fe71505] {\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: #3ec8f5;\n  opacity: 0.3;\n  -webkit-transform: scale(0.6);\n          transform: scale(0.6);\n  -webkit-animation: jopacity 0.8s infinite linear alternate;\n          animation: jopacity 0.8s infinite linear alternate;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(1) {\n  left: 0;\n  top: 0;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(2) {\n  right: 0;\n  top: 0;\n  -webkit-animation-delay: 0.4s;\n          animation-delay: 0.4s;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(3) {\n  right: 0;\n  bottom: 0;\n  -webkit-animation-delay: 0.8s;\n          animation-delay: 0.8s;\n}\n.spin .dot[_v-4fe71505]:nth-of-type(4) {\n  left: 0;\n  bottom: 0;\n  -webkit-animation-delay: 1.2s;\n          animation-delay: 1.2s;\n}\n.jsay[_v-4fe71505] {\n  text-align: center;\n  margin-top: 10px;\n}\n@-webkit-keyframes jopacity {\n  0% {\n    opacity: .3;\n    -webkit-transform: scale(0.6);\n            transform: scale(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n  }\n}\n@keyframes jopacity {\n  0% {\n    opacity: .3;\n    -webkit-transform: scale(0.6);\n            transform: scale(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n  }\n}\n@-webkit-keyframes jrotate {\n  0% {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n  }\n  100% {\n    -webkit-transform: rotate(405deg);\n            transform: rotate(405deg);\n  }\n}\n@keyframes jrotate {\n  0% {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n  }\n  100% {\n    -webkit-transform: rotate(405deg);\n            transform: rotate(405deg);\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1414,7 +1420,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-1e199ad6] {\n  font-size: 12px;\n}\nbody[_v-1e199ad6] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.j-message[_v-1e199ad6] {\n  padding: 8px 16px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  display: inline-block;\n  position: fixed;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n  top: 50px;\n  font-size: 12px;\n  color: #666;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px 0px 1px #e9e9e9;\n  -webkit-animation: messagedisplay .2s linear;\n          animation: messagedisplay .2s linear;\n}\n.j-message .message[_v-1e199ad6] {\n  margin-left: 5px;\n}\n.j-end[_v-1e199ad6] {\n  -webkit-animation: messageend .2s linear;\n          animation: messageend .2s linear;\n}\n@-webkit-keyframes messageend {\n  0% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n}\n@keyframes messageend {\n  0% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n}\n@-webkit-keyframes messagedisplay {\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n}\n@keyframes messagedisplay {\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n}\n", ""]);
+	exports.push([module.id, ".j-message[_v-1e199ad6] {\n  padding: 8px 16px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  display: inline-block;\n  position: fixed;\n  left: 50%;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n  top: 50px;\n  font-size: 12px;\n  color: #666;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px 0px 1px #e9e9e9;\n  -webkit-animation: messagedisplay .2s linear;\n          animation: messagedisplay .2s linear;\n}\n.j-message .message[_v-1e199ad6] {\n  margin-left: 5px;\n}\n.j-end[_v-1e199ad6] {\n  -webkit-animation: messageend .2s linear;\n          animation: messageend .2s linear;\n}\n@-webkit-keyframes messageend {\n  0% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n}\n@keyframes messageend {\n  0% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n}\n@-webkit-keyframes messagedisplay {\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n}\n@keyframes messagedisplay {\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(-50%, -20px, 0);\n            transform: translate3d(-50%, -20px, 0);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0);\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -1613,7 +1619,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-36efc21d] {\n  font-size: 12px;\n}\nbody[_v-36efc21d] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.j-box[_v-36efc21d] {\n  padding: 50px 30px;\n  box-sizing: border-box;\n  width: 500px;\n  height: 200px;\n  margin: 20px;\n  border: 1px solid #e9e9e9;\n  border-radius: 10px;\n}\n", ""]);
+	exports.push([module.id, ".j-box[_v-36efc21d] {\n  padding: 50px 30px;\n  box-sizing: border-box;\n  width: 500px;\n  min-height: 200px;\n  margin: 20px;\n  border: 1px solid #e9e9e9;\n  border-radius: 10px;\n}\n", ""]);
 	
 	// exports
 
@@ -1634,7 +1640,7 @@
 	//         padding: 50px 30px;
 	//         box-sizing: border-box;
 	//         width: 500px;
-	//         height: 200px;
+	//         min-height: 200px;
 	//         margin: 20px;
 	//         border: 1px solid @border;
 	//         border-radius: 10px;
@@ -2055,7 +2061,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.c-popcontainer {\n  display: inline-block;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  /*&-topLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-topRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n  /*&-rightTop .arrow {*/\n  /*top: 15%;*/\n  /*}*/\n  /*&-rightBottom .arrow {*/\n  /*bottom: 15%;*/\n  /*}*/\n  /*&-bottomLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-bottomRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover-top,\n.c-popover-topLeft,\n.c-popover-topRight {\n  -webkit-transform: translate3d(-50%, calc(-100% - 7px), 0);\n          transform: translate3d(-50%, calc(-100% - 7px), 0);\n}\n.c-popover-top .arrow,\n.c-popover-topLeft .arrow,\n.c-popover-topRight .arrow {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid #d9d9d9;\n  border-bottom: none;\n  bottom: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-top .arrow:after,\n.c-popover-topLeft .arrow:after,\n.c-popover-topRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover-top .arrow {\n  left: 50%;\n}\n.c-popover-right,\n.c-popover-rightTop,\n.c-popover-rightBottom {\n  -webkit-transform: translate3d(7px, calc(-50% - 7px), 0);\n          transform: translate3d(7px, calc(-50% - 7px), 0);\n}\n.c-popover-right .arrow,\n.c-popover-rightTop .arrow,\n.c-popover-rightBottom .arrow {\n  border-left: none;\n  border-right: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  left: -7px;\n}\n.c-popover-right .arrow:after,\n.c-popover-rightTop .arrow:after,\n.c-popover-rightBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-right: 6px solid white;\n  top: -5px;\n  left: 2px;\n}\n.c-popover-right .arrow {\n  top: 50%;\n}\n.c-popover-bottom,\n.c-popover-bottomLeft,\n.c-popover-bottomRight {\n  -webkit-transform: translate3d(-50%, 7px, 0);\n          transform: translate3d(-50%, 7px, 0);\n}\n.c-popover-bottom .arrow,\n.c-popover-bottomLeft .arrow,\n.c-popover-bottomRight .arrow {\n  border-top: none;\n  border-right: 5px solid transparent;\n  border-left: 5px solid transparent;\n  border-bottom: 6px solid #d9d9d9;\n  top: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-bottom .arrow:after,\n.c-popover-bottomLeft .arrow:after,\n.c-popover-bottomRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-bottom: 6px solid white;\n  left: -5px;\n  top: 2px;\n}\n.c-popover-bottom .arrow {\n  left: 50%;\n}\n.c-popover-left,\n.c-popover-leftTop,\n.c-popoverleftBottom {\n  -webkit-transform: translate3d(calc(-100% - 7px), -50%, 0);\n          transform: translate3d(calc(-100% - 7px), -50%, 0);\n}\n.c-popover-left .arrow,\n.c-popover-leftTop .arrow,\n.c-popoverleftBottom .arrow {\n  border-right: none;\n  border-left: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  right: -7px;\n  -webkit-transform: translate3d(0, -50%, 0);\n          transform: translate3d(0, -50%, 0);\n}\n.c-popover-left .arrow:after,\n.c-popover-leftTop .arrow:after,\n.c-popoverleftBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 6px solid white;\n  top: -5px;\n  right: 2px;\n}\n.c-popover-left .arrow {\n  top: 50%;\n}\n.c-popover-leftTop .arrow {\n  top: 15%;\n}\n.c-popover-leftBottom .arrow {\n  bottom: 15%;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  z-index: 20;\n  position: absolute;\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  width: 0;\n  height: 0;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, ".c-popcontainer {\n  display: inline-block;\n}\n.c-popover {\n  box-sizing: border-box;\n  border-radius: 4px;\n  display: inline-block;\n  color: #666;\n  position: absolute;\n  z-index: 30;\n  background: white;\n  box-shadow: 2px 2px 2px #e9e9e9, -1px -1px 2px #e9e9e9;\n  -webkit-animation: fadein .2s forwards;\n          animation: fadein .2s forwards;\n  /*&-topLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-topRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n  /*&-rightTop .arrow {*/\n  /*top: 15%;*/\n  /*}*/\n  /*&-rightBottom .arrow {*/\n  /*bottom: 15%;*/\n  /*}*/\n  /*&-bottomLeft .arrow {*/\n  /*left: 15%;*/\n  /*}*/\n  /*&-bottomRight .arrow {*/\n  /*right: 15%;*/\n  /*}*/\n}\n.c-popover * {\n  box-sizing: border-box;\n}\n.c-popover-top,\n.c-popover-topLeft,\n.c-popover-topRight {\n  -webkit-transform: translate3d(-50%, calc(-100% - 7px), 0);\n          transform: translate3d(-50%, calc(-100% - 7px), 0);\n}\n.c-popover-top .arrow,\n.c-popover-topLeft .arrow,\n.c-popover-topRight .arrow {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid #d9d9d9;\n  border-bottom: none;\n  bottom: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-top .arrow:after,\n.c-popover-topLeft .arrow:after,\n.c-popover-topRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid white;\n  bottom: 2px;\n  left: -5px;\n}\n.c-popover-top .arrow {\n  left: 50%;\n}\n.c-popover-right,\n.c-popover-rightTop,\n.c-popover-rightBottom {\n  -webkit-transform: translate3d(7px, calc(-50% - 7px), 0);\n          transform: translate3d(7px, calc(-50% - 7px), 0);\n}\n.c-popover-right .arrow,\n.c-popover-rightTop .arrow,\n.c-popover-rightBottom .arrow {\n  border-left: none;\n  border-right: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  left: -7px;\n}\n.c-popover-right .arrow:after,\n.c-popover-rightTop .arrow:after,\n.c-popover-rightBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-right: 6px solid white;\n  top: -5px;\n  left: 2px;\n}\n.c-popover-right .arrow {\n  top: 50%;\n}\n.c-popover-bottom,\n.c-popover-bottomLeft,\n.c-popover-bottomRight {\n  -webkit-transform: translate3d(-50%, 7px, 0);\n          transform: translate3d(-50%, 7px, 0);\n}\n.c-popover-bottom .arrow,\n.c-popover-bottomLeft .arrow,\n.c-popover-bottomRight .arrow {\n  border-top: none;\n  border-right: 5px solid transparent;\n  border-left: 5px solid transparent;\n  border-bottom: 6px solid #d9d9d9;\n  top: -7px;\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0);\n}\n.c-popover-bottom .arrow:after,\n.c-popover-bottomLeft .arrow:after,\n.c-popover-bottomRight .arrow:after {\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-bottom: 6px solid white;\n  left: -5px;\n  top: 2px;\n}\n.c-popover-bottom .arrow {\n  left: 50%;\n}\n.c-popover-left,\n.c-popover-leftTop,\n.c-popoverleftBottom {\n  -webkit-transform: translate3d(calc(-100% - 7px), -50%, 0);\n          transform: translate3d(calc(-100% - 7px), -50%, 0);\n}\n.c-popover-left .arrow,\n.c-popover-leftTop .arrow,\n.c-popoverleftBottom .arrow {\n  border-right: none;\n  border-left: 6px solid #d9d9d9;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  right: -7px;\n  -webkit-transform: translate3d(0, -50%, 0);\n          transform: translate3d(0, -50%, 0);\n}\n.c-popover-left .arrow:after,\n.c-popover-leftTop .arrow:after,\n.c-popoverleftBottom .arrow:after {\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 6px solid white;\n  top: -5px;\n  right: 2px;\n}\n.c-popover-left .arrow {\n  top: 50%;\n}\n.c-popover-leftTop .arrow {\n  top: 15%;\n}\n.c-popover-leftBottom .arrow {\n  bottom: 15%;\n}\n.c-popover .arrow {\n  width: 0;\n  height: 0;\n  background: white;\n  z-index: 20;\n  position: absolute;\n}\n.c-popover .arrow:after {\n  position: absolute;\n  content: '';\n  width: 0;\n  height: 0;\n}\n.c-popover .inner .title {\n  border-bottom: 1px solid #e9e9e9;\n  min-width: 177px;\n  padding: 0 16px;\n  height: 32px;\n  line-height: 32px;\n}\n.c-popover .inner .content {\n  padding: 8px 16px;\n}\n.c-popover.fadeout {\n  -webkit-animation: fadeout .2s;\n          animation: fadeout .2s;\n}\n@-webkit-keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes fadeout {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -2535,7 +2541,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-05c0c976] {\n  font-size: 12px;\n}\nbody[_v-05c0c976] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect.selected .selectContent[_v-05c0c976] {\n  color: black;\n}\n.c-treeselect.selected:hover .clear[_v-05c0c976] {\n  display: block;\n}\n.c-treeselect .selectContent[_v-05c0c976] {\n  height: 25px;\n  line-height: 25px;\n  width: 100%;\n  padding: 0 10px;\n  color: #CCC;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .clear[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  z-index: 30;\n  background: white;\n  color: grey;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  display: none;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
+	exports.push([module.id, ".c-treeselect[_v-05c0c976] {\n  width: 300px;\n  height: 25px;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  position: relative;\n  padding-right: 24px;\n  box-sizing: border-box;\n}\n.c-treeselect.selected .selectContent[_v-05c0c976] {\n  color: black;\n}\n.c-treeselect.selected:hover .clear[_v-05c0c976] {\n  display: block;\n}\n.c-treeselect .selectContent[_v-05c0c976] {\n  height: 25px;\n  line-height: 25px;\n  width: 100%;\n  padding: 0 10px;\n  color: #CCC;\n  box-sizing: border-box;\n}\n.c-treeselect-clicked[_v-05c0c976] {\n  border-color: #46a6ea;\n}\n.c-treeselect-clicked[_v-05c0c976]:after {\n  content: '';\n  width: 300px;\n  height: 25px;\n  position: absolute;\n  top: -3px;\n  left: -3px;\n  border: 2px solid #d0e8fa;\n  border-radius: 6px;\n}\n.c-treeselect[_v-05c0c976]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-treeselect .clear[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  z-index: 30;\n  background: white;\n  color: grey;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n  display: none;\n}\n.c-treeselect .jicon-down[_v-05c0c976] {\n  font-size: 12px;\n  position: absolute;\n  right: 6px;\n  top: 6px;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect .jicon-down-display[_v-05c0c976] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n", ""]);
 	
 	// exports
 
@@ -2575,7 +2581,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\n  font-size: 12px;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.c-treeselect-hide {\n  position: absolute;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  box-shadow: 0px 1px 6px #EAEAEA, 0px 0px 6px #EAEAEA;\n  padding: 5px;\n  background: white;\n  box-sizing: border-box;\n  -webkit-animation: c-treeselect-hide-display 0.2s linear forwards;\n          animation: c-treeselect-hide-display 0.2s linear forwards;\n}\n.c-treeselect-hide .c-treeselect-input {\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  width: 100%;\n  height: 30px;\n  padding: 0 5px;\n  box-sizing: border-box;\n}\n.c-treeselect-hide .c-treeselect-input input {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  border: none;\n  outline: none;\n}\n.c-treeselect-hide .content div {\n  margin: 20px 0;\n  color: #666;\n  -webkit-transition: all 0.2s ease-in;\n  transition: all 0.2s ease-in;\n}\n.c-treeselect-hide .content div .jicon-right {\n  font-size: 12px;\n  margin: 0 5px;\n}\n.c-treeselect-hide .content .jicon-right {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect-hide .content .jicon-right:hover {\n  cursor: pointer;\n}\n.c-treeselect-hide .content .open > .jicon-right {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.c-treeselect-hide .content .close > .jicon-right {\n  -webkit-transform: rotate(0deg);\n          transform: rotate(0deg);\n}\n.c-treeselect-hide .content .parent .parent {\n  padding: 0 22px;\n}\n.c-treeselect-hide .content .parent .children {\n  padding: 0 44px;\n}\n.c-treeselect-hide .content .strong > span {\n  font-weight: 700;\n}\n.c-treeselect-hide .content span {\n  padding: 5px;\n  border-radius: 2px;\n  -webkit-transition: font-weight 0.2s ease-in;\n  transition: font-weight 0.2s ease-in;\n}\n.c-treeselect-hide .content span:hover {\n  cursor: pointer;\n  background: #e7f4fd;\n}\n.c-treeselect-hide .content .notfound {\n  padding: 0 5px;\n  color: #CCC;\n}\n.c-treeselect-hide-fade {\n  -webkit-animation: c-treeselect-hide-fadeout 0.1s linear;\n          animation: c-treeselect-hide-fadeout 0.1s linear;\n}\n@-webkit-keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n@keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n", ""]);
+	exports.push([module.id, ".c-treeselect-hide {\n  position: absolute;\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  box-shadow: 0px 1px 6px #EAEAEA, 0px 0px 6px #EAEAEA;\n  padding: 5px;\n  background: white;\n  box-sizing: border-box;\n  -webkit-animation: c-treeselect-hide-display 0.2s linear forwards;\n          animation: c-treeselect-hide-display 0.2s linear forwards;\n}\n.c-treeselect-hide .c-treeselect-input {\n  border: 1px solid #e9e9e9;\n  border-radius: 4px;\n  width: 100%;\n  height: 30px;\n  padding: 0 5px;\n  box-sizing: border-box;\n}\n.c-treeselect-hide .c-treeselect-input input {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  border: none;\n  outline: none;\n}\n.c-treeselect-hide .content div {\n  margin: 20px 0;\n  color: #666;\n  -webkit-transition: all 0.2s ease-in;\n  transition: all 0.2s ease-in;\n}\n.c-treeselect-hide .content div .jicon-right {\n  font-size: 12px;\n  margin: 0 5px;\n}\n.c-treeselect-hide .content .jicon-right {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-treeselect-hide .content .jicon-right:hover {\n  cursor: pointer;\n}\n.c-treeselect-hide .content .open > .jicon-right {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.c-treeselect-hide .content .close > .jicon-right {\n  -webkit-transform: rotate(0deg);\n          transform: rotate(0deg);\n}\n.c-treeselect-hide .content .parent .parent {\n  padding: 0 22px;\n}\n.c-treeselect-hide .content .parent .children {\n  padding: 0 44px;\n}\n.c-treeselect-hide .content .strong > span {\n  font-weight: 700;\n}\n.c-treeselect-hide .content span {\n  padding: 5px;\n  border-radius: 2px;\n  -webkit-transition: font-weight 0.2s ease-in;\n  transition: font-weight 0.2s ease-in;\n}\n.c-treeselect-hide .content span:hover {\n  cursor: pointer;\n  background: #e7f4fd;\n}\n.c-treeselect-hide .content .notfound {\n  padding: 0 5px;\n  color: #CCC;\n}\n.c-treeselect-hide-fade {\n  -webkit-animation: c-treeselect-hide-fadeout 0.1s linear;\n          animation: c-treeselect-hide-fadeout 0.1s linear;\n}\n@-webkit-keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes c-treeselect-hide-display {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n@keyframes c-treeselect-hide-fadeout {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.6);\n            transform: scaleY(0.6);\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -3126,11 +3132,12 @@
 /* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(83)
+	__webpack_require__(107)
+	__webpack_require__(109)
 	module.exports = __webpack_require__(85)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(86)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(92)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3144,101 +3151,59 @@
 	})()}
 
 /***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(84);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(21)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./transfer.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./transfer.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(20)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "*[_v-1cfd56a5] {\n  font-size: 12px;\n}\nbody[_v-1cfd56a5] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.c-transfer[_v-1cfd56a5] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.c-transfer .transfercont[_v-1cfd56a5] {\n  border: 1px solid #e9e9e9;\n  margin: 0 20px;\n  padding: 0 20px;\n  box-sizing: border-box;\n}\n.c-transfer .transfercont input[_v-1cfd56a5] {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-transfer .transfercont input[_v-1cfd56a5]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-transfer .transfercont ul[_v-1cfd56a5] {\n  padding: 0;\n  list-style: none;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
+/* 83 */,
+/* 84 */,
 /* 85 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <div class="c-transfer">
-	//         <div class="transfercont transfer-from">
-	//             <ul v-for="source in sourcedata">
-	//                 <li :title="source.title" :disabled="source.disabled">
-	//                     <input type="checkbox">
-	//                     {{ source.content }}
-	//                 </li>
-	//             </ul>
-	//         </div>
-	//         <div class="transfercont transfer-symbol">
 	
-	//         </div>
-	//         <div class="transfercont transfer-to">
+	var _checkbox = __webpack_require__(86);
 	
-	//         </div>
-	//     </div>
-	// </template>
-	// <style lang="less" scoped rel="stylesheet/less">
-	//     @import '../../mixin/mixin.less';
-	//     .c-transfer {
-	//         display: flex;
-	//         .transfercont {
-	//             border: 1px solid @border;
-	//             margin: 0 20px;
-	//             padding: 0 20px;
-	//             box-sizing: border-box;
-	//             input {
-	//                 transition: all .2s linear;
-	//                 &:hover {
-	//                     border-color: @jbluelight;
-	//                     cursor: pointer;
-	//                 }
-	//             }
-	//             ul {
-	//                 padding: 0;
-	//                 list-style: none;
-	//             }
-	//         }
-	//     }
-	// </style>
-	// <script>
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+	
+	var _checkboxgroup = __webpack_require__(94);
+	
+	var _checkboxgroup2 = _interopRequireDefault(_checkboxgroup);
+	
+	var _button = __webpack_require__(23);
+	
+	var _button2 = _interopRequireDefault(_button);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	exports.default = {
 	    data: function data() {
-	        return {};
+	        return {
+	            fromSelected: [],
+	            toSelected: [],
+	            sourcevalue: []
+	        };
 	    },
 	
+	    computed: {
+	        fromNum: function fromNum() {
+	            return this.sourcedata.length;
+	        },
+	        toNum: function toNum() {
+	            return this.targetdata.length;
+	        },
+	        sourceisall: function sourceisall() {
+	            return this.sourcedata.length === this.sourcevalue.length;
+	        },
+	        sourceisnotall: function sourceisnotall() {
+	            return this.sourcevalue.length && this.sourcevalue.length !== this.sourcedata.length;
+	        }
+	    },
+	    components: {
+	        'checkbox': _checkbox2.default,
+	        'checkboxgroup': _checkboxgroup2.default,
+	        'c-button': _button2.default
+	    },
 	    props: {
 	        sourcedata: {
 	            type: Array,
@@ -3250,58 +3215,130 @@
 	        },
 	        targetdata: {
 	            type: Array,
-	            default: null
+	            default: []
 	        },
 	        title: {
 	            type: Array,
-	            default: ['source', 'target']
+	            default: ['Source', 'Target']
+	        }
+	    },
+	    methods: {
+	        sourceChangeEvent: function sourceChangeEvent() {},
+	        sourceAllEvent: function sourceAllEvent() {
+	            if (this.sourceisnotall) {
+	                this.sourcevalue = [];
+	                for (var i = 0; i < this.sourcedata.length; i++) {
+	                    if (Object.prototype.toString.call(this.sourcedata[i]) === "[object Object]") {
+	                        this.sourcevalue[i] = this.sourcedata[i].content;
+	                    } else {
+	                        this.sourcevalue[i] = this.sourcedata[i];
+	                    }
+	                }
+	            } else if (this.sourceisall) {
+	                this.sourcevalue = [];
+	            } else {
+	                this.sourcevalue = [];
+	                for (var _i = 0; _i < this.sourcedata.length; _i++) {
+	                    if (Object.prototype.toString.call(this.sourcedata[_i]) === "[object Object]") {
+	                        this.sourcevalue[_i] = this.sourcedata[_i].content;
+	                    } else {
+	                        this.sourcevalue[_i] = this.sourcedata[_i];
+	                    }
+	                }
+	            }
 	        }
 	    }
 	};
 	// </script>
+	// <template>
+	//     <div class="c-transfer">
+	//         <div class="transfercont transfer-from">
+	//             <div class="transfer-top">
+	//                 <checkbox :isnotall="sourceisnotall" :isselected="sourceisall" @change="sourceAllEvent">
+	//                     {{ fromNum }} items
+	//                 </checkbox>
+	//                 <span class="from-title">
+	//                     {{ title[0] }}
+	//                 </span>
+	//             </div>
+	//             <div class="transfer-content">
+	//                 <checkboxgroup :options="sourcedata" @change="sourceChangeEvent" :values="sourcevalue"></checkboxgroup>
+	//             </div>
+	//         </div>
+	//         <div class="transfer-symbol">
+	//             <c-button type="primary" icon="backward" size="small"></c-button>
+	//             <c-button type="primary" icon="forward" size="small"></c-button>
+	//         </div>
+	//         <div class="transfercont transfer-to">
+	//             <div class="transfer-top">
+	
+	//             </div>
+	//         </div>
+	//     </div>
+	// </template>
+	// <style lang="less" rel="stylesheet/less">
+	//     @import '../../mixin/mixin.less';
+	//     .transfer-content {
+	//         .j-checkboxgroup {
+	//             .detail {
+	//                 .checkboxcont {
+	//                     margin: 0;
+	//                     box-sizing: border-box;
+	//                     width: 100%;
+	//                     padding: 10px;
+	//                     transition: all .5s linear;
+	//                     &:hover {
+	//                         background: @transferblue;
+	//                         cursor: pointer;
+	//                     }
+	//                 }
+	//             }
+	//         }
+	//     }
+	// </style>
+	// <style lang="less" scoped rel="stylesheet/less">
+	//     @import '../../mixin/mixin.less';
+	//     .c-transfer {
+	//         display: flex;
+	//         .transfercont {
+	//             border: 1px solid @border;
+	//             margin: 0 20px;
+	//             box-sizing: border-box;
+	//             input {
+	//                 transition: all .2s linear;
+	//                 &:hover {
+	//                     border-color: @jbluelight;
+	//                     cursor: pointer;
+	//                 }
+	//             }
+	
+	//             .transfer-top {
+	//                 padding: 10px;
+	//                 border-bottom: 1px solid @boxshadow;
+	
+	//             }
+	//         }
+	//     }
+	//     .checkboxcont {
+	//         width: 100px;
+	//         margin-right: 20px;
+	//         vertical-align: -3px;
+	//         text-overflow: ellipsis;
+	//         overflow: hidden;
+	//         white-space: nowrap;
+	//     }
+	// </style>
+	// <script>
 
 /***/ },
 /* 86 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"c-transfer\" _v-1cfd56a5=\"\">\n        <div class=\"transfercont transfer-from\" _v-1cfd56a5=\"\">\n            <ul v-for=\"source in sourcedata\" _v-1cfd56a5=\"\">\n                <li :title=\"source.title\" :disabled=\"source.disabled\" _v-1cfd56a5=\"\">\n                    <input type=\"checkbox\" _v-1cfd56a5=\"\">\n                    {{ source.content }}\n                </li>\n            </ul>\n        </div>\n        <div class=\"transfercont transfer-symbol\" _v-1cfd56a5=\"\">\n\n        </div>\n        <div class=\"transfercont transfer-to\" _v-1cfd56a5=\"\">\n\n        </div>\n    </div>";
-
-/***/ },
-/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.checkboxgroup = exports.checkbox = undefined;
-	
-	var _checkbox = __webpack_require__(88);
-	
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-	
-	var _checkboxgroup = __webpack_require__(94);
-	
-	var _checkboxgroup2 = _interopRequireDefault(_checkboxgroup);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/**
-	 * Created by jorten on 2016/12/20.
-	 */
-	exports.checkbox = _checkbox2.default;
-	exports.checkboxgroup = _checkboxgroup2.default;
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(89)
-	module.exports = __webpack_require__(91)
+	__webpack_require__(87)
+	module.exports = __webpack_require__(89)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(93)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(91)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3315,13 +3352,13 @@
 	})()}
 
 /***/ },
-/* 89 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(90);
+	var content = __webpack_require__(88);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(21)(content, {});
@@ -3341,7 +3378,7 @@
 	}
 
 /***/ },
-/* 90 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(20)();
@@ -3349,13 +3386,13 @@
 	
 	
 	// module
-	exports.push([module.id, "*[_v-435aacb6] {\n  font-size: 12px;\n}\nbody[_v-435aacb6] {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.checkboxcont[_v-435aacb6] {\n  display: inline-block;\n}\n.checkboxcont[_v-435aacb6]:hover {\n  cursor: pointer;\n}\n.checkboxcont:hover .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.j-checkbox[_v-435aacb6] {\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  display: inline-block;\n  border: 1px solid #e9e9e9;\n  border-radius: 3px;\n  line-height: 12px;\n  vertical-align: -3px;\n  margin: 0 5px;\n  z-index: 20;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox[_v-435aacb6]:after {\n  border-color: white;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox input[_v-435aacb6] {\n  opacity: 0;\n  position: absolute;\n  left: 0;\n  top: 0;\n  visibility: hidden;\n  /*display: none;*/\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 4px;\n  height: 7px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  position: absolute;\n  left: 3px;\n  top: 0;\n  z-index: 30;\n  -webkit-transform: rotate(45deg) scale(1);\n          transform: rotate(45deg) scale(1);\n}\n.checkboxcont-selected-last .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 6px;\n  height: 7px;\n  border-bottom: 2px solid white;\n  position: absolute;\n  left: 3px;\n  top: -1px;\n  z-index: 30;\n}\n", ""]);
+	exports.push([module.id, ".checkboxcont[_v-435aacb6] {\n  display: inline-block;\n}\n.checkboxcont[_v-435aacb6]:hover {\n  cursor: pointer;\n}\n.checkboxcont:hover .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.j-checkbox[_v-435aacb6] {\n  position: relative;\n  top: 3px;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  display: inline-block;\n  border: 1px solid #e9e9e9;\n  border-radius: 3px;\n  line-height: 12px;\n  margin: 0 5px;\n  z-index: 20;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox[_v-435aacb6]:after {\n  border-color: white;\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.j-checkbox input[_v-435aacb6] {\n  opacity: 0;\n  position: absolute;\n  left: 0;\n  top: 0;\n  visibility: hidden;\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-selected .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 4px;\n  height: 7px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  position: absolute;\n  left: 3px;\n  top: 0;\n  z-index: 30;\n  -webkit-transform: rotate(45deg) scale(1);\n          transform: rotate(45deg) scale(1);\n}\n.checkboxcont-selected-last .j-checkbox[_v-435aacb6] {\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6] {\n  background: #46a6ea;\n  border-color: #46a6ea;\n}\n.checkboxcont-notall .j-checkbox[_v-435aacb6]:after {\n  content: '';\n  width: 6px;\n  height: 7px;\n  border-bottom: 2px solid white;\n  position: absolute;\n  left: 3px;\n  top: -1px;\n  z-index: 30;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 91 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3364,7 +3401,7 @@
 	    value: true
 	});
 	
-	var _vuex = __webpack_require__(92);
+	var _vuex = __webpack_require__(90);
 	
 	var _vuex2 = _interopRequireDefault(_vuex);
 	
@@ -3385,11 +3422,13 @@
 	        }
 	    }
 	}); // <template>
-	//     <div class="checkboxcont" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
+	//     <div class="checkboxcont" :title="title" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
 	//         <span class="j-checkbox">
 	//             <input type="checkbox" />
 	//         </span>
-	//         <slot></slot>
+	//         <span class="j-content">
+	//             <slot></slot>
+	//         </span>
 	//     </div>
 	// </template>
 	// <style lang="less" scoped rel="stylesheet/less">
@@ -3405,7 +3444,7 @@
 	//     }
 	//     .j-checkbox {
 	//         position: relative;
-	//         top: 0;
+	//         top: 3px;
 	//         left: 0;
 	//         width: 12px;
 	//         height: 12px;
@@ -3413,7 +3452,6 @@
 	//         border: 1px solid @border;
 	//         border-radius: 3px;
 	//         line-height: 12px;
-	//         vertical-align: -3px;
 	//         margin: 0 5px;
 	//         z-index: 20;
 	//         transition: all .2s linear;
@@ -3427,7 +3465,6 @@
 	//             left: 0;
 	//             top: 0;
 	//             visibility: hidden;
-	//             /*display: none;*/
 	//         }
 	//     }
 	//     .checkboxcont-selected {
@@ -3482,6 +3519,10 @@
 	        isselected: {
 	            type: Boolean,
 	            default: false
+	        },
+	        title: {
+	            type: String,
+	            default: null
 	        }
 	    },
 	    store: store,
@@ -3498,14 +3539,14 @@
 	                }
 	                this.isselected = true;
 	            }
-	            this.$emit("change", this.$el.textContent.trim());
+	            this.$emit("change", this.$el.querySelector(".j-content").textContent.trim());
 	        }
 	    }
 	};
 	// </script>
 
 /***/ },
-/* 92 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -4271,10 +4312,43 @@
 	})));
 
 /***/ },
-/* 93 */
+/* 91 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"checkboxcont\" :class=\"{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }\" @click=\"clickevent\" _v-435aacb6=\"\">\n        <span class=\"j-checkbox\" _v-435aacb6=\"\">\n            <input type=\"checkbox\" _v-435aacb6=\"\">\n        </span>\n        <slot _v-435aacb6=\"\"></slot>\n    </div>";
+	module.exports = "<div class=\"checkboxcont\" :title=\"title\" :class=\"{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }\" @click=\"clickevent\" _v-435aacb6=\"\">\n        <span class=\"j-checkbox\" _v-435aacb6=\"\">\n            <input type=\"checkbox\" _v-435aacb6=\"\">\n        </span>\n        <span class=\"j-content\" _v-435aacb6=\"\">\n            <slot _v-435aacb6=\"\"></slot>\n        </span>\n    </div>";
+
+/***/ },
+/* 92 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-transfer\" _v-1cfd56a5=\"\">\n        <div class=\"transfercont transfer-from\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n                <checkbox :isnotall=\"sourceisnotall\" :isselected=\"sourceisall\" @change=\"sourceAllEvent\" _v-1cfd56a5=\"\">\n                    {{ fromNum }} items\n                </checkbox>\n                <span class=\"from-title\" _v-1cfd56a5=\"\">\n                    {{ title[0] }}\n                </span>\n            </div>\n            <div class=\"transfer-content\" _v-1cfd56a5=\"\">\n                <checkboxgroup :options=\"sourcedata\" @change=\"sourceChangeEvent\" :values=\"sourcevalue\" _v-1cfd56a5=\"\"></checkboxgroup>\n            </div>\n        </div>\n        <div class=\"transfer-symbol\" _v-1cfd56a5=\"\">\n            <c-button type=\"primary\" icon=\"backward\" size=\"small\" _v-1cfd56a5=\"\"></c-button>\n            <c-button type=\"primary\" icon=\"forward\" size=\"small\" _v-1cfd56a5=\"\"></c-button>\n        </div>\n        <div class=\"transfercont transfer-to\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n\n            </div>\n        </div>\n    </div>";
+
+/***/ },
+/* 93 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.checkboxgroup = exports.checkbox = undefined;
+	
+	var _checkbox = __webpack_require__(86);
+	
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+	
+	var _checkboxgroup = __webpack_require__(94);
+	
+	var _checkboxgroup2 = _interopRequireDefault(_checkboxgroup);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by jorten on 2016/12/20.
+	 */
+	exports.checkbox = _checkbox2.default;
+	exports.checkboxgroup = _checkboxgroup2.default;
 
 /***/ },
 /* 94 */
@@ -4347,7 +4421,7 @@
 	    value: true
 	});
 	
-	var _checkbox = __webpack_require__(88);
+	var _checkbox = __webpack_require__(86);
 	
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 	
@@ -4361,13 +4435,44 @@
 	        return {};
 	    },
 	
-	    computed: {},
+	    computed: {
+	        dealOptions: function dealOptions() {
+	            var arr = [];
+	            this.options.map(function (data, index) {
+	                if (data.content) {
+	                    if (data.title) {
+	                        arr[index] = {
+	                            content: data.content,
+	                            title: data.title
+	                        };
+	                    } else {
+	                        arr[index] = {
+	                            content: data.content,
+	                            title: data.content
+	                        };
+	                    }
+	                } else {
+	                    arr[index] = {
+	                        content: data,
+	                        title: data
+	                    };
+	                }
+	            });
+	            return arr;
+	        }
+	    },
 	    props: {
 	        options: {
-	            type: Array
+	            type: Array,
+	            default: []
 	        },
 	        values: {
-	            type: Array
+	            type: Array,
+	            default: []
+	        },
+	        titles: {
+	            type: Array,
+	            default: []
 	        }
 	    },
 	    methods: {
@@ -4386,8 +4491,8 @@
 	// <template>
 	//     <div class="j-checkboxgroup">
 	//         <div class="detail">
-	//             <checkbox v-for="(option, index) in options" v-bind:isselected="values.indexOf(option) !== -1" @change="changeEvent">
-	//                 {{ option }}
+	//             <checkbox v-for="(option, index) in dealOptions" :title="option.title" v-bind:isselected="values.indexOf(option.content) !== -1" @change="changeEvent">
+	//                 {{ option.content }}
 	//             </checkbox>
 	//         </div>
 	//     </div>
@@ -4400,13 +4505,100 @@
 /* 98 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"j-checkboxgroup\" _v-095fbaaa=\"\">\n        <div class=\"detail\" _v-095fbaaa=\"\">\n            <checkbox v-for=\"(option, index) in options\" v-bind:isselected=\"values.indexOf(option) !== -1\" @change=\"changeEvent\" _v-095fbaaa=\"\">\n                {{ option }}\n            </checkbox>\n        </div>\n    </div>";
+	module.exports = "<div class=\"j-checkboxgroup\" _v-095fbaaa=\"\">\n        <div class=\"detail\" _v-095fbaaa=\"\">\n            <checkbox v-for=\"(option, index) in dealOptions\" :title=\"option.title\" v-bind:isselected=\"values.indexOf(option.content) !== -1\" @change=\"changeEvent\" _v-095fbaaa=\"\">\n                {{ option.content }}\n            </checkbox>\n        </div>\n    </div>";
 
 /***/ },
 /* 99 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <box _v-415b7153=\"\">\n      <spin tips=\"loading...\" _v-415b7153=\"\"></spin>\n      <icon type=\"success\" _v-415b7153=\"\">\n      <icon type=\"fail\" _v-415b7153=\"\">\n      <icon type=\"prompt\" _v-415b7153=\"\">\n      <icon type=\"warning\" _v-415b7153=\"\">\n      <icon type=\"search\" _v-415b7153=\"\">\n    </icon></icon></icon></icon></icon></box>\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <box _v-415b7153=\"\">\n      <row space=\"between\" _v-415b7153=\"\">\n        <column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\" _v-415b7153=\"\">\n          haha\n        </column>\n        <column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\" _v-415b7153=\"\">\n          hehe\n        </column>\n      </row>\n    </box>\n    <box _v-415b7153=\"\">\n      <popover placement=\"left\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"right\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n      <popover placement=\"bottom\" _v-415b7153=\"\">\n        <c-button type=\"primary\" _v-415b7153=\"\">Hover me.</c-button>\n      </popover>\n    </box>\n    <box _v-415b7153=\"\">\n      <treeselect :selectopt=\"option\" _v-415b7153=\"\">\n\n      </treeselect>\n    </box>\n    <box _v-415b7153=\"\">\n      <transfer _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<c-button size=\"large\">large</c-button>-->\n      <!--<c-button type=\"primary\">default</c-button>-->\n      <!--<c-button size=\"small\" type=\"primary\">small</c-button>-->\n      <!--<c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\"></c-button>-->\n      <!--<c-button type=\"primary\" icon=\"search\" shape=\"circle\"></c-button>-->\n      <!--<c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\"></c-button>-->\n      <!--<c-button type=\"primary\" icon=\"search\" size=\"small\">click me</c-button>-->\n      <!--<c-button icon=\"forward\" size=\"small\" type=\"primary\">Go froward</c-button>-->\n      <!--<c-button icon=\"download\" size=\"small\" type=\"primary\">download</c-button>-->\n      <!--<c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\">我收起看不见的结果</c-button>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer :sourcedata=\"sourcedata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n  </div>";
+
+/***/ },
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(108);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(21)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./transfer.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./transfer.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 108 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(20)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".transfer-content .j-checkboxgroup .detail .checkboxcont {\n  margin: 0;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 10px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n}\n.transfer-content .j-checkboxgroup .detail .checkboxcont:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(110);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(21)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./transfer.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cfd56a5&file=transfer.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./transfer.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(20)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".c-transfer[_v-1cfd56a5] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.c-transfer .transfercont[_v-1cfd56a5] {\n  border: 1px solid #e9e9e9;\n  margin: 0 20px;\n  box-sizing: border-box;\n}\n.c-transfer .transfercont input[_v-1cfd56a5] {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-transfer .transfercont input[_v-1cfd56a5]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-transfer .transfercont .transfer-top[_v-1cfd56a5] {\n  padding: 10px;\n  border-bottom: 1px solid #EAEAEA;\n}\n.checkboxcont[_v-1cfd56a5] {\n  width: 100px;\n  margin-right: 20px;\n  vertical-align: -3px;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n", ""]);
+	
+	// exports
+
 
 /***/ }
 /******/ ]);
