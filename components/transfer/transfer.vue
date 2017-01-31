@@ -3,31 +3,37 @@
         <div class="transfercont transfer-from">
             <div class="transfer-top">
                 <checkbox :isnotall="sourceisnotall" :isselected="sourceisall" @change="sourceAllEvent">
-                    {{ fromNum }} items
+                    <span v-if="sourcevalue.length">{{ sourcevalue.length }}/</span>{{ fromNum }} items
                 </checkbox>
                 <span class="from-title">
                     {{ title[0] }}
                 </span>
             </div>
             <div class="transfer-content">
-                <checkboxgroup :options="sourcedata" @change="sourceChangeEvent" :values="sourcevalue"></checkboxgroup>
+                <checkboxgroup v-if="sourcedata.length" :options="sourcedata" @change="sourceChangeEvent" :values="sourcevalue"></checkboxgroup>
+                <div class="notfound" v-if="!sourcedata.length">
+                    <span>Not Found</span>
+                </div>
             </div>
         </div>
         <div class="transfer-symbol">
-            <c-button type="primary" icon="backward" size="small" :disabled="!targetvalue.length"></c-button>
-            <c-button type="primary" icon="forward" size="small" :disabled="!sourcevalue.length"></c-button>
+            <c-button type="primary" icon="backward" size="small" :disabled="!targetvalue.length" @click="targetClickEvent"></c-button>
+            <c-button type="primary" icon="forward" size="small" :disabled="!sourcevalue.length" @click="sourceClickEvent"></c-button>
         </div>
         <div class="transfercont transfer-to">
             <div class="transfer-top">
                 <checkbox :isnotall="targetisnotall" :isselected="targetisall" @change="targetAllEvent">
-                    {{ toNum }} items
+                    <span v-if="targetvalue.length">{{ targetvalue.length }}/</span>{{ toNum }} items
                 </checkbox>
                 <span class="from-title">
                     {{ title[1] }}
                 </span>
             </div>
             <div class="transfer-content">
-                <checkboxgroup :options="targetdata" @change="sourceChangeEvent" :values="targetvalue"></checkboxgroup>
+                <checkboxgroup v-if="targetdata.length" :options="targetdata" @change="sourceChangeEvent" :values="targetvalue"></checkboxgroup>
+                <div class="notfound" v-if="!targetdata.length">
+                    <span>Not Found</span>
+                </div>
             </div>
         </div>
     </div>
@@ -44,12 +50,22 @@
                     width: 100%;
                     padding: 10px;
                     transition: all .5s linear;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                     &:hover {
                         background: @transferblue;
                         cursor: pointer;
                     }
                 }
             }
+        }
+        .notfound {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            color: @jdefault;
         }
     }
     .transfer-symbol {
@@ -69,6 +85,7 @@
         .transfercont {
             border: 1px solid @border;
             box-sizing: border-box;
+            width: 200px;
             input {
                 transition: all .2s linear;
                 &:hover {
@@ -86,12 +103,9 @@
         width: 100px;
         margin-right: 20px;
         vertical-align: -3px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
     }
 </style>
-<script>
+<script type="text/ecmascript-6">
     import checkbox from '../checkbox/checkbox.vue'
     import checkboxgroup from '../checkbox/checkboxgroup.vue'
     import button from '../button/button.vue'
@@ -198,6 +212,42 @@
                         }
                     }
                 }
+            },
+            sourceClickEvent() {
+                this.sourcevalue.map((data) => {
+                    let index;
+                    if(Object.prototype.toString.call(this.sourcedata[0]) === "[object Object]") {
+                        this.sourcedata.map((data1, index1) => {
+                            if(data1.content === data) {
+                                index = index1;
+                                return;
+                            }
+                        })
+                    } else {
+                        index = this.sourcedata.indexOf(data);
+                    }
+                    let element = this.sourcedata.splice(index, 1);
+                    this.targetdata.unshift(element[0]);
+                })
+                this.sourcevalue = [];
+            },
+            targetClickEvent() {
+                this.targetvalue.map((data) => {
+                    let index;
+                    if(Object.prototype.toString.call(this.targetdata[0]) === "[object Object]") {
+                        this.targetdata.map((data1, index1) => {
+                            if(data1.content === data) {
+                                index = index1;
+                                return;
+                            }
+                        })
+                    } else {
+                        index = this.targetdata.indexOf(data);
+                    }
+                    let element = this.targetdata.splice(index, 1);
+                    this.sourcedata.unshift(element[0]);
+                })
+                this.targetvalue = [];
             }
         }
     })

@@ -624,7 +624,7 @@
 	      sourcedata: [{
 	        content: "hahaha"
 	      }, {
-	        content: "mxoamoxsa"
+	        content: "mxoamoxjisoadnoiasndoisandoisandiosadnoiasa"
 	      }],
 	      targetdata: [{
 	        content: 'pppp'
@@ -3188,7 +3188,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".transfer-content {\n  height: 168px;\n}\n.transfer-content .j-checkboxgroup .detail .checkboxcont {\n  margin: 0;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 10px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n}\n.transfer-content .j-checkboxgroup .detail .checkboxcont:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n.transfer-symbol {\n  padding-top: 65px;\n}\n.transfer-symbol .small {\n  padding: 2px 8px!important;\n  border-radius: 0px;\n  display: block;\n}\n", ""]);
+	exports.push([module.id, ".transfer-content {\n  height: 168px;\n}\n.transfer-content .j-checkboxgroup .detail .checkboxcont {\n  margin: 0;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 10px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n.transfer-content .j-checkboxgroup .detail .checkboxcont:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n.transfer-content .notfound {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 100%;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #DADADA;\n}\n.transfer-symbol {\n  padding-top: 65px;\n}\n.transfer-symbol .small {\n  padding: 2px 8px!important;\n  border-radius: 0px;\n  display: block;\n}\n", ""]);
 	
 	// exports
 
@@ -3228,7 +3228,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".c-transfer[_v-1cfd56a5] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding: 0 20px;\n}\n.c-transfer .transfercont[_v-1cfd56a5] {\n  border: 1px solid #e9e9e9;\n  box-sizing: border-box;\n}\n.c-transfer .transfercont input[_v-1cfd56a5] {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-transfer .transfercont input[_v-1cfd56a5]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-transfer .transfercont .transfer-top[_v-1cfd56a5] {\n  padding: 10px;\n  border-bottom: 1px solid #EAEAEA;\n}\n.checkboxcont[_v-1cfd56a5] {\n  width: 100px;\n  margin-right: 20px;\n  vertical-align: -3px;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n}\n", ""]);
+	exports.push([module.id, ".c-transfer[_v-1cfd56a5] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding: 0 20px;\n}\n.c-transfer .transfercont[_v-1cfd56a5] {\n  border: 1px solid #e9e9e9;\n  box-sizing: border-box;\n  width: 200px;\n}\n.c-transfer .transfercont input[_v-1cfd56a5] {\n  -webkit-transition: all .2s linear;\n  transition: all .2s linear;\n}\n.c-transfer .transfercont input[_v-1cfd56a5]:hover {\n  border-color: #46a6ea;\n  cursor: pointer;\n}\n.c-transfer .transfercont .transfer-top[_v-1cfd56a5] {\n  padding: 10px;\n  border-bottom: 1px solid #EAEAEA;\n}\n.checkboxcont[_v-1cfd56a5] {\n  width: 100px;\n  margin-right: 20px;\n  vertical-align: -3px;\n}\n", ""]);
 	
 	// exports
 
@@ -3358,6 +3358,46 @@
 	                    }
 	                }
 	            }
+	        },
+	        sourceClickEvent: function sourceClickEvent() {
+	            var _this = this;
+	
+	            this.sourcevalue.map(function (data) {
+	                var index = void 0;
+	                if (Object.prototype.toString.call(_this.sourcedata[0]) === "[object Object]") {
+	                    _this.sourcedata.map(function (data1, index1) {
+	                        if (data1.content === data) {
+	                            index = index1;
+	                            return;
+	                        }
+	                    });
+	                } else {
+	                    index = _this.sourcedata.indexOf(data);
+	                }
+	                var element = _this.sourcedata.splice(index, 1);
+	                _this.targetdata.unshift(element[0]);
+	            });
+	            this.sourcevalue = [];
+	        },
+	        targetClickEvent: function targetClickEvent() {
+	            var _this2 = this;
+	
+	            this.targetvalue.map(function (data) {
+	                var index = void 0;
+	                if (Object.prototype.toString.call(_this2.targetdata[0]) === "[object Object]") {
+	                    _this2.targetdata.map(function (data1, index1) {
+	                        if (data1.content === data) {
+	                            index = index1;
+	                            return;
+	                        }
+	                    });
+	                } else {
+	                    index = _this2.targetdata.indexOf(data);
+	                }
+	                var element = _this2.targetdata.splice(index, 1);
+	                _this2.sourcedata.unshift(element[0]);
+	            });
+	            this.targetvalue = [];
 	        }
 	    }
 	};
@@ -3367,31 +3407,37 @@
 	//         <div class="transfercont transfer-from">
 	//             <div class="transfer-top">
 	//                 <checkbox :isnotall="sourceisnotall" :isselected="sourceisall" @change="sourceAllEvent">
-	//                     {{ fromNum }} items
+	//                     <span v-if="sourcevalue.length">{{ sourcevalue.length }}/</span>{{ fromNum }} items
 	//                 </checkbox>
 	//                 <span class="from-title">
 	//                     {{ title[0] }}
 	//                 </span>
 	//             </div>
 	//             <div class="transfer-content">
-	//                 <checkboxgroup :options="sourcedata" @change="sourceChangeEvent" :values="sourcevalue"></checkboxgroup>
+	//                 <checkboxgroup v-if="sourcedata.length" :options="sourcedata" @change="sourceChangeEvent" :values="sourcevalue"></checkboxgroup>
+	//                 <div class="notfound" v-if="!sourcedata.length">
+	//                     <span>Not Found</span>
+	//                 </div>
 	//             </div>
 	//         </div>
 	//         <div class="transfer-symbol">
-	//             <c-button type="primary" icon="backward" size="small" :disabled="!targetvalue.length"></c-button>
-	//             <c-button type="primary" icon="forward" size="small" :disabled="!sourcevalue.length"></c-button>
+	//             <c-button type="primary" icon="backward" size="small" :disabled="!targetvalue.length" @click="targetClickEvent"></c-button>
+	//             <c-button type="primary" icon="forward" size="small" :disabled="!sourcevalue.length" @click="sourceClickEvent"></c-button>
 	//         </div>
 	//         <div class="transfercont transfer-to">
 	//             <div class="transfer-top">
 	//                 <checkbox :isnotall="targetisnotall" :isselected="targetisall" @change="targetAllEvent">
-	//                     {{ toNum }} items
+	//                     <span v-if="targetvalue.length">{{ targetvalue.length }}/</span>{{ toNum }} items
 	//                 </checkbox>
 	//                 <span class="from-title">
 	//                     {{ title[1] }}
 	//                 </span>
 	//             </div>
 	//             <div class="transfer-content">
-	//                 <checkboxgroup :options="targetdata" @change="sourceChangeEvent" :values="targetvalue"></checkboxgroup>
+	//                 <checkboxgroup v-if="targetdata.length" :options="targetdata" @change="sourceChangeEvent" :values="targetvalue"></checkboxgroup>
+	//                 <div class="notfound" v-if="!targetdata.length">
+	//                     <span>Not Found</span>
+	//                 </div>
 	//             </div>
 	//         </div>
 	//     </div>
@@ -3408,12 +3454,22 @@
 	//                     width: 100%;
 	//                     padding: 10px;
 	//                     transition: all .5s linear;
+	//                     text-overflow: ellipsis;
+	//                     overflow: hidden;
+	//                     white-space: nowrap;
 	//                     &:hover {
 	//                         background: @transferblue;
 	//                         cursor: pointer;
 	//                     }
 	//                 }
 	//             }
+	//         }
+	//         .notfound {
+	//             display: flex;
+	//             height: 100%;
+	//             justify-content: center;
+	//             align-items: center;
+	//             color: @jdefault;
 	//         }
 	//     }
 	//     .transfer-symbol {
@@ -3433,6 +3489,7 @@
 	//         .transfercont {
 	//             border: 1px solid @border;
 	//             box-sizing: border-box;
+	//             width: 200px;
 	//             input {
 	//                 transition: all .2s linear;
 	//                 &:hover {
@@ -3450,12 +3507,9 @@
 	//         width: 100px;
 	//         margin-right: 20px;
 	//         vertical-align: -3px;
-	//         text-overflow: ellipsis;
-	//         overflow: hidden;
-	//         white-space: nowrap;
 	//     }
 	// </style>
-	// <script>
+	// <script type="text/ecmascript-6">
 
 /***/ },
 /* 88 */
@@ -4605,7 +4659,7 @@
 /* 99 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"c-transfer\" _v-1cfd56a5=\"\">\n        <div class=\"transfercont transfer-from\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n                <checkbox :isnotall=\"sourceisnotall\" :isselected=\"sourceisall\" @change=\"sourceAllEvent\" _v-1cfd56a5=\"\">\n                    {{ fromNum }} items\n                </checkbox>\n                <span class=\"from-title\" _v-1cfd56a5=\"\">\n                    {{ title[0] }}\n                </span>\n            </div>\n            <div class=\"transfer-content\" _v-1cfd56a5=\"\">\n                <checkboxgroup :options=\"sourcedata\" @change=\"sourceChangeEvent\" :values=\"sourcevalue\" _v-1cfd56a5=\"\"></checkboxgroup>\n            </div>\n        </div>\n        <div class=\"transfer-symbol\" _v-1cfd56a5=\"\">\n            <c-button type=\"primary\" icon=\"backward\" size=\"small\" :disabled=\"!targetvalue.length\" _v-1cfd56a5=\"\"></c-button>\n            <c-button type=\"primary\" icon=\"forward\" size=\"small\" :disabled=\"!sourcevalue.length\" _v-1cfd56a5=\"\"></c-button>\n        </div>\n        <div class=\"transfercont transfer-to\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n                <checkbox :isnotall=\"targetisnotall\" :isselected=\"targetisall\" @change=\"targetAllEvent\" _v-1cfd56a5=\"\">\n                    {{ toNum }} items\n                </checkbox>\n                <span class=\"from-title\" _v-1cfd56a5=\"\">\n                    {{ title[1] }}\n                </span>\n            </div>\n            <div class=\"transfer-content\" _v-1cfd56a5=\"\">\n                <checkboxgroup :options=\"targetdata\" @change=\"sourceChangeEvent\" :values=\"targetvalue\" _v-1cfd56a5=\"\"></checkboxgroup>\n            </div>\n        </div>\n    </div>";
+	module.exports = "<div class=\"c-transfer\" _v-1cfd56a5=\"\">\n        <div class=\"transfercont transfer-from\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n                <checkbox :isnotall=\"sourceisnotall\" :isselected=\"sourceisall\" @change=\"sourceAllEvent\" _v-1cfd56a5=\"\">\n                    <span v-if=\"sourcevalue.length\" _v-1cfd56a5=\"\">{{ sourcevalue.length }}/</span>{{ fromNum }} items\n                </checkbox>\n                <span class=\"from-title\" _v-1cfd56a5=\"\">\n                    {{ title[0] }}\n                </span>\n            </div>\n            <div class=\"transfer-content\" _v-1cfd56a5=\"\">\n                <checkboxgroup v-if=\"sourcedata.length\" :options=\"sourcedata\" @change=\"sourceChangeEvent\" :values=\"sourcevalue\" _v-1cfd56a5=\"\"></checkboxgroup>\n                <div class=\"notfound\" v-if=\"!sourcedata.length\" _v-1cfd56a5=\"\">\n                    <span _v-1cfd56a5=\"\">Not Found</span>\n                </div>\n            </div>\n        </div>\n        <div class=\"transfer-symbol\" _v-1cfd56a5=\"\">\n            <c-button type=\"primary\" icon=\"backward\" size=\"small\" :disabled=\"!targetvalue.length\" @click=\"targetClickEvent\" _v-1cfd56a5=\"\"></c-button>\n            <c-button type=\"primary\" icon=\"forward\" size=\"small\" :disabled=\"!sourcevalue.length\" @click=\"sourceClickEvent\" _v-1cfd56a5=\"\"></c-button>\n        </div>\n        <div class=\"transfercont transfer-to\" _v-1cfd56a5=\"\">\n            <div class=\"transfer-top\" _v-1cfd56a5=\"\">\n                <checkbox :isnotall=\"targetisnotall\" :isselected=\"targetisall\" @change=\"targetAllEvent\" _v-1cfd56a5=\"\">\n                    <span v-if=\"targetvalue.length\" _v-1cfd56a5=\"\">{{ targetvalue.length }}/</span>{{ toNum }} items\n                </checkbox>\n                <span class=\"from-title\" _v-1cfd56a5=\"\">\n                    {{ title[1] }}\n                </span>\n            </div>\n            <div class=\"transfer-content\" _v-1cfd56a5=\"\">\n                <checkboxgroup v-if=\"targetdata.length\" :options=\"targetdata\" @change=\"sourceChangeEvent\" :values=\"targetvalue\" _v-1cfd56a5=\"\"></checkboxgroup>\n                <div class=\"notfound\" v-if=\"!targetdata.length\" _v-1cfd56a5=\"\">\n                    <span _v-1cfd56a5=\"\">Not Found</span>\n                </div>\n            </div>\n        </div>\n    </div>";
 
 /***/ },
 /* 100 */
