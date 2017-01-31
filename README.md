@@ -14,5 +14,6 @@
  - popover组件: 气泡悬浮提示, 可设置触发方式, 提示位置, 标题, 内容, [查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/popover)
  - treeselect组件: 树形选择器, [查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/treeselect)
  - checkbox组件: 多选框, [查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/checkbox)
+ - transfer组件: 穿梭框, [查看使用说明](https://github.com/5606595/ChanotUI/tree/master/components/transfer)
 
 ***需要用webpack模块化加载***

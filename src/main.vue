@@ -70,7 +70,7 @@
       <!--</treeselect>-->
     <!--</box>-->
     <box>
-      <transfer :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
+      <transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
     </box>
     <box>
       <checkbox>Haha</checkbox>
@@ -144,7 +144,8 @@
         }],
         targetdata: [{
           content: 'pppp'
-        }]
+        }],
+        title: ["来源", "目标"]
       }
     },
     computed: {
