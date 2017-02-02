@@ -1,7 +1,7 @@
 <template>
     <div class="j-checkboxgroup">
         <div class="detail">
-            <checkbox v-for="(option, index) in dealOptions" :title="option.title" v-bind:isselected="values.indexOf(option.content) !== -1" @change="changeEvent">
+            <checkbox v-for="(option, index) in dealOptions" :disabled="option.disabled" :title="option.title" v-bind:isselected="values.indexOf(option.content) !== -1" @change="changeEvent">
                 {{ option.content }}
             </checkbox>
         </div>
@@ -35,10 +35,22 @@
                                 title: data.content
                             }
                         }
+                        if(data.disabled) {
+                            arr[index].disabled = true;
+                        } else {
+                            arr[index].disabled = false;
+                        }
+                        if(data.select) {
+                            arr[index].select = true;
+                        } else {
+                            arr[index].select = false;
+                        }
                     } else {
                         arr[index] = {
                             content: data,
-                            title: data
+                            title: data,
+                            disabled: false,
+                            select: false
                         }
                     }
                 });

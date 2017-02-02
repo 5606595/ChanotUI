@@ -73,7 +73,7 @@
       <transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
     </box>
     <box>
-      <checkbox>Haha</checkbox>
+      <checkbox disabled isselected>Haha</checkbox>
       <checkbox>Hehe</checkbox>
       <checkbox>Xixi</checkbox>
       <div class="group">
@@ -86,7 +86,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import button from '../components/button/button.vue'
   import spin from '../components/spin/spin.vue'
   import icon from '../components/icon'
@@ -97,7 +97,10 @@
   import { treeselect } from '../components/treeselect'
   import transfer from '../components/transfer'
   import { checkbox, checkboxgroup } from '../components/checkbox'
-  let checkAllList = ["apple", "banana", "pear"];
+  let checkAllList = ["apple", "banana", {
+    content: "pear",
+    select: true
+  }];
   let defaultList = [];
   export default {
     components: {
@@ -149,11 +152,20 @@
       }
     },
     computed: {
+      checkLength() {
+        let length = 0;
+        this.array.map((data) => {
+          if(!data.disabled) {
+            length++;
+          }
+        })
+        return length;
+      },
       checkall() {
-        return this.checkList.length === this.array.length
+        return this.checkList.length === this.checkLength
       },
       notall() {
-        return this.checkList.length && this.checkList.length !== this.array.length
+        return this.checkList.length && this.checkList.length !== this.checkLength
       }
     },
     methods: {
@@ -161,14 +173,18 @@
         if(this.notall) {
           this.checkList = [];
           for(let i = 0; i < checkAllList.length; i++) {
-            this.checkList[i] = checkAllList[i];
+            if(!checkAllList[i].disabled) {
+              this.checkList[i] = checkAllList[i];
+            }
           }
         } else if(this.checkall) {
           this.checkList = [];
         } else {
           this.checkList = [];
           for(let i = 0; i < checkAllList.length; i++) {
-            this.checkList[i] = checkAllList[i];
+            if(!checkAllList[i].disabled) {
+              this.checkList[i] = checkAllList[i];
+            }
           }
         }
       }

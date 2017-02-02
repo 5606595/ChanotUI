@@ -1,5 +1,5 @@
 <template>
-    <div class="checkboxcont" :title="title" :class="{'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
+    <div class="checkboxcont" :title="title" :class="{ 'disabled': disabled, 'checkboxcont-selected': isselected, 'checkboxcont-selected-last': isselectedLast, 'checkboxcont-notall': isnotall }" @click="clickevent">
         <span class="j-checkbox">
             <input type="checkbox" />
         </span>
@@ -16,6 +16,24 @@
             cursor: pointer;
             .j-checkbox {
                 border-color: @jbluelight;
+            }
+        }
+        &.disabled {
+            .j-checkbox {
+                background: @checkdisabledbg;
+                border-color: @checkdisablebd;
+                &:after {
+                    border-color: @checkdisablert;
+                }
+            }
+            .j-content {
+                color: @jdefault;
+            }
+            &:hover {
+                .j-checkbox {
+                    border-color: @checkdisablebd;
+                }
+                cursor: not-allowed;
             }
         }
     }
@@ -115,23 +133,29 @@
             title: {
                 type: String,
                 default: null
+            },
+            disabled: {
+                type: Boolean,
+                default: false
             }
         },
         store,
         methods: {
             clickevent(event) {
-                store.commit("clickDom");
-                if(this.isselected) {
-                    this.isselected = false;
-                    this.isselectedLast = true;
-                    store.commit("addDom", this);
-                } else {
-                    if(this.isnotall) {
-                        this.isnotall = false;
+                if(!this.disabled) {
+                    store.commit("clickDom");
+                    if(this.isselected) {
+                        this.isselected = false;
+                        this.isselectedLast = true;
+                        store.commit("addDom", this);
+                    } else {
+                        if(this.isnotall) {
+                            this.isnotall = false;
+                        }
+                        this.isselected = true;
                     }
-                    this.isselected = true;
+                    this.$emit("change", this.$el.querySelector(".j-content").textContent.trim());
                 }
-                this.$emit("change", this.$el.querySelector(".j-content").textContent.trim());
             }
         },
     }
