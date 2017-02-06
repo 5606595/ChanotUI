@@ -83,6 +83,11 @@
       </div>
       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
+    <box>
+      <dropdown>
+        siandioasndoiasnio
+      </dropdown>
+    </box>
   </div>
 </template>
 
@@ -97,6 +102,7 @@
   import { treeselect } from '../components/treeselect'
   import transfer from '../components/transfer'
   import { checkbox, checkboxgroup } from '../components/checkbox'
+  import dropdown from '../components/dropdown'
   let checkAllList = ["apple", "banana", {
     content: "pear",
     select: true
@@ -115,7 +121,8 @@
       'treeselect': treeselect,
       'transfer': transfer,
       'checkbox': checkbox,
-      'checkboxgroup': checkboxgroup
+      'checkboxgroup': checkboxgroup,
+      'dropdown': dropdown
     },
     data() {
       return {
