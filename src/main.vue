@@ -84,8 +84,10 @@
       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
     <box>
-      <dropdown>
-        siandioasndoiasnio
+      <dropdown v-bind:overload="over1">
+        <a href="">
+          midnsaiodnsaoi
+        </a>
       </dropdown>
     </box>
   </div>
