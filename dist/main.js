@@ -645,7 +645,8 @@
 	      targetdata: [{
 	        content: 'pppp'
 	      }],
-	      title: ["来源", "目标"]
+	      title: ["来源", "目标"],
+	      over1: "<p>Hello World</p>"
 	    };
 	  },
 	
@@ -4779,7 +4780,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(104)
-	module.exports = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./dropdown.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
+	module.exports = __webpack_require__(106)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
 	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(107)
@@ -4836,7 +4837,86 @@
 
 
 /***/ },
-/* 106 */,
+/* 106 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="dropdown-content">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style scoped rel="stylesheet/less" lang="less">
+	//     .dropdown-content {
+	//         display: inline-block;
+	//     }
+	// </style>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    data: function data() {
+	        return {
+	            isAppend: false,
+	            isAppear: false
+	        };
+	    },
+	
+	    components: {},
+	    computed: {
+	        left: function left() {
+	            return this.$el.getBoundingClientRect().left;
+	        },
+	        top: function top() {
+	            return this.$el.getBoundingClientRect().top + this.$el.getBoundingClientRect().height;
+	        }
+	    },
+	    methods: {
+	        overin: function overin() {
+	            if (this.isAppend) {
+	                this.isAppear = true;
+	            } else {
+	                this.isAppend = true;
+	                var overloadDiv = document.createElement("div");
+	                //                    overloadDiv.innerHTML = this.overload;
+	                overloadDiv.setAttribute("v-html", this.overload);
+	                this.$el.appendChild(overloadDiv);
+	            }
+	        },
+	        leaveout: function leaveout() {
+	            console.log(2);
+	        }
+	    },
+	    mounted: function mounted() {
+	        var _this = this;
+	
+	        if (!this.trigger.length) {
+	            this.$el.addEventListener("mouseover", this.overin, false);
+	            this.$el.addEventListener("mouseleave", this.leaveout, false);
+	        } else {
+	            this.trigger.map(function (data) {
+	                if (data === "click") {
+	                    _this.$el.addEventListener("click", _this.overin, false);
+	                }
+	            });
+	        }
+	    },
+	
+	    props: {
+	        trigger: {
+	            type: Array,
+	            default: []
+	        },
+	        overload: {
+	            type: String
+	        }
+	    }
+	};
+	// </script>
+
+/***/ },
 /* 107 */
 /***/ function(module, exports) {
 

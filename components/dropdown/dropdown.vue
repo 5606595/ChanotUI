@@ -29,7 +29,15 @@
         },
         methods: {
             overin() {
-                console.log(1)
+                if(this.isAppend) {
+                    this.isAppear = true;
+                } else {
+                    this.isAppend = true;
+                    let overloadDiv = document.createElement("div");
+//                    overloadDiv.innerHTML = this.overload;
+                    overloadDiv.setAttribute("v-html", this.overload);
+                    this.$el.appendChild(overloadDiv);
+                }
             },
             leaveout() {
                 console.log(2)
@@ -52,7 +60,9 @@
                 type: Array,
                 default: []
             },
-            'overload'
+            overload: {
+                type: String
+            }
         }
     }
 </script>
