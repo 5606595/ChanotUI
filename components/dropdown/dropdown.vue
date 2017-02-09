@@ -7,6 +7,9 @@
     .dropdown-content {
         display: inline-block;
     }
+    .overload {
+        
+    }
 </style>
 <script type="text/ecmascript-6">
     export default {
@@ -34,8 +37,7 @@
                 } else {
                     this.isAppend = true;
                     let overloadDiv = document.createElement("div");
-//                    overloadDiv.innerHTML = this.overload;
-                    overloadDiv.setAttribute("v-html", this.overload);
+                    overloadDiv.innerHTML = this.overload;
                     this.$el.appendChild(overloadDiv);
                 }
             },
