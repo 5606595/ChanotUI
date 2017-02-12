@@ -4854,13 +4854,17 @@
 	//     .dropdown-content {
 	//         display: inline-block;
 	//     }
+	//     .overload {
+	
+	//     }
 	// </style>
 	// <script type="text/ecmascript-6">
 	exports.default = {
 	    data: function data() {
 	        return {
 	            isAppend: false,
-	            isAppear: false
+	            isAppear: false,
+	            overload: null
 	        };
 	    },
 	
@@ -4880,14 +4884,13 @@
 	            } else {
 	                this.isAppend = true;
 	                var overloadDiv = document.createElement("div");
-	                //                    overloadDiv.innerHTML = this.overload;
-	                overloadDiv.setAttribute("v-html", this.overload);
+	                overloadDiv.innerHTML = this.overload;
+	                overloadDiv.classList.add("overload");
+	                this.overload = overloadDiv;
 	                this.$el.appendChild(overloadDiv);
 	            }
 	        },
-	        leaveout: function leaveout() {
-	            console.log(2);
-	        }
+	        leaveout: function leaveout() {}
 	    },
 	    mounted: function mounted() {
 	        var _this = this;

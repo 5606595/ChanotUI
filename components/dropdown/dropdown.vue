@@ -8,7 +8,7 @@
         display: inline-block;
     }
     .overload {
-        
+
     }
 </style>
 <script type="text/ecmascript-6">
@@ -16,7 +16,8 @@
         data() {
             return {
                 isAppend: false,
-                isAppear: false
+                isAppear: false,
+                overload: null
             }
         },
         components: {
@@ -38,11 +39,13 @@
                     this.isAppend = true;
                     let overloadDiv = document.createElement("div");
                     overloadDiv.innerHTML = this.overload;
+                    overloadDiv.classList.add("overload");
+                    this.overload = overloadDiv;
                     this.$el.appendChild(overloadDiv);
                 }
             },
             leaveout() {
-                console.log(2)
+
             }
         },
         mounted() {
