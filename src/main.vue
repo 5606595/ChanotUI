@@ -158,7 +158,7 @@
           content: 'pppp'
         }],
         title: ["来源", "目标"],
-        over1: "<p>Hello World</p>"
+        over1: '<a href="https://www.baidu.com">Hello World</a><a href="">haha</a>'
       }
     },
     computed: {
