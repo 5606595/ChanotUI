@@ -42,12 +42,7 @@
 
         },
         computed: {
-            left() {
-                return this.$el.getBoundingClientRect().left
-            },
-            top() {
-                return this.$el.getBoundingClientRect().top + this.$el.getBoundingClientRect().height
-            }
+           
         },
         methods: {
             overin() {
