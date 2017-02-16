@@ -42,7 +42,7 @@
 
         },
         computed: {
-           
+
         },
         methods: {
             overin() {

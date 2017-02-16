@@ -86,7 +86,7 @@
 	module.exports = __webpack_require__(23)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(108)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(110)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -4780,11 +4780,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(104)
-	__webpack_require__(109)
-	module.exports = __webpack_require__(106)
+	__webpack_require__(106)
+	module.exports = __webpack_require__(108)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(107)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(109)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -4839,6 +4839,46 @@
 
 /***/ },
 /* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(107);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(22)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-07de4165&file=dropdown.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./dropdown.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-07de4165&file=dropdown.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./dropdown.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(21)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".overload {\n  background: white;\n  margin: 5px 0px;\n  border: 1px solid #EAEAEA;\n  box-shadow: 0px 2px 5px #CCC, 0px 0px 3px #CCC;\n  border-radius: 4px;\n}\n.overload a {\n  text-decoration: none;\n  display: block;\n  padding: 10px 20px;\n  color: black;\n}\n.overload a:hover {\n  background: #e9f4fd;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 108 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4888,14 +4928,7 @@
 	    },
 	
 	    components: {},
-	    computed: {
-	        left: function left() {
-	            return this.$el.getBoundingClientRect().left;
-	        },
-	        top: function top() {
-	            return this.$el.getBoundingClientRect().top + this.$el.getBoundingClientRect().height;
-	        }
-	    },
+	    computed: {},
 	    methods: {
 	        overin: function overin() {
 	            this.isAppear = true;
@@ -4932,56 +4965,16 @@
 	// </script>
 
 /***/ },
-/* 107 */
+/* 109 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dropdown-content\" _v-07de4165=\"\">\n        <slot _v-07de4165=\"\"></slot>\n        <div v-html=\"overload\" class=\"overload\" v-if=\"isAppear\" _v-07de4165=\"\">\n\n        </div>\n    </div>";
 
 /***/ },
-/* 108 */
+/* 110 */
 /***/ function(module, exports) {
 
 	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown v-bind:overload=\"over1\" _v-415b7153=\"\">\n        <a href=\"\" _v-415b7153=\"\">\n          midnsaiodnsaoi\n        </a>\n      </dropdown>\n    </box>\n  </div>";
-
-/***/ },
-/* 109 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(110);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-07de4165&file=dropdown.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./dropdown.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-07de4165&file=dropdown.vue!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./dropdown.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 110 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(21)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".overload {\n  background: white;\n  margin: 5px 0px;\n  border: 1px solid #EAEAEA;\n  box-shadow: 0px 2px 5px #CCC, 0px 0px 3px #CCC;\n  border-radius: 4px;\n}\n.overload a {\n  text-decoration: none;\n  display: block;\n  padding: 10px 20px;\n  color: black;\n}\n.overload a:hover {\n  background: #e9f4fd;\n}\n", ""]);
-	
-	// exports
-
 
 /***/ }
 /******/ ]);
