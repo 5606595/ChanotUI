@@ -1,5 +1,7 @@
 # ChanotUI
 
+[![npm](https://travis-ci.org/5606595/ChanotUI.svg?branch=master)]() [![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)]()
+
 ##Vue组件库
 
 ----------
