@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "vue component library",
   "scripts": {
-    "test": "gulp"
+    "test": "gulp release"
   },
   "repository": {
     "type": "git",
