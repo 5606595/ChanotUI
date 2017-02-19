@@ -1,0 +1,124 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.3.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.7.3
+3 info using node@v5.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/jorten/github/ChanotUI',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/jorten/.npm/chanotui/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/jorten/.npm correctMkdir not in flight; initializing
+10 info lifecycle chanotui@1.0.0~prepublish: chanotui@1.0.0
+11 silly lifecycle chanotui@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/jorten/.npm/chanotui/1.0.0/package.tgz',
+12 verbose tar pack   '/Users/jorten/github/ChanotUI' ]
+13 verbose tarball /Users/jorten/.npm/chanotui/1.0.0/package.tgz
+14 verbose folder /Users/jorten/github/ChanotUI
+15 verbose addLocalTarball adding from inside cache /Users/jorten/.npm/chanotui/1.0.0/package.tgz
+16 verbose correctMkdir /Users/jorten/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd chanotui@1.0.0
+18 verbose afterAdd /Users/jorten/.npm/chanotui/1.0.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/jorten/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/jorten/.npm/chanotui/1.0.0/package/package.json written
+21 silly publish { name: 'chanotui',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: 'vue component library',
+21 silly publish   scripts: { test: 'gulp build' },
+21 silly publish   repository: { type: 'git', url: '' },
+21 silly publish   author: { name: 'jorten', email: 'xiawei5606595@gmail.com' },
+21 silly publish   keywords: [ 'vue', 'app' ],
+21 silly publish   license: 'ISC',
+21 silly publish   dependencies:
+21 silly publish    { 'babel-preset-stage-0': '^6.16.0',
+21 silly publish      'file-loader': '^0.9.0',
+21 silly publish      less: '^2.7.1',
+21 silly publish      'less-loader': '^2.2.3',
+21 silly publish      'url-loader': '^0.5.7',
+21 silly publish      vue: '^2.1.8',
+21 silly publish      vuex: '^2.1.1' },
+21 silly publish   devDependencies:
+21 silly publish    { autoprefixer: '~6.1.0',
+21 silly publish      'babel-core': '^6.8.0',
+21 silly publish      'babel-loader': '^6.2.4',
+21 silly publish      'babel-plugin-transform-runtime': '^6.8.0',
+21 silly publish      'babel-preset-es2015': '^6.6.0',
+21 silly publish      'babel-runtime': '^5.8.38',
+21 silly publish      'browser-sync': '^2.18.6',
+21 silly publish      'css-loader': '~0.21.0',
+21 silly publish      gulp: '~3.9.0',
+21 silly publish      'gulp-htmlone': '~0.1.9',
+21 silly publish      'gulp-webpack': '~1.5.0',
+21 silly publish      'json-loader': '~0.5.3',
+21 silly publish      'postcss-loader': '~0.8.0',
+21 silly publish      'postcss-px2rem': '~0.3.0',
+21 silly publish      'style-loader': '~0.13.0',
+21 silly publish      'vinyl-named': '~1.1.0',
+21 silly publish      'vue-hot-reload-api': '~1.2.1',
+21 silly publish      'vue-html-loader': '~1.0.0',
+21 silly publish      'vue-loader': '~7.2.0',
+21 silly publish      webpack: '^1.13.1' },
+21 silly publish   readme: '# ChanotUI\n\n[![npm](https://travis-ci.org/5606595/ChanotUI.svg?branch=master)]() [![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)]()\n\n##Vue组件库\n\n----------\n\n使用VueJS构建的页面组件，每个组件可单独使用作为独立的模块.\n\n####**安装方法**：\n\n--------\n\n    npm install chanotui\n\n####**已经完成组件**：\n\n#####基础样式库\n\n - 基于flex布局的栅格系统：[栅格布局使用说明](https://github.com/5606595/ChanotUI/tree/master/components/grid)\n -  icon组件：图标库，[图标库使用说明](https://github.com/5606595/ChanotUI/tree/master/components/icon)\n\n\n#####基础组件库\n\n 1. `spin`组件：加载显示组件，显示正在加载的图标，详情请见： [Spin使用说明](https://github.com/5606595/ChanotUI/tree/master/components/spin)\n 2. `button`组件：按钮组件，可调整大小、样式、图标，详情请见： [Button使用说明](https://github.com/5606595/ChanotUI/tree/master/components/button)\n 3. `Message`组件：全局提示组件，可设置持续时间，详情请见： [Message使用说明](https://github.com/5606595/ChanotUI/tree/master/components/message)\n 4. `popover`组件: 气泡悬浮提示组件, 可设置触发方式, 提示位置, 标题, 内容.  [Popover使用说明](https://github.com/5606595/ChanotUI/tree/master/components/popover)\n 5. `treeselect`组件: 树形选择器组件,  根据列表显示成树状供用户选择.  [Treeselect使用说明](https://github.com/5606595/ChanotUI/tree/master/components/treeselect)\n 6. `checkbox`组件: 多选框组件, 提供用户选择多项选项. [Checkbox使用说明](https://github.com/5606595/ChanotUI/tree/master/components/checkbox)\n 7. `transfer`组件: 穿梭框组件,  为用户进行直观的选择行为，将选中的一栏移到另一栏. [Transfer使用说明](https://github.com/5606595/ChanotUI/tree/master/components/transfer)\n\n***需要用webpack模块化加载***\n\n###更新日志\n\n---\n\n####**v1.0.0**\n\n 1. 提供基础搭建环境，完成基础样式库的开发\n 2. 完成基础组件库的开发\n\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '8f42cc4e307a3255777437959a21631bdcb307f4',
+21 silly publish   _id: 'chanotui@1.0.0',
+21 silly publish   _shasum: '106edfea598d481de1cbed51648f0ba6cc07915e',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name chanotui
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/chanotui
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /Users/jorten/.npm/chanotui/1.0.0/package.tgz
+29 verbose request uri https://registry.npmjs.org/chanotui
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 23:46:51
+32 verbose request using bearer token for auth
+33 verbose request id a9f628d767f86cde
+34 http request PUT https://registry.npmjs.org/chanotui
+35 http 403 https://registry.npmjs.org/chanotui
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Sun, 19 Feb 2017 15:46:53 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-nrt6133-NRT',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1487519212.103425,VS0,VE1053',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /Users/jorten/.npm/registry.npmjs.org/chanotui on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 1.0.0." : chanotui
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+39 verbose stack     at emitTwo (events.js:100:13)
+39 verbose stack     at Request.emit (events.js:185:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+39 verbose stack     at emitOne (events.js:95:20)
+39 verbose stack     at Request.emit (events.js:182:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+40 verbose statusCode 403
+41 verbose pkgid chanotui
+42 verbose cwd /Users/jorten/github/ChanotUI
+43 error Darwin 16.3.0
+44 error argv "/usr/local/Cellar/node/5.3.0/bin/node" "/usr/local/bin/npm" "publish"
+45 error node v5.9.1
+46 error npm  v3.7.3
+47 error code E403
+48 error "You cannot publish over the previously published version 1.0.0." : chanotui
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
