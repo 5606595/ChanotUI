@@ -590,9 +590,28 @@
 	//         <a href="" slot="display">
 	//           midnsaiodnsaoi
 	//         </a>
-	//         <p>
-	//           爱情好像流沙
-	//         </p>
+	//         <ul>
+	//           <li>
+	//             <a href="">
+	//               不敢回看
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="">
+	//               左顾右盼不自然的暗自喜欢
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="">
+	//               偷偷搭讪总没完地坐立难安
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="">
+	//               试探说晚安 多空泛又心酸
+	//             </a>
+	//           </li>
+	//         </ul>
 	//       </dropdown>
 	//     </box>
 	//   </div>
@@ -4834,7 +4853,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".dropdown-content[_v-07de4165] {\n  display: inline-block;\n  position: relative;\n}\n.dropdown-content .dropdown-display[_v-07de4165] {\n  text-decoration: none;\n  color: #46a6ea;\n}\n.dropdown-content .dropdown-display[_v-07de4165]:hover {\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist[_v-07de4165] {\n  position: absolute;\n  top: 100%;\n}\n", ""]);
+	exports.push([module.id, ".dropdown-content[_v-07de4165] {\n  display: inline-block;\n  position: relative;\n}\n.dropdown-content .dropdown-display[_v-07de4165] {\n  text-decoration: none;\n  color: #46a6ea;\n}\n.dropdown-content .dropdown-display[_v-07de4165]:hover {\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist[_v-07de4165] {\n  position: absolute;\n  top: 100%;\n  border-radius: 4px;\n  padding: 0;\n  margin-top: 5px;\n  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);\n  white-space: nowrap;\n}\n", ""]);
 	
 	// exports
 
@@ -4874,7 +4893,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".dropdown-content .dropdown-display a {\n  text-decoration: none;\n  color: #46a6ea;\n}\n", ""]);
+	exports.push([module.id, ".dropdown-content .dropdown-display a {\n  text-decoration: none;\n  color: #46a6ea;\n}\n.dropdown-content .dropdownlist ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.dropdown-content .dropdownlist li {\n  padding: 7px 16px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n  color: rgba(0, 0, 0, 0.65);\n}\n.dropdown-content .dropdownlist li:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist li a {\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.65);\n}\n", ""]);
 	
 	// exports
 
@@ -4913,6 +4932,11 @@
 	//         .dropdownlist {
 	//             position: absolute;
 	//             top: 100%;
+	//             border-radius: 4px;
+	//             padding: 0;
+	//             margin-top: 5px;
+	//             box-shadow: 0 1px 6px @whiteshadow;
+	//             white-space: nowrap;
 	//         }
 	//     }
 	// </style>
@@ -4925,13 +4949,34 @@
 	//                 color: @jbluelight;
 	//             }
 	//         }
+	//         .dropdownlist {
+	//             ul {
+	//                 list-style: none;
+	//                 padding: 0;
+	//                 margin: 0;
+	//             }
+	//             li {
+	//                 padding: 7px 16px;
+	//                 transition: all .5s linear;
+	//                 color: @acolor;
+	//                 &:hover {
+	//                     background: @dropdownlist-hover;
+	//                     cursor: pointer;
+	//                 }
+	//                 a {
+	//                     text-decoration: none;
+	//                     color: @acolor;
+	//                 }
+	//             }
+	//         }
 	//     }
 	// </style>
 	// <script type="text/ecmascript-6">
 	exports.default = {
 	    data: function data() {
 	        return {
-	            isAppear: false
+	            isAppear: false,
+	            timeHandle: null
 	        };
 	    },
 	
@@ -4939,10 +4984,17 @@
 	    computed: {},
 	    methods: {
 	        overin: function overin() {
-	            this.isAppear = true;
+	            clearTimeout(this.timeHandle);
+	            if (!this.isAppear) {
+	                this.isAppear = true;
+	            }
 	        },
 	        leaveout: function leaveout() {
-	            this.isAppear = false;
+	            var _this = this;
+	
+	            this.timeHandle = setTimeout(function () {
+	                _this.isAppear = false;
+	            }, 300);
 	        }
 	    },
 	    mounted: function mounted() {},
@@ -4969,7 +5021,7 @@
 /* 110 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown _v-415b7153=\"\">\n        <a href=\"\" slot=\"display\" _v-415b7153=\"\">\n          midnsaiodnsaoi\n        </a>\n        <p _v-415b7153=\"\">\n          爱情好像流沙\n        </p>\n      </dropdown>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown _v-415b7153=\"\">\n        <a href=\"\" slot=\"display\" _v-415b7153=\"\">\n          midnsaiodnsaoi\n        </a>\n        <ul _v-415b7153=\"\">\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              不敢回看\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              左顾右盼不自然的暗自喜欢\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              偷偷搭讪总没完地坐立难安\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              试探说晚安 多空泛又心酸\n            </a>\n          </li>\n        </ul>\n      </dropdown>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

@@ -23,6 +23,11 @@
         .dropdownlist {
             position: absolute;
             top: 100%;
+            border-radius: 4px;
+            padding: 0;
+            margin-top: 5px;
+            box-shadow: 0 1px 6px @whiteshadow;
+            white-space: nowrap;
         }
     }
 </style>
@@ -35,6 +40,26 @@
                 color: @jbluelight;
             }
         }
+        .dropdownlist {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            li {
+                padding: 7px 16px;
+                transition: all .5s linear;
+                color: @acolor;
+                &:hover {
+                    background: @dropdownlist-hover;
+                    cursor: pointer;
+                }
+                a {
+                    text-decoration: none;
+                    color: @acolor;
+                }
+            }
+        }
     }
 </style>
 <script type="text/ecmascript-6">
@@ -42,6 +67,7 @@
         data() {
             return {
                 isAppear: false,
+                timeHandle: null
             }
         },
         components: {
@@ -52,10 +78,15 @@
         },
         methods: {
             overin() {
-                this.isAppear = true;
+                clearTimeout(this.timeHandle);
+                if(!this.isAppear) {
+                    this.isAppear = true;
+                }
             },
             leaveout() {
-                this.isAppear = false;
+                this.timeHandle = setTimeout(() => {
+                    this.isAppear = false;
+                }, 300);
             }
         },
         mounted() {
