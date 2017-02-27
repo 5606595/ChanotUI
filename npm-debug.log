@@ -67,7 +67,7 @@
 21 silly publish      webpack: '^1.13.1' },
 21 silly publish   readme: '# ChanotUI\n\n[![npm](https://travis-ci.org/5606595/ChanotUI.svg?branch=master)]() [![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)]()\n\n##Vue组件库\n\n----------\n\n使用VueJS构建的页面组件，每个组件可单独使用作为独立的模块.\n\n####**安装方法**：\n\n--------\n\n    npm install chanotui\n\n####**已经完成组件**：\n\n#####基础样式库\n\n - 基于flex布局的栅格系统：[栅格布局使用说明](https://github.com/5606595/ChanotUI/tree/master/components/grid)\n -  icon组件：图标库，[图标库使用说明](https://github.com/5606595/ChanotUI/tree/master/components/icon)\n\n\n#####基础组件库\n\n 1. `spin`组件：加载显示组件，显示正在加载的图标，详情请见： [Spin使用说明](https://github.com/5606595/ChanotUI/tree/master/components/spin)\n 2. `button`组件：按钮组件，可调整大小、样式、图标，详情请见： [Button使用说明](https://github.com/5606595/ChanotUI/tree/master/components/button)\n 3. `Message`组件：全局提示组件，可设置持续时间，详情请见： [Message使用说明](https://github.com/5606595/ChanotUI/tree/master/components/message)\n 4. `popover`组件: 气泡悬浮提示组件, 可设置触发方式, 提示位置, 标题, 内容.  [Popover使用说明](https://github.com/5606595/ChanotUI/tree/master/components/popover)\n 5. `treeselect`组件: 树形选择器组件,  根据列表显示成树状供用户选择.  [Treeselect使用说明](https://github.com/5606595/ChanotUI/tree/master/components/treeselect)\n 6. `checkbox`组件: 多选框组件, 提供用户选择多项选项. [Checkbox使用说明](https://github.com/5606595/ChanotUI/tree/master/components/checkbox)\n 7. `transfer`组件: 穿梭框组件,  为用户进行直观的选择行为，将选中的一栏移到另一栏. [Transfer使用说明](https://github.com/5606595/ChanotUI/tree/master/components/transfer)\n\n***需要用webpack模块化加载***\n\n###更新日志\n\n---\n\n####**v1.0.0**\n\n 1. 提供基础搭建环境，完成基础样式库的开发\n 2. 完成基础组件库的开发\n\n',
 21 silly publish   readmeFilename: 'README.md',
-21 silly publish   gitHead: '8f42cc4e307a3255777437959a21631bdcb307f4',
+21 silly publish   gitHead: '1d157dbf34d5bc958702b3bd3bec1d17676f315d',
 21 silly publish   _id: 'chanotui@1.0.0',
 21 silly publish   _shasum: '106edfea598d481de1cbed51648f0ba6cc07915e',
 21 silly publish   _from: '.' }
@@ -80,22 +80,22 @@
 28 silly publish uploading /Users/jorten/.npm/chanotui/1.0.0/package.tgz
 29 verbose request uri https://registry.npmjs.org/chanotui
 30 verbose request sending authorization for write operation
-31 info attempt registry request try #1 at 23:46:51
+31 info attempt registry request try #1 at 08:44:22
 32 verbose request using bearer token for auth
-33 verbose request id a9f628d767f86cde
+33 verbose request id 4b8f0d16c71cc240
 34 http request PUT https://registry.npmjs.org/chanotui
 35 http 403 https://registry.npmjs.org/chanotui
 36 verbose headers { 'content-type': 'application/json',
 36 verbose headers   'cache-control': 'max-age=300',
 36 verbose headers   'content-length': '95',
 36 verbose headers   'accept-ranges': 'bytes',
-36 verbose headers   date: 'Sun, 19 Feb 2017 15:46:53 GMT',
+36 verbose headers   date: 'Mon, 20 Feb 2017 00:44:23 GMT',
 36 verbose headers   via: '1.1 varnish',
 36 verbose headers   connection: 'keep-alive',
-36 verbose headers   'x-served-by': 'cache-nrt6133-NRT',
+36 verbose headers   'x-served-by': 'cache-itm7427-ITM',
 36 verbose headers   'x-cache': 'MISS',
 36 verbose headers   'x-cache-hits': '0',
-36 verbose headers   'x-timer': 'S1487519212.103425,VS0,VE1053',
+36 verbose headers   'x-timer': 'S1487551462.831512,VS0,VE1114',
 36 verbose headers   vary: 'Accept-Encoding' }
 37 verbose request invalidating /Users/jorten/.npm/registry.npmjs.org/chanotui on PUT
 38 error publish Failed PUT 403

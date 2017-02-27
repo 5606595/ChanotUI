@@ -84,10 +84,13 @@
       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
     <box>
-      <dropdown v-bind:overload="over1">
-        <a href="">
+      <dropdown>
+        <a href="" slot="display">
           midnsaiodnsaoi
         </a>
+        <p>
+          爱情好像流沙
+        </p>
       </dropdown>
     </box>
   </div>
@@ -124,7 +127,7 @@
       'transfer': transfer,
       'checkbox': checkbox,
       'checkboxgroup': checkboxgroup,
-      'dropdown': dropdown
+      'dropdown': dropdown,
     },
     data() {
       return {
@@ -158,7 +161,6 @@
           content: 'pppp'
         }],
         title: ["来源", "目标"],
-        over1: '<a href="https://www.baidu.com">Hello World</a><a href="">haha</a>'
       }
     },
     computed: {
