@@ -3,9 +3,11 @@
         <div class="dropdown-display">
             <slot name="display"></slot>
         </div>
-        <div class="dropdownlist" v-if="isAppear">
-            <slot></slot>
-        </div>
+        <transition name="dropdown">
+            <div class="dropdownlist" v-if="isAppear">
+                <slot></slot>
+            </div>
+        </transition>
     </div>
 </template>
 <style scoped rel="stylesheet/less" lang="less">
@@ -20,7 +22,48 @@
                 cursor: pointer;
             }
         }
+        .dropdown-enter-active {
+            /*transition: all 0.1s cubic-bezier(1, 0.02, 1, 1);*/
+            animation: enter .1s linear;
+        }
+        .dropdown-leave-active {
+            animation: leave .1s linear;
+        }
+        .dropdown-enter, .dropdown-leave-active {
+            opacity: 0;
+            transform: scaleY(0.8);
+
+        }
+        @keyframes enter {
+            0% {
+                opacity: 0;
+                transform: scaleY(0.95);
+            }
+            20% {
+                opacity: 0.6;
+                transform: scaleY(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+        @keyframes leave {
+            0% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            20% {
+                opacity: 0.6;
+                transform: scaleY(0.95);
+            }
+            100% {
+                opacity: 0;
+                transform: scaleY(0.95);
+            }
+        }
         .dropdownlist {
+            transform-origin: 50% 0;
             position: absolute;
             top: 100%;
             border-radius: 4px;

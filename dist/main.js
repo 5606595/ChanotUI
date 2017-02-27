@@ -4853,7 +4853,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".dropdown-content[_v-07de4165] {\n  display: inline-block;\n  position: relative;\n}\n.dropdown-content .dropdown-display[_v-07de4165] {\n  text-decoration: none;\n  color: #46a6ea;\n}\n.dropdown-content .dropdown-display[_v-07de4165]:hover {\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist[_v-07de4165] {\n  position: absolute;\n  top: 100%;\n  border-radius: 4px;\n  padding: 0;\n  margin-top: 5px;\n  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);\n  white-space: nowrap;\n}\n", ""]);
+	exports.push([module.id, ".dropdown-content[_v-07de4165] {\n  display: inline-block;\n  position: relative;\n}\n.dropdown-content .dropdown-display[_v-07de4165] {\n  text-decoration: none;\n  color: #46a6ea;\n}\n.dropdown-content .dropdown-display[_v-07de4165]:hover {\n  cursor: pointer;\n}\n.dropdown-content .dropdown-enter-active[_v-07de4165] {\n  /*transition: all 0.1s cubic-bezier(1, 0.02, 1, 1);*/\n  -webkit-animation: enter .1s linear;\n          animation: enter .1s linear;\n}\n.dropdown-content .dropdown-leave-active[_v-07de4165] {\n  -webkit-animation: leave .1s linear;\n          animation: leave .1s linear;\n}\n.dropdown-content .dropdown-enter[_v-07de4165],\n.dropdown-content .dropdown-leave-active[_v-07de4165] {\n  opacity: 0;\n  -webkit-transform: scaleY(0.8);\n          transform: scaleY(0.8);\n}\n@-webkit-keyframes enter {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  20% {\n    opacity: 0.6;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@keyframes enter {\n  0% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  20% {\n    opacity: 0.6;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n}\n@-webkit-keyframes leave {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  20% {\n    opacity: 0.6;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n}\n@keyframes leave {\n  0% {\n    opacity: 1;\n    -webkit-transform: scaleY(1);\n            transform: scaleY(1);\n  }\n  20% {\n    opacity: 0.6;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: scaleY(0.95);\n            transform: scaleY(0.95);\n  }\n}\n.dropdown-content .dropdownlist[_v-07de4165] {\n  -webkit-transform-origin: 50% 0;\n          transform-origin: 50% 0;\n  position: absolute;\n  top: 100%;\n  border-radius: 4px;\n  padding: 0;\n  margin-top: 5px;\n  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);\n  white-space: nowrap;\n}\n", ""]);
 	
 	// exports
 
@@ -4912,9 +4912,11 @@
 	//         <div class="dropdown-display">
 	//             <slot name="display"></slot>
 	//         </div>
-	//         <div class="dropdownlist" v-if="isAppear">
-	//             <slot></slot>
-	//         </div>
+	//         <transition name="dropdown">
+	//             <div class="dropdownlist" v-if="isAppear">
+	//                 <slot></slot>
+	//             </div>
+	//         </transition>
 	//     </div>
 	// </template>
 	// <style scoped rel="stylesheet/less" lang="less">
@@ -4929,7 +4931,48 @@
 	//                 cursor: pointer;
 	//             }
 	//         }
+	//         .dropdown-enter-active {
+	//             /*transition: all 0.1s cubic-bezier(1, 0.02, 1, 1);*/
+	//             animation: enter .1s linear;
+	//         }
+	//         .dropdown-leave-active {
+	//             animation: leave .1s linear;
+	//         }
+	//         .dropdown-enter, .dropdown-leave-active {
+	//             opacity: 0;
+	//             transform: scaleY(0.8);
+	
+	//         }
+	//         @keyframes enter {
+	//             0% {
+	//                 opacity: 0;
+	//                 transform: scaleY(0.95);
+	//             }
+	//             20% {
+	//                 opacity: 0.6;
+	//                 transform: scaleY(0.95);
+	//             }
+	//             100% {
+	//                 opacity: 1;
+	//                 transform: scaleY(1);
+	//             }
+	//         }
+	//         @keyframes leave {
+	//             0% {
+	//                 opacity: 1;
+	//                 transform: scaleY(1);
+	//             }
+	//             20% {
+	//                 opacity: 0.6;
+	//                 transform: scaleY(0.95);
+	//             }
+	//             100% {
+	//                 opacity: 0;
+	//                 transform: scaleY(0.95);
+	//             }
+	//         }
 	//         .dropdownlist {
+	//             transform-origin: 50% 0;
 	//             position: absolute;
 	//             top: 100%;
 	//             border-radius: 4px;
@@ -5015,7 +5058,7 @@
 /* 109 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dropdown-content\" @mouseover=\"overin\" @mouseleave=\"leaveout\" _v-07de4165=\"\">\n        <div class=\"dropdown-display\" _v-07de4165=\"\">\n            <slot name=\"display\" _v-07de4165=\"\"></slot>\n        </div>\n        <div class=\"dropdownlist\" v-if=\"isAppear\" _v-07de4165=\"\">\n            <slot _v-07de4165=\"\"></slot>\n        </div>\n    </div>";
+	module.exports = "<div class=\"dropdown-content\" @mouseover=\"overin\" @mouseleave=\"leaveout\" _v-07de4165=\"\">\n        <div class=\"dropdown-display\" _v-07de4165=\"\">\n            <slot name=\"display\" _v-07de4165=\"\"></slot>\n        </div>\n        <transition name=\"dropdown\" _v-07de4165=\"\">\n            <div class=\"dropdownlist\" v-if=\"isAppear\" _v-07de4165=\"\">\n                <slot _v-07de4165=\"\"></slot>\n            </div>\n        </transition>\n    </div>";
 
 /***/ },
 /* 110 */
