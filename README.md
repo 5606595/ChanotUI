@@ -32,6 +32,7 @@
  6. `checkbox`组件: 多选框组件, 提供用户选择多项选项. [Checkbox使用说明](https://github.com/5606595/ChanotUI/tree/master/components/checkbox)
  7. `transfer`组件: 穿梭框组件,  为用户进行直观的选择行为，将选中的一栏移到另一栏. [Transfer使用说明](https://github.com/5606595/ChanotUI/tree/master/components/transfer)
  8. `dropdown`组件：下拉菜单组件，提供向下滑动出菜单的组件.[Dropdown使用说明](https://github.com/5606595/ChanotUI/tree/master/components/dropdown)
+ 9. `backtop`组件：回到顶部组件，使用户点击即可回到页面顶部的按钮[Backtop使用说明](https://github.com/5606595/ChanotUI/tree/master/components/backtop)
 
 ***需要用webpack模块化加载***
 
@@ -52,3 +53,6 @@
 
 1. 为`dropdown`组件新增了**click**的触发方式
 
+####**v1.2.0**
+
+1.  新增`backtop`回到顶部组件

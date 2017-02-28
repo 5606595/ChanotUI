@@ -71,6 +71,7 @@
     .transfer-symbol {
         padding-top: 65px;
         .small {
+            margin: 10px;
             padding: 2px 8px!important;
             border-radius: 0px;
             display: block;

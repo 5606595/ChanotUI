@@ -48,6 +48,7 @@
     .jicon-download:before { content: '\e621' }
     .jicon-down:before { content: '\e69d' }
     .jicon-right:before { content: '\e67a' }
+    .jicon-backtop:before { content: '\e612' }
     @keyframes loading {
         0% {
             transform: rotate(0deg);
@@ -61,11 +62,11 @@
     }
     @font-face {
         font-family: 'iconfont';  /* project id 191439 */
-        src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot');
-        src: url('//at.alicdn.com/t/font_z2exoyfhk703haor.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_z2exoyfhk703haor.woff') format('woff'),
-        url('//at.alicdn.com/t/font_z2exoyfhk703haor.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_z2exoyfhk703haor.svg#iconfont') format('svg');
+        src: url('//at.alicdn.com/t/font_kk45pahzawkx1or.eot');
+        src: url('//at.alicdn.com/t/font_kk45pahzawkx1or.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_kk45pahzawkx1or.woff') format('woff'),
+        url('//at.alicdn.com/t/font_kk45pahzawkx1or.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_kk45pahzawkx1or.svg#iconfont') format('svg');
     }
 </style>
 <script>

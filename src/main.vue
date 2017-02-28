@@ -112,6 +112,7 @@
         </ul>
       </dropdown>
     </box>
+    <backtop></backtop>
   </div>
 </template>
 
@@ -127,10 +128,8 @@
   import transfer from '../components/transfer'
   import { checkbox, checkboxgroup } from '../components/checkbox'
   import dropdown from '../components/dropdown'
-  let checkAllList = ["apple", "banana", {
-    content: "pear",
-    select: true
-  }];
+  import backtop from '../components/backtop'
+  let checkAllList = ["apple", "banana", "pear"];
   let defaultList = [];
   export default {
     components: {
@@ -147,6 +146,7 @@
       'checkbox': checkbox,
       'checkboxgroup': checkboxgroup,
       'dropdown': dropdown,
+      'backtop': backtop
     },
     data() {
       return {
