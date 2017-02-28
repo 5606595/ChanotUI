@@ -2,14 +2,13 @@
     @import '../../mixin/mixin.less';
     .j-btn {
         padding: 6px 16px;
-        background: @jgrey;
+        background: #FFF;;
         border: 1px solid @jdefault;
         border-radius: 4px;
         box-sizing: border-box;
         transition: all .1s linear;
         outline: none;
         font-size: 14px;
-        margin: 10px;
         position: relative;
         &.loading {
             background: @jbluelight!important;
@@ -72,7 +71,6 @@
                 position: absolute;
                 border-radius: inherit;
                 box-sizing: border-box;
-                border: 0px solid @jblueborder;
                 margin: 0;
                 animation: pray .2s linear forwards;
             }

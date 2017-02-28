@@ -17,9 +17,11 @@
         position: relative;
         .dropdown-display {
             text-decoration: none;
-            color: @jbluelight;
+            color: @jblue;
+            transition: color .2s linear;
             &:hover {
                 cursor: pointer;
+                color: @jbluelight;
             }
         }
         .dropdown-enter-active {
@@ -80,7 +82,11 @@
         .dropdown-display {
             a {
                 text-decoration: none;
-                color: @jbluelight;
+                color: @jblue;
+                transition: color .2s linear;
+                &:hover {
+                    color: @jbluelight;
+                }
             }
         }
         .dropdownlist {
@@ -129,7 +135,7 @@
             leaveout() {
                 this.timeHandle = setTimeout(() => {
                     this.isAppear = false;
-                }, 300);
+                }, 500);
             }
         },
         mounted() {

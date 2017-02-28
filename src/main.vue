@@ -86,7 +86,7 @@
     <box>
       <dropdown>
         <a href="" slot="display">
-          midnsaiodnsaoi
+          Hover Me <icon type="down"></icon>
         </a>
         <ul>
           <li>
