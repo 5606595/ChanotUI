@@ -23,10 +23,10 @@
 #####使用方法
 
     <dropdown>
-		<span slot="display">   //slot="display"设置要触发的元素
+		<span slot="display">                                             //slot="display"设置要触发的元素
 			Hover me <icon type="down"></icon>
 		</span>
-		<ul>                 //设置下拉菜单选项
+		<ul>                                                              //设置下拉菜单选项
           <li>
             <a href="">
               不敢回看
