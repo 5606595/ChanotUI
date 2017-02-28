@@ -31,6 +31,7 @@
  5. `treeselect`组件: 树形选择器组件,  根据列表显示成树状供用户选择.  [Treeselect使用说明](https://github.com/5606595/ChanotUI/tree/master/components/treeselect)
  6. `checkbox`组件: 多选框组件, 提供用户选择多项选项. [Checkbox使用说明](https://github.com/5606595/ChanotUI/tree/master/components/checkbox)
  7. `transfer`组件: 穿梭框组件,  为用户进行直观的选择行为，将选中的一栏移到另一栏. [Transfer使用说明](https://github.com/5606595/ChanotUI/tree/master/components/transfer)
+ 8. `dropdown`组件：下拉菜单组件，提供向下滑动出菜单的组件.[Dropdown使用说明](https://github.com/5606595/ChanotUI/tree/master/components/dropdown)
 
 ***需要用webpack模块化加载***
 
@@ -42,4 +43,10 @@
 
  1. 提供基础搭建环境，完成基础样式库的开发
  2. 完成基础组件库的开发
+
+####**v1.1.0**
+
+1. 新增`dropdown`下拉菜单组件
+
+
 

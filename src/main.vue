@@ -85,9 +85,9 @@
     </box>
     <box>
       <dropdown>
-        <a href="" slot="display">
+        <span slot="display">
           Hover Me <icon type="down"></icon>
-        </a>
+        </span>
         <ul>
           <li>
             <a href="">
