@@ -1,6 +1,6 @@
 <template>
     <div class="dropdown-content" @mouseover="overin" @mouseleave="leaveout">
-        <div class="dropdown-display">
+        <div class="dropdown-display" @click="clickEvent">
             <slot name="display"></slot>
         </div>
         <transition name="dropdown">
@@ -104,6 +104,7 @@
                     cursor: pointer;
                 }
                 a {
+                    display: block;
                     text-decoration: none;
                     color: @acolor;
                 }
@@ -127,28 +128,49 @@
         },
         methods: {
             overin() {
-                clearTimeout(this.timeHandle);
-                if(!this.isAppear) {
-                    this.isAppear = true;
+                if(this.trigger === 'hover') {
+                    clearTimeout(this.timeHandle);
+                    if(!this.isAppear) {
+                        this.isAppear = true;
+                    }
                 }
             },
             leaveout() {
-                this.timeHandle = setTimeout(() => {
-                    this.isAppear = false;
-                }, 500);
+                if(this.trigger === 'hover') {
+                    this.timeHandle = setTimeout(() => {
+                        this.isAppear = false;
+                    }, 500);
+                }
+            },
+            clickEvent(eve) {
+                eve.preventDefault()
+                if(this.trigger === 'click') {
+                    if(!this.isAppear) {
+                        this.isAppear = true;
+                    } else {
+                        this.isAppear = false;
+                    }
+                }
             }
         },
         mounted() {
-
+            if(this.trigger === 'click') {
+                document.body.addEventListener("click", (event) => {
+                    if(this.$el !== event.target && this.$el.contains ? !this.$el.contains(event.target) : !this.$el.compareDocumentPosition(event.target)
+ & 16) {
+                        this.isAppear = false;
+                    }
+                }, false)
+            }
         },
         props: {
             trigger: {
-                type: Array,
-                default: []
+                type: String,
+                default: 'hover'
             },
             overload: {
                 type: String
-            }
+            },
         }
     }
 </script>

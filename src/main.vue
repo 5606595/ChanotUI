@@ -84,7 +84,7 @@
       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
     <box>
-      <dropdown>
+      <dropdown trigger="click">
         <span slot="display">
           Hover Me <icon type="down"></icon>
         </span>

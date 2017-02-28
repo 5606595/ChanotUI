@@ -586,7 +586,7 @@
 	//       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
 	//     </box>
 	//     <box>
-	//       <dropdown>
+	//       <dropdown trigger="click">
 	//         <span slot="display">
 	//           Hover Me <icon type="down"></icon>
 	//         </span>
@@ -4891,7 +4891,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".dropdown-content .dropdown-display a {\n  text-decoration: none;\n  color: #1f90e6;\n  -webkit-transition: color .2s linear;\n  transition: color .2s linear;\n}\n.dropdown-content .dropdown-display a:hover {\n  color: #46a6ea;\n}\n.dropdown-content .dropdownlist ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.dropdown-content .dropdownlist li {\n  padding: 7px 16px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n  color: rgba(0, 0, 0, 0.65);\n}\n.dropdown-content .dropdownlist li:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist li a {\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.65);\n}\n", ""]);
+	exports.push([module.id, ".dropdown-content .dropdown-display a {\n  text-decoration: none;\n  color: #1f90e6;\n  -webkit-transition: color .2s linear;\n  transition: color .2s linear;\n}\n.dropdown-content .dropdown-display a:hover {\n  color: #46a6ea;\n}\n.dropdown-content .dropdownlist ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.dropdown-content .dropdownlist li {\n  padding: 7px 16px;\n  -webkit-transition: all .5s linear;\n  transition: all .5s linear;\n  color: rgba(0, 0, 0, 0.65);\n}\n.dropdown-content .dropdownlist li:hover {\n  background: #ecf6fd;\n  cursor: pointer;\n}\n.dropdown-content .dropdownlist li a {\n  display: block;\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.65);\n}\n", ""]);
 	
 	// exports
 
@@ -4900,14 +4900,14 @@
 /* 108 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	// <template>
 	//     <div class="dropdown-content" @mouseover="overin" @mouseleave="leaveout">
-	//         <div class="dropdown-display">
+	//         <div class="dropdown-display" @click="clickEvent">
 	//             <slot name="display"></slot>
 	//         </div>
 	//         <transition name="dropdown">
@@ -5011,6 +5011,7 @@
 	//                     cursor: pointer;
 	//                 }
 	//                 a {
+	//                     display: block;
 	//                     text-decoration: none;
 	//                     color: @acolor;
 	//                 }
@@ -5031,25 +5032,49 @@
 	    computed: {},
 	    methods: {
 	        overin: function overin() {
-	            clearTimeout(this.timeHandle);
-	            if (!this.isAppear) {
-	                this.isAppear = true;
+	            if (this.trigger === 'hover') {
+	                clearTimeout(this.timeHandle);
+	                if (!this.isAppear) {
+	                    this.isAppear = true;
+	                }
 	            }
 	        },
 	        leaveout: function leaveout() {
 	            var _this = this;
 	
-	            this.timeHandle = setTimeout(function () {
-	                _this.isAppear = false;
-	            }, 500);
+	            if (this.trigger === 'hover') {
+	                this.timeHandle = setTimeout(function () {
+	                    _this.isAppear = false;
+	                }, 500);
+	            }
+	        },
+	        clickEvent: function clickEvent(eve) {
+	            eve.preventDefault();
+	            if (this.trigger === 'click') {
+	                if (!this.isAppear) {
+	                    this.isAppear = true;
+	                } else {
+	                    this.isAppear = false;
+	                }
+	            }
 	        }
 	    },
-	    mounted: function mounted() {},
+	    mounted: function mounted() {
+	        var _this2 = this;
+	
+	        if (this.trigger === 'click') {
+	            document.body.addEventListener("click", function (event) {
+	                if (_this2.$el !== event.target && _this2.$el.contains ? !_this2.$el.contains(event.target) : !_this2.$el.compareDocumentPosition(event.target) & 16) {
+	                    _this2.isAppear = false;
+	                }
+	            }, false);
+	        }
+	    },
 	
 	    props: {
 	        trigger: {
-	            type: Array,
-	            default: []
+	            type: String,
+	            default: 'hover'
 	        },
 	        overload: {
 	            type: String
@@ -5062,13 +5087,13 @@
 /* 109 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dropdown-content\" @mouseover=\"overin\" @mouseleave=\"leaveout\" _v-07de4165=\"\">\n        <div class=\"dropdown-display\" _v-07de4165=\"\">\n            <slot name=\"display\" _v-07de4165=\"\"></slot>\n        </div>\n        <transition name=\"dropdown\" _v-07de4165=\"\">\n            <div class=\"dropdownlist\" v-if=\"isAppear\" _v-07de4165=\"\">\n                <slot _v-07de4165=\"\"></slot>\n            </div>\n        </transition>\n    </div>";
+	module.exports = "<div class=\"dropdown-content\" @mouseover=\"overin\" @mouseleave=\"leaveout\" _v-07de4165=\"\">\n        <div class=\"dropdown-display\" @click=\"clickEvent\" _v-07de4165=\"\">\n            <slot name=\"display\" _v-07de4165=\"\"></slot>\n        </div>\n        <transition name=\"dropdown\" _v-07de4165=\"\">\n            <div class=\"dropdownlist\" v-if=\"isAppear\" _v-07de4165=\"\">\n                <slot _v-07de4165=\"\"></slot>\n            </div>\n        </transition>\n    </div>";
 
 /***/ },
 /* 110 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown _v-415b7153=\"\">\n        <span slot=\"display\" _v-415b7153=\"\">\n          Hover Me <icon type=\"down\" _v-415b7153=\"\"></icon>\n        </span>\n        <ul _v-415b7153=\"\">\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              不敢回看\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              左顾右盼不自然的暗自喜欢\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              偷偷搭讪总没完地坐立难安\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              试探说晚安 多空泛又心酸\n            </a>\n          </li>\n        </ul>\n      </dropdown>\n    </box>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown trigger=\"click\" _v-415b7153=\"\">\n        <span slot=\"display\" _v-415b7153=\"\">\n          Hover Me <icon type=\"down\" _v-415b7153=\"\"></icon>\n        </span>\n        <ul _v-415b7153=\"\">\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              不敢回看\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              左顾右盼不自然的暗自喜欢\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              偷偷搭讪总没完地坐立难安\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              试探说晚安 多空泛又心酸\n            </a>\n          </li>\n        </ul>\n      </dropdown>\n    </box>\n  </div>";
 
 /***/ }
 /******/ ]);

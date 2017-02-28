@@ -50,3 +50,8 @@
         </ul>
     </dropdown>
 
+#####可设置触发方式，默认为hover
+
+	<dropdown trigger="click">
+		......
+	</dropdown>
