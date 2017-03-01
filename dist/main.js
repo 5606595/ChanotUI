@@ -500,9 +500,11 @@
 	
 	var _backtop2 = _interopRequireDefault(_backtop);
 	
+	var _menu = __webpack_require__(123);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <style scoped lang="less" rel="stylesheet/less">
+	var checkAllList = ["apple", "banana", "pear"]; // <style scoped lang="less" rel="stylesheet/less">
 	//   .c-col {
 	//     &:nth-of-type(2n) {
 	//       background: #52bdee;
@@ -573,9 +575,9 @@
 	
 	//       <!--</treeselect>-->
 	//     <!--</box>-->
-	//     <box>
-	//       <transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
-	//     </box>
+	//     <!--<box>-->
+	//       <!--<transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>-->
+	//     <!--</box>-->
 	//     <box>
 	//       <checkbox disabled isselected>Haha</checkbox>
 	//       <checkbox>Hehe</checkbox>
@@ -588,7 +590,7 @@
 	//       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
 	//     </box>
 	//     <box>
-	//       <dropdown trigger="click">
+	//       <dropdown>
 	//         <span slot="display">
 	//           Hover Me <icon type="down"></icon>
 	//         </span>
@@ -617,11 +619,18 @@
 	//       </dropdown>
 	//     </box>
 	//     <backtop></backtop>
+	//     <box>
+	//       <c-menu>
+	//         <item>haha</item>
+	//         <item>hehe</item>
+	//         <item>xixi</item>
+	//       </c-menu>
+	//     </box>
 	//   </div>
 	// </template>
 	
 	// <script type="text/ecmascript-6">
-	var checkAllList = ["apple", "banana", "pear"];
+	
 	var defaultList = [];
 	exports.default = {
 	  components: {
@@ -638,7 +647,11 @@
 	    'checkbox': _checkbox.checkbox,
 	    'checkboxgroup': _checkbox.checkboxgroup,
 	    'dropdown': _dropdown2.default,
-	    'backtop': _backtop2.default
+	    'backtop': _backtop2.default,
+	    "c-menu": _menu.menu,
+	    "menugroup": _menu.menugroup,
+	    "submenu": _menu.submenu,
+	    "item": _menu.item
 	  },
 	  data: function data() {
 	    return {
@@ -5120,11 +5133,11 @@
 /* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(122)
+	__webpack_require__(113)
 	module.exports = __webpack_require__(115)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(124)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(117)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -5138,8 +5151,46 @@
 	})()}
 
 /***/ },
-/* 113 */,
-/* 114 */,
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(114);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(23)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2c1382a3&file=backtop.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./backtop.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2c1382a3&file=backtop.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./backtop.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(22)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".backtop[_v-2c1382a3] {\n  position: fixed;\n  bottom: 50px;\n  right: 100px;\n}\n.backtop .j-btn[_v-2c1382a3] {\n  background: #AFAFAF;\n  border: 0px;\n  color: white;\n  padding: 10px!important;\n  -webkit-transition: background .2s linear;\n  transition: background .2s linear;\n}\n.backtop .j-btn[_v-2c1382a3]:hover {\n  color: white;\n  background: #999;\n}\n.display-enter-active[_v-2c1382a3],\n.display-leave-active[_v-2c1382a3] {\n  -webkit-transition: opacity .3s linear!important;\n  transition: opacity .3s linear!important;\n}\n.display-enter[_v-2c1382a3],\n.display-leave-active[_v-2c1382a3] {\n  opacity: 0;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -5286,23 +5337,87 @@
 	                                     */
 
 /***/ },
-/* 117 */,
+/* 117 */
+/***/ function(module, exports) {
+
+	module.exports = "<transition name=\"display\" _v-2c1382a3=\"\">\n        <div class=\"backtop\" @click=\"clickEvent\" v-if=\"isAppear\" _v-2c1382a3=\"\">\n            <c-button size=\"large\" icon=\"backtop\" shape=\"circle\" _v-2c1382a3=\"\"></c-button>\n        </div>\n    </transition>";
+
+/***/ },
 /* 118 */
 /***/ function(module, exports) {
 
-	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\" _v-415b7153=\"\"></transfer>\n    </box>\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown trigger=\"click\" _v-415b7153=\"\">\n        <span slot=\"display\" _v-415b7153=\"\">\n          Hover Me <icon type=\"down\" _v-415b7153=\"\"></icon>\n        </span>\n        <ul _v-415b7153=\"\">\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              不敢回看\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              左顾右盼不自然的暗自喜欢\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              偷偷搭讪总没完地坐立难安\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              试探说晚安 多空泛又心酸\n            </a>\n          </li>\n        </ul>\n      </dropdown>\n    </box>\n    <backtop _v-415b7153=\"\"></backtop>\n  </div>";
+	module.exports = "<div _v-415b7153=\"\">\n    <!--<box>-->\n      <!--<spin tips=\"loading...\"></spin>-->\n      <!--<icon type=\"success\"/>-->\n      <!--<icon type=\"fail\"/>-->\n      <!--<icon type=\"prompt\"/>-->\n      <!--<icon type=\"warning\"/>-->\n      <!--<icon type=\"search\"/>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <c-button size=\"large\" _v-415b7153=\"\">large</c-button>\n      <c-button type=\"primary\" _v-415b7153=\"\">default</c-button>\n      <c-button size=\"small\" type=\"primary\" _v-415b7153=\"\">small</c-button>\n      <c-button type=\"primary\" size=\"large\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" shape=\"circle\" size=\"small\" _v-415b7153=\"\"></c-button>\n      <c-button type=\"primary\" icon=\"search\" size=\"small\" _v-415b7153=\"\">click me</c-button>\n      <c-button icon=\"forward\" size=\"small\" type=\"primary\" _v-415b7153=\"\">Go froward</c-button>\n      <c-button icon=\"download\" size=\"small\" type=\"primary\" _v-415b7153=\"\">download</c-button>\n      <c-button :loading=\"loading\" type=\"primary\" @click=\"loading = true\" _v-415b7153=\"\">我收起看不见的结果</c-button>\n    </box>\n    <!--<box>-->\n      <!--<row space=\"between\">-->\n        <!--<column xs=\"1\" sm=\"6\" md=\"2\" lg=\"2\">-->\n          <!--haha-->\n        <!--</column>-->\n        <!--<column xs=\"10\" sm=\"6\" md=\"8\" lg=\"10\">-->\n          <!--hehe-->\n        <!--</column>-->\n      <!--</row>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<popover placement=\"left\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"right\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"top\" title=\"<h2>这是标题</h2>\" content=\"<p>内容</p>\" trigger=\"click\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n      <!--<popover placement=\"bottom\">-->\n        <!--<c-button type=\"primary\">Hover me.</c-button>-->\n      <!--</popover>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<treeselect :selectopt=\"option\">-->\n\n      <!--</treeselect>-->\n    <!--</box>-->\n    <!--<box>-->\n      <!--<transfer v-bind:title=\"title\" :sourcedata=\"sourcedata\" :targetdata=\"targetdata\"></transfer>-->\n    <!--</box>-->\n    <box _v-415b7153=\"\">\n      <checkbox disabled=\"\" isselected=\"\" _v-415b7153=\"\">Haha</checkbox>\n      <checkbox _v-415b7153=\"\">Hehe</checkbox>\n      <checkbox _v-415b7153=\"\">Xixi</checkbox>\n      <div class=\"group\" _v-415b7153=\"\">\n        <checkbox :isnotall=\"notall\" :isselected=\"checkall\" @change=\"allEvent\" _v-415b7153=\"\">\n          CheckAll\n        </checkbox>\n      </div>\n      <checkboxgroup :options=\"array\" :values=\"checkList\" _v-415b7153=\"\"></checkboxgroup>\n    </box>\n    <box _v-415b7153=\"\">\n      <dropdown _v-415b7153=\"\">\n        <span slot=\"display\" _v-415b7153=\"\">\n          Hover Me <icon type=\"down\" _v-415b7153=\"\"></icon>\n        </span>\n        <ul _v-415b7153=\"\">\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              不敢回看\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              左顾右盼不自然的暗自喜欢\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              偷偷搭讪总没完地坐立难安\n            </a>\n          </li>\n          <li _v-415b7153=\"\">\n            <a href=\"\" _v-415b7153=\"\">\n              试探说晚安 多空泛又心酸\n            </a>\n          </li>\n        </ul>\n      </dropdown>\n    </box>\n    <backtop _v-415b7153=\"\"></backtop>\n    <box _v-415b7153=\"\">\n      <c-menu _v-415b7153=\"\">\n        <item _v-415b7153=\"\">haha</item>\n        <item _v-415b7153=\"\">hehe</item>\n        <item _v-415b7153=\"\">xixi</item>\n      </c-menu>\n    </box>\n  </div>";
 
 /***/ },
 /* 119 */,
 /* 120 */,
 /* 121 */,
-/* 122 */
+/* 122 */,
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.submenu = exports.menugroup = exports.menu = exports.item = undefined;
+	
+	var _item = __webpack_require__(124);
+	
+	var _item2 = _interopRequireDefault(_item);
+	
+	var _menu = __webpack_require__(129);
+	
+	var _menu2 = _interopRequireDefault(_menu);
+	
+	var _menugroup = __webpack_require__(134);
+	
+	var _menugroup2 = _interopRequireDefault(_menugroup);
+	
+	var _submenu = __webpack_require__(139);
+	
+	var _submenu2 = _interopRequireDefault(_submenu);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by jorten on 2017/2/28.
+	 */
+	exports.item = _item2.default;
+	exports.menu = _menu2.default;
+	exports.menugroup = _menugroup2.default;
+	exports.submenu = _submenu2.default;
+
+/***/ },
+/* 124 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(125)
+	module.exports = __webpack_require__(127)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(128)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/menu/item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(123);
+	var content = __webpack_require__(126);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(23)(content, {});
@@ -5311,8 +5426,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2c1382a3&file=backtop.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./backtop.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2c1382a3&file=backtop.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./backtop.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-8ecfca4e&file=item.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./item.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-8ecfca4e&file=item.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./item.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5322,7 +5437,7 @@
 	}
 
 /***/ },
-/* 123 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(22)();
@@ -5330,16 +5445,339 @@
 	
 	
 	// module
-	exports.push([module.id, ".backtop[_v-2c1382a3] {\n  position: fixed;\n  bottom: 50px;\n  right: 100px;\n}\n.backtop .j-btn[_v-2c1382a3] {\n  background: #AFAFAF;\n  border: 0px;\n  color: white;\n  padding: 10px!important;\n  -webkit-transition: background .2s linear;\n  transition: background .2s linear;\n}\n.backtop .j-btn[_v-2c1382a3]:hover {\n  color: white;\n  background: #999;\n}\n.display-enter-active[_v-2c1382a3],\n.display-leave-active[_v-2c1382a3] {\n  -webkit-transition: opacity .3s linear!important;\n  transition: opacity .3s linear!important;\n}\n.display-enter[_v-2c1382a3],\n.display-leave-active[_v-2c1382a3] {\n  opacity: 0;\n}\n", ""]);
+	exports.push([module.id, ".c-menuitem[_v-8ecfca4e] {\n  padding: 10px 0;\n}\n.c-menuitem[_v-8ecfca4e]:hover {\n  color: #1f90e6;\n  cursor: pointer;\n}\n.c-menuitem.clicked[_v-8ecfca4e] {\n  background: #ecf6fd;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 124 */
+/* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "<transition name=\"display\" _v-2c1382a3=\"\">\n        <div class=\"backtop\" @click=\"clickEvent\" v-if=\"isAppear\" _v-2c1382a3=\"\">\n            <c-button size=\"large\" icon=\"backtop\" shape=\"circle\" _v-2c1382a3=\"\"></c-button>\n        </div>\n    </transition>";
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-menuitem" :class="isClicked">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style scoped rel="stylesheet/less" lang="less">
+	//     @import '../../mixin/mixin.less';
+	//     .c-menuitem {
+	//         padding: 10px 0;
+	//         &:hover {
+	//             color: @default;
+	//             cursor: pointer;
+	//         }
+	//         &.clicked {
+	//             background: @dropdownlist-hover;
+	//         }
+	//     }
+	// </style>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+
+/***/ },
+/* 128 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-menuitem\" :class=\"isClicked\" _v-8ecfca4e=\"\">\n        <slot _v-8ecfca4e=\"\"></slot>\n    </div>";
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(130)
+	module.exports = __webpack_require__(132)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(133)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/menu/menu.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(131);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(23)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4e6baf25&file=menu.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./menu.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4e6baf25&file=menu.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./menu.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(22)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".c-menu[_v-4e6baf25] {\n  border-right: 1px solid #DADADA;\n  width: 240px;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 132 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-menu">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style scoped rel="stylesheet/less" lang="less">
+	//     @import '../../mixin/mixin.less';
+	//     .c-menu {
+	//         border-right: 1px solid @jdefault;
+	//         width: 240px;
+	//     }
+	// </style>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+
+/***/ },
+/* 133 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-menu\" _v-4e6baf25=\"\">\n        <slot _v-4e6baf25=\"\"></slot>\n    </div>";
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(135)
+	module.exports = __webpack_require__(137)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(138)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/menu/menugroup.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(136);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(23)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-238e252a&file=menugroup.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./menugroup.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-238e252a&file=menugroup.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./menugroup.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(22)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 137 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-menugroup">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style scoped rel="stylesheet/less" lang="less">
+	
+	// </style>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+
+/***/ },
+/* 138 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-menugroup\" _v-238e252a=\"\">\n        <slot _v-238e252a=\"\"></slot>\n    </div>";
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(140)
+	module.exports = __webpack_require__(142)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(143)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/jorten/github/ChanotUI/components/menu/submenu.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(141);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(23)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-767fad6e&file=submenu.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./submenu.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-767fad6e&file=submenu.vue&scoped=true!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./submenu.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(22)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 142 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="c-submenu">
+	//         <slot></slot>
+	//     </div>
+	// </template>
+	// <style scoped rel="stylesheet/less" lang="less">
+	
+	// </style>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+
+/***/ },
+/* 143 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"c-submenu\" _v-767fad6e=\"\">\n        <slot _v-767fad6e=\"\"></slot>\n    </div>";
 
 /***/ }
 /******/ ]);

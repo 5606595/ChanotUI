@@ -69,9 +69,9 @@
 
       <!--</treeselect>-->
     <!--</box>-->
-    <box>
-      <transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>
-    </box>
+    <!--<box>-->
+      <!--<transfer v-bind:title="title" :sourcedata="sourcedata" :targetdata="targetdata"></transfer>-->
+    <!--</box>-->
     <box>
       <checkbox disabled isselected>Haha</checkbox>
       <checkbox>Hehe</checkbox>
@@ -84,7 +84,7 @@
       <checkboxgroup :options="array" :values="checkList"></checkboxgroup>
     </box>
     <box>
-      <dropdown trigger="click">
+      <dropdown>
         <span slot="display">
           Hover Me <icon type="down"></icon>
         </span>
@@ -113,6 +113,13 @@
       </dropdown>
     </box>
     <backtop></backtop>
+    <box>
+      <c-menu>
+        <item>haha</item>
+        <item>hehe</item>
+        <item>xixi</item>
+      </c-menu>
+    </box>
   </div>
 </template>
 
@@ -129,6 +136,7 @@
   import { checkbox, checkboxgroup } from '../components/checkbox'
   import dropdown from '../components/dropdown'
   import backtop from '../components/backtop'
+  import { menu, submenu, menugroup, item } from '../components/menu'
   let checkAllList = ["apple", "banana", "pear"];
   let defaultList = [];
   export default {
@@ -146,7 +154,11 @@
       'checkbox': checkbox,
       'checkboxgroup': checkboxgroup,
       'dropdown': dropdown,
-      'backtop': backtop
+      'backtop': backtop,
+      "c-menu": menu,
+      "menugroup": menugroup,
+      "submenu": submenu,
+      "item": item
     },
     data() {
       return {
